@@ -1,0 +1,515 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#FAF6ED; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Shadows -->
+    <filter id="subtleShadow" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#8C7E6A" flood-opacity="0.12" />
+    </filter>
+
+    <filter id="cardShadow" x="-3%" y="-3%" width="106%" height="108%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#7A6D58" flood-opacity="0.10" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284C7" />
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D97706" />
+    </marker>
+    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669" />
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7C3AED" />
+    </marker>
+  </defs>
+
+  <!-- SOLID FORMAL CREAM CANVAS -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#FAF6ED" />
+
+  <!-- Subtle Blueprint Grid Pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#EAE0CE" stroke-width="0.8" opacity="0.7" />
+  </pattern>
+  <rect width="1920" height="1080" fill="url(#grid)" />
+
+  <!-- ========================================================================= -->
+  <!-- TOP HEADER BANNER (Y: 16 - 68) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 16)" filter="url(#subtleShadow)">
+    <rect x="0" y="0" width="1840" height="52" rx="8" fill="#FFFDF8" stroke="#D1C3A5" stroke-width="1.4" />
+    
+    <rect x="14" y="9" width="8" height="34" rx="3" fill="#0284C7" />
+    <text x="32" y="33" fill="#0F172A" font-size="20" font-weight="900" letter-spacing="0.5">SAHAKAR-SETU: SYSTEM ARCHITECTURE &amp; DATA FLOW</text>
+    
+    <text x="770" y="33" fill="#475569" font-size="12" font-weight="700" letter-spacing="0.4">MINISTRY OF COOPERATION • NCCT TRAINING NETWORK • MODULAR MONOLITH + EDGE KIOSK</text>
+
+    <!-- Header Badges -->
+    <g transform="translate(1520, 10)">
+      <rect x="0" y="0" width="140" height="32" rx="5" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.2" />
+      <text x="70" y="21" fill="#0369A1" font-size="11" font-weight="800" text-anchor="middle">ASPECT 16:9 • PPT</text>
+
+      <rect x="150" y="0" width="155" height="32" rx="5" fill="#ECFDF5" stroke="#059669" stroke-width="1.2" />
+      <text x="227" y="21" fill="#047857" font-size="11" font-weight="800" text-anchor="middle">HIGH-CONCURRENCY</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LAYER 1: CLIENT ACCESS & EDGE HARDWARE (Y: 78 - 240) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 78)">
+    <rect x="0" y="0" width="1840" height="158" rx="10" fill="#F4EDE0" stroke="#CFC2A7" stroke-width="1.4" stroke-dasharray="4,4" />
+    
+    <!-- Layer Identifier Strip -->
+    <rect x="12" y="-12" width="410" height="24" rx="4" fill="#FFFDF8" stroke="#0284C7" stroke-width="1.2" />
+    <text x="22" y="4" fill="#0369A1" font-size="11" font-weight="900" letter-spacing="0.8">LAYER 1: CLIENT INTERFACES &amp; PHYSICAL EDGE DEVICES</text>
+
+    <!-- 5 Clean Presentation Cards (Width 352 each, Gap 16) -->
+    <!-- Card 1: Trainee Mobile PWA -->
+    <g transform="translate(14, 20)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="122" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="122" rx="2" fill="#0284C7" />
+      <text x="16" y="26" fill="#0F172A" font-size="14" font-weight="900">📱 Trainee Mobile PWA</text>
+      <rect x="245" y="12" width="95" height="18" rx="3" fill="#E0F2FE" />
+      <text x="292" y="25" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">OFFLINE-FIRST</text>
+
+      <text x="16" y="50" fill="#0284C7" font-size="11" font-weight="800">Next.js 14 • Serwist SW • IndexedDB</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• Spoken Vernacular LMS (22 Languages)</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• In-Browser PACS ERP Accounting Simulator</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Local quiz state • Sub-1.2MB mobile payload</text>
+    </g>
+
+    <!-- Card 2: Institute ERP Portal -->
+    <g transform="translate(382, 20)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="122" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="122" rx="2" fill="#0284C7" />
+      <text x="16" y="26" fill="#0F172A" font-size="14" font-weight="900">💻 Institute Admin &amp; ERP</text>
+      <rect x="255" y="12" width="85" height="18" rx="3" fill="#E0F2FE" />
+      <text x="297" y="25" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">CAMPUS ERP</text>
+
+      <text x="16" y="50" fill="#0284C7" font-size="11" font-weight="800">React 18 • TanStack Table • FullCalendar</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• Trainee Admissions &amp; Bulk CSV Verification</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• Dynamic Hostel Bed Matrix &amp; Meal Tokens</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Automated faculty timetable &amp; hall allocations</text>
+    </g>
+
+    <!-- Card 3: Cooperative Recruiter Portal -->
+    <g transform="translate(750, 20)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="122" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="122" rx="2" fill="#7C3AED" />
+      <text x="16" y="26" fill="#0F172A" font-size="14" font-weight="900">🏢 PACS &amp; Recruiter Portal</text>
+      <rect x="250" y="12" width="90" height="18" rx="3" fill="#EDE9FE" />
+      <text x="295" y="25" fill="#6D28D9" font-size="9" font-weight="800" text-anchor="middle">JOBS BRIDGE</text>
+
+      <text x="16" y="50" fill="#7C3AED" font-size="11" font-weight="800">Cooperative Society Talent Ingress</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• PACS &amp; DCCB Direct Vacancy Management</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• 1-Click Hiring of Certified Local Youth</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Verified merit filters • Distance-based matching</text>
+    </g>
+
+    <!-- Card 4: Public Verifier & HQ Cockpit -->
+    <g transform="translate(1118, 20)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="344" height="122" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="122" rx="2" fill="#059669" />
+      <text x="16" y="26" fill="#0F172A" font-size="14" font-weight="900">🔍 Verifier &amp; HQ Cockpit</text>
+      <rect x="250" y="12" width="82" height="18" rx="3" fill="#D1FAE5" />
+      <text x="291" y="25" fill="#047857" font-size="9" font-weight="800" text-anchor="middle">TRUST &amp; BI</text>
+
+      <text x="16" y="50" fill="#059669" font-size="11" font-weight="800">Zero-Login QR Validation &amp; Analytics</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• Offline Ed25519 2D QR Signature Check (&lt;15ms)</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• Ministry HQ National Macro BI Telemetry</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Apache Superset • Real-time stipend audit streams</text>
+    </g>
+
+    <!-- Card 5: Autonomous Edge Kiosk -->
+    <g transform="translate(1478, 20)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="348" height="122" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="122" rx="2" fill="#D97706" />
+      <text x="16" y="26" fill="#0F172A" font-size="14" font-weight="900">📟 Door Edge Kiosk</text>
+      <rect x="225" y="12" width="112" height="18" rx="3" fill="#FEF3C7" />
+      <text x="281" y="25" fill="#B45309" font-size="9" font-weight="800" text-anchor="middle">HARDWARE KIOSK</text>
+
+      <text x="16" y="50" fill="#D97706" font-size="11" font-weight="800">Wall-Mounted Rugged Device (Doorway)</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• INT8 MobileFaceNet ONNX (&lt;80ms Match)</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• MiniFASNet Silent Anti-Spoof Liveness</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">50,000 log SQLite buffer • 5000mAh battery backup</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- DATA FLOW CONNECTORS: LAYER 1 TO LAYER 2 (Y: 236 - 286) -->
+  <!-- ========================================================================= -->
+  <path d="M 558 236 L 558 288" fill="none" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowCyan)" />
+  <g transform="translate(230, 248)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="480" height="22" rx="11" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.2" />
+    <text x="240" y="15" fill="#0369A1" font-size="10" font-weight="800" text-anchor="middle">HTTPS / TLS 1.3: Audio Chunks, OTP, Portals, Roster CSVs, Bed Matrix</text>
+  </g>
+
+  <path d="M 1650 236 L 1650 288" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowAmber)" />
+  <g transform="translate(1330, 248)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="450" height="22" rx="11" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2" />
+    <text x="225" y="15" fill="#B45309" font-size="10" font-weight="800" text-anchor="middle">HMAC-SHA256 Encrypted Sync: 128-d Biometric Vectors (No Raw Photos)</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LAYER 2: UNIFIED API GATEWAY & SECURITY LAYER (Y: 288 - 356) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 288)" filter="url(#subtleShadow)">
+    <rect x="0" y="0" width="1840" height="68" rx="8" fill="#F4EDE0" stroke="#0284C7" stroke-width="1.6" />
+    <rect x="0" y="0" width="6" height="68" rx="3" fill="#0284C7" />
+    
+    <text x="22" y="28" fill="#0284C7" font-size="11" font-weight="900" letter-spacing="0.8">LAYER 2: UNIFIED API GATEWAY &amp; SECURITY INGRESS</text>
+    <text x="22" y="51" fill="#0F172A" font-size="16" font-weight="900">Unified API Gateway &amp; Reverse Proxy</text>
+
+    <!-- 5 Clean Security Badges -->
+    <g transform="translate(400, 16)">
+      <rect x="0" y="0" width="270" height="36" rx="6" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.3" />
+      <circle cx="16" cy="18" r="4" fill="#0284C7" />
+      <text x="28" y="22" fill="#0F172A" font-size="11" font-weight="800">Nginx / Cloudflare Edge Ingress</text>
+
+      <rect x="285" y="0" width="270" height="36" rx="6" fill="#FFFFFF" stroke="#059669" stroke-width="1.3" />
+      <circle cx="301" cy="18" r="4" fill="#059669" />
+      <text x="313" y="22" fill="#0F172A" font-size="11" font-weight="800">TLS 1.3 Strict Mutual Encryption</text>
+
+      <rect x="570" y="0" width="270" height="36" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="1.3" />
+      <circle cx="586" cy="18" r="4" fill="#D97706" />
+      <text x="598" y="22" fill="#0F172A" font-size="11" font-weight="800">WAF &amp; DDoS Layer-7 Mitigation</text>
+
+      <rect x="855" y="0" width="285" height="36" rx="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.3" />
+      <circle cx="871" cy="18" r="4" fill="#7C3AED" />
+      <text x="883" y="22" fill="#0F172A" font-size="11" font-weight="800">JWT &amp; Fine-Grained RBAC Auth</text>
+
+      <rect x="1155" y="0" width="270" height="36" rx="6" fill="#FFFFFF" stroke="#DB2777" stroke-width="1.3" />
+      <circle cx="1171" cy="18" r="4" fill="#DB2777" />
+      <text x="1183" y="22" fill="#0F172A" font-size="11" font-weight="800">Token Bucket Rate Limiter</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- DATA FLOW CONNECTORS: LAYER 2 TO LAYER 3 (Y: 356 - 396) -->
+  <!-- ========================================================================= -->
+  <path d="M 960 356 L 960 396" fill="none" stroke="#0284C7" stroke-width="2.2" marker-end="url(#arrowCyan)" />
+  <g transform="translate(690, 364)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="540" height="24" rx="12" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.3" />
+    <text x="270" y="16" fill="#0369A1" font-size="10.5" font-weight="800" text-anchor="middle">Internal Reverse Proxy Routing to Domain Micro-Modules (/api/v1/...)</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LAYER 3: CORE APPLICATION MODULAR MONOLITH (Y: 398 - 584) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 398)" filter="url(#subtleShadow)">
+    <rect x="0" y="0" width="1840" height="186" rx="10" fill="#F0E9DC" stroke="#0284C7" stroke-width="1.6" />
+    
+    <!-- Layer Identifier Strip -->
+    <rect x="16" y="-12" width="540" height="24" rx="4" fill="#FFFDF8" stroke="#0284C7" stroke-width="1.2" />
+    <text x="26" y="4" fill="#0284C7" font-size="11" font-weight="900" letter-spacing="0.8">LAYER 3: CORE APPLICATION MODULAR MONOLITH (FASTAPI BACKEND)</text>
+
+    <!-- Header Description inside Container -->
+    <g transform="translate(20, 16)">
+      <text x="0" y="16" fill="#0F172A" font-size="14" font-weight="900">FastAPI High-Performance Async Application Core</text>
+      <text x="365" y="16" fill="#475569" font-size="11" font-weight="700">[Python 3.12 • Pydantic v2 • AsyncIO Event Loop • High-Throughput Domain Boundaries]</text>
+    </g>
+
+    <!-- 4 Clean, Spacious Domain Engines (Width 442 each, Gap 14) -->
+    <!-- Engine 1: ERP & Logistics Engine -->
+    <g transform="translate(14, 42)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="442" height="130" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="130" rx="2" fill="#0284C7" />
+      <text x="16" y="24" fill="#0F172A" font-size="13.5" font-weight="900">📋 ERP &amp; Hostel Logistics Engine</text>
+      <rect x="330" y="10" width="98" height="18" rx="3" fill="#E0F2FE" />
+      <text x="379" y="23" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">CORE ENGINE 1</text>
+      
+      <line x1="16" y1="34" x2="426" y2="34" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="52" fill="#0284C7" font-size="11" font-weight="800">• Camunda BPMN Multi-Tier Approval State Machine</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• PostgreSQL pg_trgm Fuzzy Dedup (Aadhaar &amp; Phone Check)</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• Dynamic Gender/Date Room Allotment &amp; Bed Matrix</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">QR-verified daily mess coupons • Automated batch roll calls</text>
+    </g>
+
+    <!-- Engine 2: Biometric Attendance & Stipend -->
+    <g transform="translate(470, 42)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="442" height="130" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="130" rx="2" fill="#059669" />
+      <text x="16" y="24" fill="#0F172A" font-size="13.5" font-weight="900">⚡ Biometric Attendance &amp; Stipend</text>
+      <rect x="330" y="10" width="98" height="18" rx="3" fill="#D1FAE5" />
+      <text x="379" y="23" fill="#047857" font-size="9" font-weight="800" text-anchor="middle">CORE ENGINE 2</text>
+
+      <line x1="16" y1="34" x2="426" y2="34" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="52" fill="#059669" font-size="11" font-weight="800">• INT8 Vector Match Verification (&lt;80ms Inference)</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• Automated TA/DA Daily Stipend Calculator</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• Anomaly Fraud Detection Gate (Blocks Geo/Proxy Clocks)</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">100% DPDP Act compliant • Zero raw photos in storage</text>
+    </g>
+
+    <!-- Engine 3: Multilingual LMS & PACS Simulator -->
+    <g transform="translate(926, 42)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="442" height="130" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="130" rx="2" fill="#0284C7" />
+      <text x="16" y="24" fill="#0F172A" font-size="13.5" font-weight="900">📚 Multilingual LMS &amp; Sandbox</text>
+      <rect x="330" y="10" width="98" height="18" rx="3" fill="#E0F2FE" />
+      <text x="379" y="23" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">CORE ENGINE 3</text>
+
+      <line x1="16" y1="34" x2="426" y2="34" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="52" fill="#0284C7" font-size="11" font-weight="800">• 3-5min Audio Lesson Bundler in 22 Indian Languages</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• 22-Module PACS Accounting Software Simulator</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• Formative Vernacular Spoken Quizzing Engine</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Bhashini ASR/TTS powered • Offline caching support</text>
+    </g>
+
+    <!-- Engine 4: Trust & Job Exchange -->
+    <g transform="translate(1382, 42)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="442" height="130" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="130" rx="2" fill="#7C3AED" />
+      <text x="16" y="24" fill="#0F172A" font-size="13.5" font-weight="900">🎯 Trust &amp; Cooperative Jobs</text>
+      <rect x="330" y="10" width="98" height="18" rx="3" fill="#EDE9FE" />
+      <text x="379" y="23" fill="#6D28D9" font-size="9" font-weight="800" text-anchor="middle">CORE ENGINE 4</text>
+
+      <line x1="16" y1="34" x2="426" y2="34" stroke="#E2E8F0" stroke-width="1" />
+      <text x="16" y="52" fill="#7C3AED" font-size="11" font-weight="800">• W3C Verifiable Credentials with Ed25519 2D QR Signing</text>
+      <text x="16" y="70" fill="#334155" font-size="10.5" font-weight="600">• Explainable Ranker: Score = w₁(Grade) + w₂(Dist) + w₃(Rec)</text>
+      <text x="16" y="88" fill="#334155" font-size="10.5" font-weight="600">• National Cooperative Database (NCD) PACS Verification</text>
+      <text x="16" y="106" fill="#64748B" font-size="9.5" font-weight="500">Direct DigiLocker sync • 1-click candidate shortlisting</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- DATA FLOW CONNECTORS: LAYER 3 TO LAYER 4 (STORAGE) (Y: 584 - 634) -->
+  <!-- ========================================================================= -->
+  <path d="M 350 584 L 350 634" fill="none" stroke="#0284C7" stroke-width="2" marker-end="url(#arrowCyan)" />
+  <g transform="translate(100, 596)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="480" height="22" rx="11" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.2" />
+    <text x="240" y="15" fill="#0369A1" font-size="9.5" font-weight="800" text-anchor="middle">SQL with Row-Level Security (RLS) Tenant Isolation (tenant_id = Institute_ID)</text>
+  </g>
+
+  <path d="M 960 584 L 960 634" fill="none" stroke="#DB2777" stroke-width="2" marker-end="url(#arrowCyan)" />
+  <g transform="translate(730, 596)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="450" height="22" rx="11" fill="#FFFFFF" stroke="#DB2777" stroke-width="1.2" />
+    <text x="225" y="15" fill="#BE185D" font-size="9.5" font-weight="800" text-anchor="middle">Pub/Sub Event Bus &amp; Celery Async Queues (Stipend Audits, SMS Alerts)</text>
+  </g>
+
+  <path d="M 1570 584 L 1570 634" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowAmber)" />
+  <g transform="translate(1330, 596)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="470" height="22" rx="11" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2" />
+    <text x="235" y="15" fill="#B45309" font-size="9.5" font-weight="800" text-anchor="middle">Direct Presigned S3 URLs (Course Audio Files, Signed PDF Certificates)</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LAYER 4: PERSISTENCE & DATA STORAGE LAYER (Y: 636 - 744) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 636)">
+    <rect x="0" y="0" width="1840" height="106" rx="10" fill="#F4EDE0" stroke="#CFC2A7" stroke-width="1.4" stroke-dasharray="4,4" />
+    
+    <!-- Layer Identifier Strip -->
+    <rect x="12" y="-12" width="430" height="24" rx="4" fill="#FFFDF8" stroke="#0284C7" stroke-width="1.2" />
+    <text x="22" y="4" fill="#0369A1" font-size="11" font-weight="900" letter-spacing="0.8">LAYER 4: PERSISTENCE &amp; DISTRIBUTED STORAGE</text>
+
+    <!-- 3 Storage Blocks (Width 594 each, Gap 18) -->
+    <!-- Block 1: PostgreSQL 16 -->
+    <g transform="translate(14, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="594" height="76" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="6" height="76" rx="3" fill="#0284C7" />
+      
+      <!-- Cylinder Graphic -->
+      <g transform="translate(18, 14)">
+        <ellipse cx="20" cy="10" rx="18" ry="6" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.2" />
+        <path d="M 2 10 L 2 36 A 18 6 0 0 0 38 36 L 38 10 Z" fill="#BAE6FD" stroke="#0284C7" stroke-width="1.2" />
+        <ellipse cx="20" cy="36" rx="18" ry="6" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.2" />
+      </g>
+
+      <text x="70" y="27" fill="#0F172A" font-size="14" font-weight="900">Primary Database: PostgreSQL 16</text>
+      <rect x="445" y="12" width="135" height="18" rx="3" fill="#E0F2FE" />
+      <text x="512" y="25" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">RELATIONAL / RLS ACID</text>
+      
+      <text x="70" y="47" fill="#0284C7" font-size="11" font-weight="800">Multi-Tenant with Row-Level Security (RLS) • Native JSONB Schema</text>
+      <text x="70" y="63" fill="#475569" font-size="9.5" font-weight="500">pg_trgm tri-gram GIN indexing • Automated connection pooling &amp; read-replica split</text>
+    </g>
+
+    <!-- Block 2: Redis 7 -->
+    <g transform="translate(623, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="594" height="76" rx="8" fill="#FFFFFF" stroke="#DB2777" stroke-width="1.4" />
+      <rect x="0" y="0" width="6" height="76" rx="3" fill="#DB2777" />
+      
+      <!-- Redis Stack Graphic -->
+      <g transform="translate(18, 14)">
+        <rect x="2" y="6" width="34" height="8" rx="2" fill="#FCE7F3" stroke="#DB2777" stroke-width="1.2" />
+        <rect x="2" y="18" width="34" height="8" rx="2" fill="#FBCFE8" stroke="#DB2777" stroke-width="1.2" />
+        <rect x="2" y="30" width="34" height="8" rx="2" fill="#F472B6" stroke="#DB2777" stroke-width="1.2" />
+      </g>
+
+      <text x="70" y="27" fill="#0F172A" font-size="14" font-weight="900">In-Memory Cache &amp; Broker: Redis 7</text>
+      <rect x="450" y="12" width="130" height="18" rx="3" fill="#FCE7F3" />
+      <text x="515" y="25" fill="#BE185D" font-size="9" font-weight="800" text-anchor="middle">&lt;2ms IN-MEMORY</text>
+
+      <text x="70" y="47" fill="#BE185D" font-size="11" font-weight="800">Session Store • Rate Limit Sliding Counters • Celery Background Queues</text>
+      <text x="70" y="63" fill="#475569" font-size="9.5" font-weight="500">Pub/Sub event fan-out for real-time WebSocket notifications &amp; attendance alerts</text>
+    </g>
+
+    <!-- Block 3: Cloudflare R2 / AWS S3 -->
+    <g transform="translate(1232, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="594" height="76" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.4" />
+      <rect x="0" y="0" width="6" height="76" rx="3" fill="#D97706" />
+      
+      <!-- Storage Bucket Graphic -->
+      <g transform="translate(18, 14)">
+        <rect x="4" y="6" width="32" height="32" rx="4" fill="#FEF3C7" stroke="#D97706" stroke-width="1.3" />
+        <path d="M 8 16 L 32 16 M 8 26 L 32 26" stroke="#B45309" stroke-width="1.3" />
+      </g>
+
+      <text x="70" y="27" fill="#0F172A" font-size="14" font-weight="900">Encrypted Object Store: Cloudflare R2 / S3</text>
+      <rect x="445" y="12" width="135" height="18" rx="3" fill="#FEF3C7" />
+      <text x="512" y="25" fill="#B45309" font-size="9" font-weight="800" text-anchor="middle">ZERO EGRESS S3 API</text>
+
+      <text x="70" y="47" fill="#B45309" font-size="11" font-weight="800">Audio Micro-Lessons (&lt;2MB) • Signed Tamper-Proof PDF Certificates</text>
+      <text x="70" y="63" fill="#475569" font-size="9.5" font-weight="500">AES-256 at rest • Signed time-bound presigned URLs • Multi-region CDN caching</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- DATA FLOW CONNECTORS: LAYER 3/4 TO LAYER 5 (EXTERNAL DPI) (Y: 742 - 796) -->
+  <!-- ========================================================================= -->
+  <path d="M 215 742 L 215 798" fill="none" stroke="#0284C7" stroke-width="2" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)" />
+  <g transform="translate(60, 756)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="310" height="24" rx="12" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.2" />
+    <text x="155" y="16" fill="#0369A1" font-size="9" font-weight="800" text-anchor="middle">gRPC Voice Streams: Raw Audio (ASR) ⇄ TTS Voice</text>
+  </g>
+
+  <path d="M 575 742 L 575 798" fill="none" stroke="#059669" stroke-width="2" marker-end="url(#arrowEmerald)" />
+  <g transform="translate(425, 756)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="300" height="24" rx="12" fill="#FFFFFF" stroke="#059669" stroke-width="1.2" />
+    <text x="150" y="16" fill="#047857" font-size="9" font-weight="800" text-anchor="middle">REST API: JSON-LD W3C Verifiable Credential Push</text>
+  </g>
+
+  <path d="M 1130 742 L 1130 798" fill="none" stroke="#7C3AED" stroke-width="2" marker-start="url(#arrowPurple)" marker-end="url(#arrowPurple)" />
+  <g transform="translate(940, 756)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="380" height="24" rx="12" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.2" />
+    <text x="190" y="16" fill="#6D28D9" font-size="9" font-weight="800" text-anchor="middle">REST API: Ingest National Vacancies &amp; Verify PACS Reg ID</text>
+  </g>
+
+  <path d="M 1690 742 L 1690 798" fill="none" stroke="#D97706" stroke-width="2" marker-end="url(#arrowAmber)" />
+  <g transform="translate(1480, 756)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="380" height="24" rx="12" fill="#FFFFFF" stroke="#D97706" stroke-width="1.2" />
+    <text x="190" y="16" fill="#B45309" font-size="9" font-weight="800" text-anchor="middle">REST API: DLT-Approved Notification Template &amp; OTP Disbursal</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LAYER 5: NATIONAL DIGITAL PUBLIC INFRASTRUCTURE (DPI) (Y: 798 - 926) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 798)">
+    <rect x="0" y="0" width="1840" height="126" rx="10" fill="#F4EDE0" stroke="#CFC2A7" stroke-width="1.4" stroke-dasharray="4,4" />
+    
+    <!-- Layer Identifier Strip -->
+    <rect x="12" y="-12" width="530" height="24" rx="4" fill="#FFFDF8" stroke="#0284C7" stroke-width="1.2" />
+    <text x="22" y="4" fill="#0369A1" font-size="11" font-weight="900" letter-spacing="0.8">LAYER 5: NATIONAL DIGITAL PUBLIC INFRASTRUCTURE (DPI) &amp; EXTERNAL SERVICES</text>
+
+    <!-- 5 Clean DPI Cards (Width 352 each, Gap 15) -->
+    <!-- Card 1: Bhashini -->
+    <g transform="translate(14, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="96" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="96" rx="2" fill="#0284C7" />
+      <text x="14" y="24" fill="#0F172A" font-size="12.5" font-weight="900">Bhashini / AI4Bharat Gateway</text>
+      <rect x="255" y="10" width="85" height="16" rx="3" fill="#E0F2FE" />
+      <text x="297" y="22" fill="#0369A1" font-size="8.5" font-weight="800" text-anchor="middle">DPI - SPEECH</text>
+
+      <text x="14" y="44" fill="#0284C7" font-size="10" font-weight="800">IndicWhisper (ASR) • IndicTrans2 (NMT)</text>
+      <text x="14" y="62" fill="#334155" font-size="9.5" font-weight="600">Meta MMS-TTS Neural Voices in 22 Languages</text>
+      <text x="14" y="80" fill="#64748B" font-size="8.5" font-weight="500">Real-time dialect translation &amp; audio streaming</text>
+    </g>
+
+    <!-- Card 2: DigiLocker -->
+    <g transform="translate(381, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="96" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="96" rx="2" fill="#059669" />
+      <text x="14" y="24" fill="#0F172A" font-size="12.5" font-weight="900">DigiLocker &amp; NAD</text>
+      <rect x="255" y="10" width="85" height="16" rx="3" fill="#D1FAE5" />
+      <text x="297" y="22" fill="#047857" font-size="8.5" font-weight="800" text-anchor="middle">DPI - IDENTITY</text>
+
+      <text x="14" y="44" fill="#059669" font-size="10" font-weight="800">National Academic Depository Integration</text>
+      <text x="14" y="62" fill="#334155" font-size="9.5" font-weight="600">Permanent Citizen Verifiable Credential Vault</text>
+      <text x="14" y="80" fill="#64748B" font-size="8.5" font-weight="500">Direct push of Ed25519-signed training degrees</text>
+    </g>
+
+    <!-- Card 3: NCS -->
+    <g transform="translate(748, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="96" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="96" rx="2" fill="#7C3AED" />
+      <text x="14" y="24" fill="#0F172A" font-size="12.5" font-weight="900">National Career Service (NCS)</text>
+      <rect x="255" y="10" width="85" height="16" rx="3" fill="#EDE9FE" />
+      <text x="297" y="22" fill="#6D28D9" font-size="8.5" font-weight="800" text-anchor="middle">DPI - JOBS</text>
+
+      <text x="14" y="44" fill="#7C3AED" font-size="10" font-weight="800">Ministry of Labour &amp; Employment Ingress</text>
+      <text x="14" y="62" fill="#334155" font-size="9.5" font-weight="600">Cooperative Vacancy &amp; Apprenticeship Feed</text>
+      <text x="14" y="80" fill="#64748B" font-size="8.5" font-weight="500">Syncs DCCB accountant &amp; field manager openings</text>
+    </g>
+
+    <!-- Card 4: NCD -->
+    <g transform="translate(1115, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="352" height="96" rx="8" fill="#FFFFFF" stroke="#7C3AED" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="96" rx="2" fill="#7C3AED" />
+      <text x="14" y="24" fill="#0F172A" font-size="12.5" font-weight="900">National Cooperative Database</text>
+      <rect x="245" y="10" width="95" height="16" rx="3" fill="#EDE9FE" />
+      <text x="292" y="22" fill="#6D28D9" font-size="8.5" font-weight="800" text-anchor="middle">MIN COOPERATION</text>
+
+      <text x="14" y="44" fill="#7C3AED" font-size="10" font-weight="800">Master Society &amp; PACS Registry API</text>
+      <text x="14" y="62" fill="#334155" font-size="9.5" font-weight="600">79,630+ Active PACS Verification &amp; Audits</text>
+      <text x="14" y="80" fill="#64748B" font-size="8.5" font-weight="500">Legal standing check before job posting</text>
+    </g>
+
+    <!-- Card 5: NIC SMS -->
+    <g transform="translate(1482, 18)" filter="url(#cardShadow)">
+      <rect x="0" y="0" width="344" height="96" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.4" />
+      <rect x="0" y="0" width="5" height="96" rx="2" fill="#D97706" />
+      <text x="14" y="24" fill="#0F172A" font-size="12.5" font-weight="900">NIC Gov SMS / WhatsApp DLT</text>
+      <rect x="245" y="10" width="88" height="16" rx="3" fill="#FEF3C7" />
+      <text x="289" y="22" fill="#B45309" font-size="8.5" font-weight="800" text-anchor="middle">GOV TELECOM</text>
+
+      <text x="14" y="44" fill="#D97706" font-size="10" font-weight="800">TRAI DLT Whitelisted Notification Ingress</text>
+      <text x="14" y="62" fill="#334155" font-size="9.5" font-weight="600">Transactional OTPs, Attendance &amp; Allowances</text>
+      <text x="14" y="80" fill="#64748B" font-size="8.5" font-weight="500">Direct DBT credit alerts &amp; training status notifications</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER & ARCHITECTURAL HIGHLIGHTS BADGE (Y: 946 - 1044) -->
+  <!-- ========================================================================= -->
+  <g transform="translate(40, 946)">
+    <!-- 3 Callout Metric Cards (Width 596 each, Gap 20) -->
+    <!-- Badge 1: Edge Attendance -->
+    <g transform="translate(0, 0)" filter="url(#subtleShadow)">
+      <rect x="0" y="0" width="596" height="78" rx="8" fill="#FFFFFF" stroke="#059669" stroke-width="1.5" />
+      <rect x="0" y="0" width="6" height="78" rx="3" fill="#059669" />
+      
+      <circle cx="28" cy="26" r="11" fill="#D1FAE5" stroke="#059669" stroke-width="1.5" />
+      <text x="28" y="30" fill="#047857" font-size="13" font-weight="900" text-anchor="middle">✓</text>
+      
+      <text x="48" y="30" fill="#047857" font-size="13.5" font-weight="900">EDGE ATTENDANCE &amp; PRIVACY GUARANTEE</text>
+      <text x="48" y="50" fill="#0F172A" font-size="12" font-weight="800">Sub-80ms Face Match • 100% Offline SQLite Spooler</text>
+      <text x="48" y="67" fill="#475569" font-size="11" font-weight="600">Zero Raw Photo Storage • Fully Compliant with DPDP Act 2023</text>
+    </g>
+
+    <!-- Badge 2: Cryptographic Verification -->
+    <g transform="translate(616, 0)" filter="url(#subtleShadow)">
+      <rect x="0" y="0" width="606" height="78" rx="8" fill="#FFFFFF" stroke="#0284C7" stroke-width="1.5" />
+      <rect x="0" y="0" width="6" height="78" rx="3" fill="#0284C7" />
+      
+      <circle cx="28" cy="26" r="11" fill="#E0F2FE" stroke="#0284C7" stroke-width="1.5" />
+      <text x="28" y="30" fill="#0369A1" font-size="13" font-weight="900" text-anchor="middle">⚡</text>
+
+      <text x="48" y="30" fill="#0369A1" font-size="13.5" font-weight="900">CRYPTOGRAPHIC CREDENTIAL TRUST</text>
+      <text x="48" y="50" fill="#0F172A" font-size="12" font-weight="800">Ed25519 2D QR Code • Sub-15ms Offline Instant Validation</text>
+      <text x="48" y="67" fill="#475569" font-size="11" font-weight="600">$0 Blockchain Gas Fees • W3C Verifiable Credentials Standard</text>
+    </g>
+
+    <!-- Badge 3: Infrastructure Cost -->
+    <g transform="translate(1242, 0)" filter="url(#subtleShadow)">
+      <rect x="0" y="0" width="598" height="78" rx="8" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5" />
+      <rect x="0" y="0" width="6" height="78" rx="3" fill="#D97706" />
+      
+      <circle cx="28" cy="26" r="11" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5" />
+      <text x="28" y="30" fill="#B45309" font-size="13" font-weight="900" text-anchor="middle">₹</text>
+
+      <text x="48" y="30" fill="#B45309" font-size="13.5" font-weight="900">COST-EFFECTIVE PRODUCTION TOPOLOGY</text>
+      <text x="48" y="50" fill="#0F172A" font-size="12" font-weight="800">Modular Monolith Topology (FastAPI + PostgreSQL RLS)</text>
+      <text x="48" y="67" fill="#475569" font-size="11" font-weight="600">Scales to 20 National Institutes &amp; 79,630 PACS on &lt;$90/mo VPS</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+{
+  "_comment": "Two-page spec for build-diagram.mjs: the as-is on one page, the to-be on the next. Made-up order-reporting system, no customer content. Each page carries its own title, boundaries, nodes and edges; layout and context are shared. Ids are per page, so a component on both pages keeps its id (shop, orders, reports). An edge cannot cross pages.",
+  "layout": { "originX": 200, "originY": 180, "colPitch": 320, "rowPitch": 190 },
+  "context": { "packs": ["aws"] },
+
+  "pages": [
+    {
+      "name": "As-is",
+      "id": "as-is",
+      "title": "As-is: nightly batch",
+      "boundaries": [
+        { "id": "onprem", "kind": "scope", "label": "On-premises data centre", "col": 1, "row": 0, "cols": 3, "rows": 1, "padTop": 60 }
+      ],
+      "nodes": [
+        { "id": "shop", "kind": "box", "label": "Web shop", "col": 0, "row": 0, "width": 170, "height": 110 },
+        { "id": "orders", "kind": "icon", "icon": "databases/oracle", "label": "Orders database", "parent": "onprem", "col": 1, "row": 0 },
+        { "id": "etl", "kind": "icon", "icon": "primitives/cron", "label": "Nightly ETL job", "parent": "onprem", "col": 2, "row": 0 },
+        { "id": "warehouse", "kind": "icon", "icon": "databases/postgresql", "label": "Reporting database", "parent": "onprem", "col": 3, "row": 0 },
+        { "id": "reports", "kind": "box", "label": "Morning reports", "col": 4, "row": 0, "width": 170, "height": 110 },
+        { "id": "note", "kind": "note", "label": "Assumption: reports run a day behind; the 02:00 load is the only feed.", "col": 0, "row": 1, "width": 190, "height": 74 }
+      ],
+      "edges": [
+        { "from": "shop", "to": "orders", "label": "orders" },
+        { "from": "orders", "to": "etl", "kind": "async", "label": "02:00 extract" },
+        { "from": "etl", "to": "warehouse", "label": "load" },
+        { "from": "warehouse", "to": "reports" }
+      ]
+    },
+    {
+      "name": "To-be",
+      "id": "to-be",
+      "title": "To-be: event-driven",
+      "boundaries": [
+        { "id": "cloud", "kind": "aws-cloud", "label": "AWS Cloud", "col": 1, "row": 0, "cols": 4, "rows": 2, "padLeft": 55, "padTop": 60, "padRight": 55, "padBottom": 30 }
+      ],
+      "nodes": [
+        { "id": "shop", "kind": "box", "label": "Web shop", "col": 0, "row": 0, "width": 170, "height": 110 },
+        { "id": "api", "kind": "icon", "icon": "aws/amazon-api-gateway", "label": "Orders API", "parent": "cloud", "col": 1, "row": 0 },
+        { "id": "handler", "kind": "icon", "icon": "lambda", "label": "Order handler", "parent": "cloud", "col": 2, "row": 0 },
+        { "id": "orders", "kind": "icon", "icon": "dynamodb", "label": "Orders table", "parent": "cloud", "col": 3, "row": 0 },
+        { "id": "events", "kind": "icon", "icon": "eventbridge", "label": "Order events", "parent": "cloud", "col": 2, "row": 1 },
+        { "id": "lake", "kind": "icon", "icon": "simple storage service", "label": "Order lake", "parent": "cloud", "col": 3, "row": 1 },
+        { "id": "query", "kind": "icon", "icon": "athena", "label": "Queries", "parent": "cloud", "col": 4, "row": 1 },
+        { "id": "reports", "kind": "box", "label": "Live dashboards", "col": 5, "row": 1, "width": 170, "height": 110 },
+        { "id": "note", "kind": "note", "label": "Assumption: single region; dashboards trail an order by about a minute.", "col": 0, "row": 1, "width": 190, "height": 74 }
+      ],
+      "edges": [
+        { "from": "shop", "to": "api", "label": "orders" },
+        { "from": "api", "to": "handler" },
+        { "from": "handler", "to": "orders" },
+        { "from": "handler", "to": "events", "kind": "async", "label": "order placed" },
+        { "from": "events", "to": "lake" },
+        { "from": "lake", "to": "query" },
+        { "from": "query", "to": "reports" }
+      ]
+    }
+  ]
+}

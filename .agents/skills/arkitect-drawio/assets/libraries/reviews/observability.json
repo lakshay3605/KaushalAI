@@ -1,0 +1,33 @@
+{
+  "pack": "observability",
+  "about": "One row per shipped Observability id: the sha256 of the payload that was reviewed against its caption, the verdict (ok or mismatch), who reviewed it and when. A row counts only while the artwork still has that hash. Regenerate the pages with: node skills/arkitect-drawio/scripts/contact-sheet.mjs --pack observability --review (#81).",
+  "entries": {
+    "observability/grafana": {"sha256":"e1b36d1cef0b8b380ae0a4b10260e72dd633840d0d477020ee36753c6a0bfba1","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/prometheus": {"sha256":"99db8d71eee6974c77db509286c7960efc9995f1a310db0e9305f50b258b7430","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/opentelemetry": {"sha256":"24615e12ab1759aa2f04d1c02829d1c9c05a8ab500dd523ace9e99ecddf42238","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/datadog": {"sha256":"7170999fd1af2b439a1f82801f2d845581bb7f407df4e1eaacb61f2e085960d9","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/elastic": {"sha256":"48f8783163817e737aca1fa53a73c8cc1fb53f8dea1069323613cddd2b9c3678","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/elasticstack": {"sha256":"e738dfef5d9046235009aa9bd30e9305a5189e841ddccd144ff2b70ab57b56ae","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/kibana": {"sha256":"28d54b413ba7695fc50732f54ca8417c9702888526e57affd1f25a58ffdb45dd","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/logstash": {"sha256":"7cf6164d117002929e8ba27a099280de66a4361f9b60986443fd8ab852588251","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/splunk": {"sha256":"a5b32c93d5fb5c3c159b15831d3c3ba4044f4f796baf9dbd734a3226d543bd90","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/sentry": {"sha256":"472d1e6e97a35cbbb31b7d6947231d5d06d87c0517c2988b9fb97590106b2a95","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/newrelic": {"sha256":"089dd6277ea82d83cf07893e5fff8c9b9f12fae611abb3d1dc9a8b9d5cf2e572","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/dynatrace": {"sha256":"f95d75539d96ce6f6595c7231a7a962395af3537ae68d5784e9eca1d090b98e2","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/jaeger": {"sha256":"7ae9d1e7af91eb0e052817d22a145d8d60fe7c364d8f3e33bcf9ac806f19ee4e","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/pagerduty": {"sha256":"7c7d1e2188ccb2f72a364024b9fe50b1db316d0235361e59a7c3c9d474677b60","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/opsgenie": {"sha256":"3bd70d787c2e2db59ab33ae6b51003e4ef248b016dd25a2f0b3237128d7b90a3","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/uptimekuma": {"sha256":"147a4675e31c4882025dea82d73e7c0ba8ecf1bcde7a97ef647ca708dd2c45bc","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/victoriametrics": {"sha256":"91c6c83e6175f051a557e4835e797eb7faafd3ea5769291d49faa1dfd73ed0ea","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/betterstack": {"sha256":"f9c4e116ef23372731764801c1219afb1787bebf6fc5c62b7748bae4c3c8d696","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/graylog": {"sha256":"52b6200fcbb71f847e4a8c466722beecfca9fc5add60e4f2d9006cff847ff59d","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/fluentbit": {"sha256":"18f63e335a97c1c647a4f266d402ff86fb51d7ab8f2da9255bba83f0622afe9a","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/fluentd": {"sha256":"ba6292894c6a0de8069cc1607bf285d25ae4981e48aa036765576b80f9496e11","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/statuspage": {"sha256":"08c4bbf83a237f6db2455a0a413b7e978747934a21374f97102bd070c0d8804f","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/checkmk": {"sha256":"6513f6f34456c3e7ab41a8b4367e371030fb22d6fd4daa818277605e444ed7f6","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/icinga": {"sha256":"7bb1ea14a6db59375a38e160da117d60737be3f52eb18b3f956abd41f5cc5847","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/netdata": {"sha256":"be0b353c1eaa95485035e5848a55a06e7d27aa10cb626ff42c55f40362ad6eee","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/thanos": {"sha256":"da25a114153f72fce311a961dd295611060507f4b6fbde61d7f565b3461339a6","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "observability/signoz": {"sha256":"cc0a1ace499a08d09398d78dc08d351e0901bd991abb5cdf69ea619ed5a2b525","verdict":"ok","reviewer":"claude","date":"2026-09-16"}
+  }
+}

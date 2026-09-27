@@ -1,0 +1,135 @@
+{
+  "_comment": "Second worked example: a large, detailed cloud architecture, where starter-architecture.spec.json is the small tour of every node and connector kind. Everything here is drawn from one bundled library (aws-architecture-icons), which is why the marks look like a set rather than a collection. Worth copying the shape of: column-per-phase regions sized from their contents, a caption naming the ROLE under an icon that already draws its own product name, a sublabel carrying the scaling or availability fact, an error lane along the bottom with the recovery loop closed back into the flow, a cross-cutting band that is labelled rather than wired to everything, assumptions in a note on the canvas, and fractional col/row values used to place things off the main grid. Note the handful of route:\"straight\" edges - each one is an elbow that would otherwise have been routed through another icon.",
+
+  "title": "AWS data platform — decoupled, distributed, scalable, highly available",
+  "canvasBackground": "white",
+
+  "style": { "roughness": 1, "fontFamily": 1, "strokeWidth": 2, "rounded": true },
+  "layout": { "originX": 0, "originY": 0, "colPitch": 360, "rowPitch": 270 },
+
+  "boundaries": [
+    { "id": "sources",  "kind": "scope", "label": "Source systems", "color": "black" },
+    { "id": "aws",      "kind": "scope", "label": "AWS Region eu-west-1 · 3 Availability Zones", "color": "slate", "fontSize": 28, "padTop": 62 },
+    { "id": "edge",     "kind": "scope", "label": "Global edge", "color": "blue",   "parent": "aws" },
+    { "id": "ingest",   "kind": "scope", "label": "Ingestion", "color": "sky", "parent": "aws" },
+    { "id": "backbone", "kind": "scope", "label": "Decoupling", "color": "violet", "parent": "aws" },
+    { "id": "process",  "kind": "scope", "label": "Processing", "color": "teal", "parent": "aws" },
+    { "id": "storage",  "kind": "scope", "label": "Lakehouse", "color": "cyan", "parent": "aws" },
+    { "id": "serving",  "kind": "scope", "label": "Serving & consumption", "color": "green", "parent": "aws" },
+    { "id": "errors",   "kind": "scope", "label": "Error handling & recovery", "color": "red", "parent": "aws" },
+    { "id": "ops",      "kind": "scope", "label": "Cross-cutting — attached to every component above", "color": "grey", "parent": "aws" }
+  ],
+
+  "nodes": [
+    { "id": "web",   "kind": "box",  "label": "Web & mobile apps",  "sublabel": "clickstream · app events", "col": -0.35, "row": 0, "width": 210, "parent": "sources" },
+    { "id": "oltp",  "kind": "icon", "icon": "aws-architecture-icons:52",  "label": "Operational databases", "sublabel": "Aurora Multi-AZ · prod acct", "col": -0.35, "row": 2, "parent": "sources" },
+    { "id": "fleet", "kind": "icon", "icon": "aws-architecture-icons:123", "label": "Edge device fleet", "sublabel": "10k devices · MQTT", "col": -0.35, "row": 3, "parent": "sources" },
+    { "id": "saas",  "kind": "box",  "label": "SaaS & partner APIs", "sublabel": "CRM · ads · billing", "col": -0.35, "row": 4, "width": 210, "parent": "sources" },
+
+    { "id": "r53", "kind": "icon", "icon": "aws-architecture-icons:211", "label": "Failover DNS",    "sublabel": "health checks · latency", "col": 1, "row": 0, "parent": "edge" },
+    { "id": "cf",  "kind": "icon", "icon": "aws-architecture-icons:209", "label": "Edge cache + WAF", "sublabel": "TLS · geo · rate limits", "col": 1, "row": 1, "parent": "edge" },
+
+    { "id": "apigw",   "kind": "icon", "icon": "aws-architecture-icons:233", "label": "Ingest API",      "sublabel": "throttling · usage plans", "col": 2, "row": 1, "parent": "ingest" },
+    { "id": "dms",     "kind": "icon", "icon": "aws-architecture-icons:59",  "label": "CDC replication", "sublabel": "Multi-AZ instance", "col": 2, "row": 2, "parent": "ingest" },
+    { "id": "iot",     "kind": "icon", "icon": "aws-architecture-icons:118", "label": "Device gateway",  "sublabel": "rules engine · mTLS", "col": 2, "row": 3, "parent": "ingest" },
+    { "id": "appflow", "kind": "icon", "icon": "aws-architecture-icons:115", "label": "SaaS connectors", "sublabel": "scheduled pulls", "col": 2, "row": 4, "parent": "ingest" },
+
+    { "id": "kds",  "kind": "icon", "icon": "aws-architecture-icons:6",   "label": "Event stream",  "sublabel": "on-demand · 7-day replay", "col": 3, "row": 1, "parent": "backbone" },
+    { "id": "ebus", "kind": "icon", "icon": "aws-architecture-icons:110", "label": "Event router",  "sublabel": "rules · schema registry", "col": 3, "row": 2, "parent": "backbone" },
+    { "id": "sqs",  "kind": "icon", "icon": "aws-architecture-icons:106", "label": "Work queue",    "sublabel": "backpressure · 5 retries", "col": 3, "row": 3, "parent": "backbone" },
+    { "id": "sfn",  "kind": "icon", "icon": "aws-architecture-icons:109", "label": "Orchestration", "sublabel": "retry · catch · timeout", "col": 3, "row": 4, "parent": "backbone" },
+
+    { "id": "firehose", "kind": "icon", "icon": "aws-architecture-icons:7",  "label": "Buffered delivery",  "sublabel": "60 s / 128 MB · retry", "col": 4, "row": 1, "parent": "process" },
+    { "id": "flink",    "kind": "icon", "icon": "aws-architecture-icons:9",  "label": "Stream enrichment",  "sublabel": "windowed · exactly-once", "col": 4, "row": 2, "parent": "process" },
+    { "id": "lam",      "kind": "icon", "icon": "aws-architecture-icons:87", "label": "Event transforms",   "sublabel": "reserved concurrency", "col": 4, "row": 3, "parent": "process" },
+    { "id": "glue",     "kind": "icon", "icon": "aws-architecture-icons:10", "label": "Spark ETL + quality", "sublabel": "autoscaling DPUs", "col": 4, "row": 4, "parent": "process" },
+
+    { "id": "raw",     "kind": "icon", "icon": "aws-architecture-icons:74", "label": "Raw / bronze",     "sublabel": "immutable · partitioned", "col": 5, "row": 1, "parent": "storage" },
+    { "id": "curated", "kind": "icon", "icon": "aws-architecture-icons:74", "label": "Curated / silver", "sublabel": "Iceberg · compacted", "col": 5, "row": 2, "parent": "storage" },
+    { "id": "gold",    "kind": "icon", "icon": "aws-architecture-icons:74", "label": "Analytics / gold", "sublabel": "marts · aggregates", "col": 5, "row": 3, "parent": "storage" },
+    { "id": "ddb",     "kind": "icon", "icon": "aws-architecture-icons:54", "label": "Low-latency store", "sublabel": "global tables · DAX", "col": 5, "row": 4, "parent": "storage" },
+
+    { "id": "rs",      "kind": "icon", "icon": "aws-architecture-icons:15",  "label": "Cloud warehouse", "sublabel": "RA3 · multi-AZ · autoscale", "col": 6, "row": 1, "parent": "serving" },
+    { "id": "athena",  "kind": "icon", "icon": "aws-architecture-icons:23",  "label": "Ad-hoc SQL",      "sublabel": "serverless · federated", "col": 6, "row": 2, "parent": "serving" },
+    { "id": "appsync", "kind": "icon", "icon": "aws-architecture-icons:108", "label": "GraphQL data API", "sublabel": "per-tenant auth", "col": 6, "row": 3, "parent": "serving" },
+    { "id": "os",      "kind": "icon", "icon": "aws-architecture-icons:14",  "label": "Search & log analytics", "sublabel": "3 AZ · dedicated masters", "col": 6, "row": 4, "parent": "serving" },
+
+    { "id": "qs",   "kind": "icon", "icon": "aws-architecture-icons:16", "label": "Executive dashboards", "col": 7, "row": 1, "parent": "serving" },
+    { "id": "sm",   "kind": "icon", "icon": "aws-architecture-icons:31", "label": "ML training & inference", "sublabel": "feature store", "col": 7, "row": 2, "parent": "serving" },
+    { "id": "apps", "kind": "box",  "label": "Internal & partner apps", "sublabel": "least-privilege, per tenant", "col": 7, "row": 3, "width": 230, "parent": "serving" },
+
+    { "id": "dr", "kind": "icon", "icon": "aws-architecture-icons:241", "label": "DR region — us-east-1", "sublabel": "warm standby · RTO 1 h", "col": 5, "row": -1.15 },
+
+    { "id": "dlq",    "kind": "icon", "icon": "aws-architecture-icons:106", "label": "Dead-letter queue", "sublabel": "maxReceiveCount = 5", "accent": "red", "col": 2, "row": 5, "parent": "errors" },
+    { "id": "errh",   "kind": "icon", "icon": "aws-architecture-icons:87",  "label": "Error handler",     "sublabel": "classify · enrich · decide", "accent": "red", "col": 3, "row": 5, "parent": "errors" },
+    { "id": "quar",   "kind": "icon", "icon": "aws-architecture-icons:74",  "label": "Quarantine zone",   "sublabel": "bad record + raw payload", "accent": "red", "col": 4, "row": 5, "parent": "errors" },
+    { "id": "alert",  "kind": "icon", "icon": "aws-architecture-icons:105", "label": "Alert topic",       "sublabel": "chat · email · pager", "accent": "red", "col": 5, "row": 5, "parent": "errors" },
+    { "id": "oncall", "kind": "box",  "label": "On-call + replay runbook", "sublabel": "fix · replay · drop", "accent": "red", "col": 6, "row": 5, "width": 240, "parent": "errors" },
+
+    { "id": "iam",     "kind": "icon", "icon": "aws-architecture-icons:192", "label": "Least-privilege roles", "sublabel": "per service, per account", "col": 1, "row": 6, "parent": "ops" },
+    { "id": "kms",     "kind": "icon", "icon": "aws-architecture-icons:196", "label": "CMK encryption",   "sublabel": "at rest & in transit", "col": 2, "row": 6, "parent": "ops" },
+    { "id": "trail",   "kind": "icon", "icon": "aws-architecture-icons:165", "label": "Audit trail",      "sublabel": "every API call", "col": 3, "row": 6, "parent": "ops" },
+    { "id": "xray",    "kind": "icon", "icon": "aws-architecture-icons:132", "label": "Distributed tracing", "sublabel": "end-to-end request ids", "col": 4, "row": 6, "parent": "ops" },
+    { "id": "cw",      "kind": "icon", "icon": "aws-architecture-icons:155", "label": "Metrics · logs · alarms", "sublabel": "SLO dashboards", "col": 5, "row": 6, "parent": "ops" },
+    { "id": "catalog", "kind": "icon", "icon": "aws-architecture-icons:12",  "label": "Glue Data Catalog", "sublabel": "schema · partitions", "col": 6, "row": 6, "parent": "ops" },
+    { "id": "lakef",   "kind": "icon", "icon": "aws-architecture-icons:2",   "label": "Governed access",  "sublabel": "row & column filters", "col": 7, "row": 6, "parent": "ops" },
+
+    {
+      "id": "note",
+      "kind": "note",
+      "col": -0.35,
+      "row": 5.15,
+      "width": 400,
+      "label": "Assumptions\n\n1. Delivery is at-least-once end to end, so every transform is idempotent and keyed on event id.\n\n2. No synchronous service-to-service calls: components meet only at the stream, the bus or the queue, and each scales on its own backlog.\n\n3. All compute is serverless or auto-scaled. Nothing on the critical path is a single instance.\n\n4. Every queue has a DLQ (5 receives), every job a Step Functions catch, every write a retry with jitter.\n\n5. eu-west-1 across 3 AZs; RPO 15 min / RTO 1 h via S3 cross-region replication and Redshift snapshots to us-east-1.\n\n6. AWS Config, Secrets Manager and AWS Backup are enabled account-wide and left off the canvas."
+    }
+  ],
+
+  "edges": [
+    { "from": "web",   "to": "r53",     "kind": "flow", "label": "HTTPS" },
+    { "from": "r53",   "to": "cf",      "kind": "flow" },
+    { "from": "cf",    "to": "apigw",   "kind": "flow", "label": "REST · WAF" },
+    { "from": "oltp",  "to": "dms",     "kind": "data", "label": "CDC" },
+    { "from": "fleet", "to": "iot",     "kind": "flow", "label": "MQTT / TLS" },
+    { "from": "saas",  "to": "appflow", "kind": "data", "label": "scheduled pull" },
+
+    { "from": "apigw",   "to": "kds",  "kind": "flow", "label": "PUT records" },
+    { "from": "dms",     "to": "kds",  "kind": "data", "label": "change events" },
+    { "from": "iot",     "to": "ebus", "kind": "data", "label": "IoT rule", "route": "straight" },
+    { "from": "appflow", "to": "ebus", "kind": "data", "label": "SaaS events", "route": "straight" },
+
+    { "from": "ebus", "to": "sqs", "kind": "flow", "label": "routing rule" },
+
+    { "from": "kds", "to": "firehose", "kind": "data", "label": "buffer" },
+    { "from": "kds", "to": "flink",    "kind": "data", "label": "enrich" },
+    { "from": "sqs", "to": "lam",      "kind": "flow", "label": "batch of 10" },
+    { "from": "sfn", "to": "glue",     "kind": "flow", "label": "run job · retry x3" },
+
+    { "from": "firehose", "to": "raw",     "kind": "data", "label": "raw parquet" },
+    { "from": "flink",    "to": "curated", "kind": "data" },
+    { "from": "lam",      "to": "curated", "kind": "data", "label": "upsert" },
+    { "from": "raw",      "to": "curated", "kind": "data", "label": "Glue ETL" },
+    { "from": "glue",     "to": "gold",    "kind": "branch", "label": "passes DQ rules", "route": "straight" },
+    { "from": "glue",     "to": "quar",    "kind": "error",  "label": "fails DQ rules" },
+    { "from": "gold",     "to": "ddb",     "kind": "data", "label": "hot aggregates" },
+
+    { "from": "curated", "to": "rs",      "kind": "data", "label": "COPY into RA3" },
+    { "from": "gold",    "to": "athena",  "kind": "data", "label": "query in place", "route": "straight" },
+    { "from": "ddb",     "to": "appsync", "kind": "flow", "label": "single-digit ms", "route": "straight" },
+    { "from": "ddb",     "to": "os",      "kind": "data", "label": "streams to index" },
+
+    { "from": "rs",      "to": "qs",   "kind": "data" },
+    { "from": "athena",  "to": "sm",   "kind": "data", "label": "features" },
+    { "from": "appsync", "to": "apps", "kind": "flow", "label": "GraphQL" },
+
+    { "from": "raw", "to": "dr", "kind": "async", "label": "cross-region replication" },
+
+    { "from": "sqs",   "to": "dlq",    "kind": "error", "label": "5 failed receives", "route": "straight" },
+    { "from": "dlq",   "to": "errh",   "kind": "flow",  "label": "drain & classify" },
+    { "from": "errh",  "to": "quar",   "kind": "error", "label": "persist payload" },
+    { "from": "quar",  "to": "alert",  "kind": "error", "label": "S3 event notification" },
+    { "from": "alert", "to": "oncall", "kind": "error", "label": "page on-call" },
+    { "from": "errh",  "to": "sfn",    "kind": "async", "label": "trigger replay" },
+
+    { "from": "cw", "to": "alert", "kind": "light", "label": "alarm breach" }
+  ]
+}

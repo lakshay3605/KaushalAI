@@ -1,0 +1,29 @@
+{
+  "pack": "streaming-orchestration",
+  "about": "One row per shipped Streaming and orchestration id: the sha256 of the payload that was reviewed against its caption, the verdict (ok or mismatch), who reviewed it and when. A row counts only while the artwork still has that hash. Regenerate the pages with: node skills/arkitect-drawio/scripts/contact-sheet.mjs --pack streaming-orchestration --review (#81).",
+  "entries": {
+    "streaming-orchestration/apachekafka": {"sha256":"48e5ad9f67d9d48e3d9a6e7d21ff665391b5b4c0bf5ec31f614651f083acd9a1","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apacheflink": {"sha256":"6357bf3d9cf8400ed0dc72553339ca2bb2c9953fe6a38c3d473ecc6a37d0336c","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apachepulsar": {"sha256":"5660e2c9fc5ab9cbeb062454aa84ad2937ef1025a4ed871613d0deda1a6b0c69","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/rabbitmq": {"sha256":"316c12b682d8788a1a2f3b8045cf63ae36983a61c48dadf09f6776ffbd83e966","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/natsdotio": {"sha256":"c3a681f05e41463e49b7ae2a76dafaa64e4c7084f7bd99ce5f8a55c17c51af28","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apacheairflow": {"sha256":"e536b4b4d9bb2ce3f24d16ba4bd392bef0cd7fbe407905fa79547579b4a7ff9f","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/prefect": {"sha256":"bf303516b06fdbff94dae45f6678d3d9f2e19045f58203f5362aafb0a43c4f0d","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apachenifi": {"sha256":"21b77b9bf79aa3010149dfb0e2dceb00bb2f30b86ac41408f8a4bf5081e5e501","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/celery": {"sha256":"0d797a9398a31da1d7b02d588d32826b8a47617945cb72ba225b89fb29035f6f","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/argo": {"sha256":"775729c19e56182889bcbf9ab3bab92e5b014d84109fab01fa50a3ebf1b8b631","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apachestorm": {"sha256":"5d4f7d0d913292a312b270bff88a3ff711194ca1b5189204c2def9520b7d6265","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/mqtt": {"sha256":"af5647bd0b0fd1f196e46bd565de6ce86a4d70f4a51a4a57682820716066b8a0","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/temporal": {"sha256":"53a736756406ef8449e08082aab72a3eb67bc8188f930bea16ded6ccbf864b75","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/airbyte": {"sha256":"ec0728bc28dbb31b9e139d90afb594bfefbbca3f5dc7e475b3ad71fc068dab77","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/matillion": {"sha256":"850940619f519a32a16b6e222bd5cfef8e58e1ccefb62ee3f5f1e8683b0becf4","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/talend": {"sha256":"71bcd7956ee1a2a2eb934d80ab64a21b61ccaab62bb2896e4ac310752fe0b6fd","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/apachebeam": {"sha256":"78f3616302230714700ff88e0fd38c5d192216fc7901653d92adcd2dcaa55e29","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/dlthub": {"sha256":"ae15bb40431f25af627c557eb634297d917afa82c153a48e83753c6ce634ba7e","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/hatchet": {"sha256":"7cad7a29c4f2d5fedec138f2cbb4313e2b84f4380b4cbd440a8365a54c4614a3","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/trigger": {"sha256":"aa26e22af23cb43b234b5d3887afc4500e76ce5a17f9e90205ae45cb0a5b902f","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/restate": {"sha256":"7b0c0fa32dfe226ead37b414eb778bcfe2f275776cf473f851e0a614d64f879c","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/meltano": {"sha256":"449bd41947bbe527b124b1649e8f600f2ca8df5d8b773db563b4cdd5fa0ab310","verdict":"ok","reviewer":"claude","date":"2026-09-16"},
+    "streaming-orchestration/sqlmesh": {"sha256":"6c05c7ddb84f499684b4e5ebbdebd75bf6f2f5a11882574899717847fe20a7e5","verdict":"ok","reviewer":"claude","date":"2026-09-16"}
+  }
+}

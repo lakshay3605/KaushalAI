@@ -1,0 +1,270 @@
+{
+  "_comment": "Synthetic artwork verification gallery: one original mark per pack, the five masked GCP icons, a non-square PNG, gRPC and Memcached. No system relationships are claimed.",
+  "title": "Shared icon export checks",
+  "layout": {
+    "colPitch": 330,
+    "rowPitch": 260
+  },
+  "nodes": [
+    {
+      "id": "icon0",
+      "kind": "icon",
+      "icon": "drawio:aws/amazon-api-gateway",
+      "label": "Amazon API Gateway",
+      "sublabel": "aws",
+      "col": 0,
+      "row": 0,
+      "size": 100
+    },
+    {
+      "id": "icon1",
+      "kind": "icon",
+      "icon": "drawio:azure/abs-member",
+      "label": "ABS Member",
+      "sublabel": "azure",
+      "col": 1,
+      "row": 0,
+      "size": 100
+    },
+    {
+      "id": "icon2",
+      "kind": "icon",
+      "icon": "drawio:gcp/access-context-manager",
+      "label": "Access Context Manager",
+      "sublabel": "gcp",
+      "col": 2,
+      "row": 0,
+      "size": 100
+    },
+    {
+      "id": "icon3",
+      "kind": "icon",
+      "icon": "drawio:data-platforms/snowflake",
+      "label": "Snowflake",
+      "sublabel": "data-platforms",
+      "col": 3,
+      "row": 0,
+      "size": 100
+    },
+    {
+      "id": "icon4",
+      "kind": "icon",
+      "icon": "drawio:databases/postgresql",
+      "label": "PostgreSQL",
+      "sublabel": "databases",
+      "col": 4,
+      "row": 0,
+      "size": 100
+    },
+    {
+      "id": "icon5",
+      "kind": "icon",
+      "icon": "drawio:ai-frameworks/langchain",
+      "label": "LangChain",
+      "sublabel": "ai-frameworks",
+      "col": 0,
+      "row": 1,
+      "size": 100
+    },
+    {
+      "id": "icon6",
+      "kind": "icon",
+      "icon": "drawio:ml-training/pytorch",
+      "label": "PyTorch",
+      "sublabel": "ml-training",
+      "col": 1,
+      "row": 1,
+      "size": 100
+    },
+    {
+      "id": "icon7",
+      "kind": "icon",
+      "icon": "drawio:streaming-orchestration/apachekafka",
+      "label": "Apache Kafka",
+      "sublabel": "streaming-orchestration",
+      "col": 2,
+      "row": 1,
+      "size": 100
+    },
+    {
+      "id": "icon8",
+      "kind": "icon",
+      "icon": "drawio:observability/grafana",
+      "label": "Grafana",
+      "sublabel": "observability",
+      "col": 3,
+      "row": 1,
+      "size": 100
+    },
+    {
+      "id": "icon9",
+      "kind": "icon",
+      "icon": "drawio:devops/terraform",
+      "label": "Terraform",
+      "sublabel": "devops",
+      "col": 4,
+      "row": 1,
+      "size": 100
+    },
+    {
+      "id": "icon10",
+      "kind": "icon",
+      "icon": "drawio:security-identity/vault",
+      "label": "Vault",
+      "sublabel": "security-identity",
+      "col": 0,
+      "row": 2,
+      "size": 100
+    },
+    {
+      "id": "icon11",
+      "kind": "icon",
+      "icon": "drawio:github/github",
+      "label": "GitHub",
+      "sublabel": "github",
+      "col": 1,
+      "row": 2,
+      "size": 100
+    },
+    {
+      "id": "icon12",
+      "kind": "icon",
+      "icon": "drawio:saas-collab/jira",
+      "label": "Jira",
+      "sublabel": "saas-collab",
+      "col": 2,
+      "row": 2,
+      "size": 100
+    },
+    {
+      "id": "icon13",
+      "kind": "icon",
+      "icon": "drawio:languages-runtimes/python",
+      "label": "Python",
+      "sublabel": "languages-runtimes",
+      "col": 3,
+      "row": 2,
+      "size": 100
+    },
+    {
+      "id": "icon14",
+      "kind": "icon",
+      "icon": "drawio:agents/agent",
+      "label": "Agent",
+      "sublabel": "agents",
+      "col": 4,
+      "row": 2,
+      "size": 100
+    },
+    {
+      "id": "icon15",
+      "kind": "icon",
+      "icon": "drawio:primitives/user",
+      "label": "User",
+      "sublabel": "primitives",
+      "col": 0,
+      "row": 3,
+      "size": 100
+    },
+    {
+      "id": "icon16",
+      "kind": "icon",
+      "icon": "drawio:file-types/md",
+      "label": "Markdown file (.md)",
+      "sublabel": "file-types",
+      "col": 1,
+      "row": 3,
+      "size": 100
+    },
+    {
+      "id": "icon17",
+      "kind": "icon",
+      "icon": "drawio:brands/e",
+      "label": "/e/",
+      "sublabel": "brands",
+      "col": 2,
+      "row": 3,
+      "size": 100
+    },
+    {
+      "id": "icon18",
+      "kind": "icon",
+      "icon": "drawio:gcp/cloud-healthcare-api",
+      "label": "Cloud Healthcare API",
+      "sublabel": "gcp",
+      "col": 3,
+      "row": 3,
+      "size": 100
+    },
+    {
+      "id": "icon19",
+      "kind": "icon",
+      "icon": "drawio:gcp/my-cloud",
+      "label": "My Cloud",
+      "sublabel": "gcp",
+      "col": 4,
+      "row": 3,
+      "size": 100
+    },
+    {
+      "id": "icon20",
+      "kind": "icon",
+      "icon": "drawio:gcp/os-inventory-management",
+      "label": "OS Inventory Management",
+      "sublabel": "gcp",
+      "col": 0,
+      "row": 4,
+      "size": 100
+    },
+    {
+      "id": "icon21",
+      "kind": "icon",
+      "icon": "drawio:gcp/pubsub",
+      "label": "Pub/Sub",
+      "sublabel": "gcp",
+      "col": 1,
+      "row": 4,
+      "size": 100
+    },
+    {
+      "id": "icon22",
+      "kind": "icon",
+      "icon": "drawio:gcp/security-health-advisor",
+      "label": "Security Health Advisor",
+      "sublabel": "gcp",
+      "col": 2,
+      "row": 4,
+      "size": 100
+    },
+    {
+      "id": "icon23",
+      "kind": "icon",
+      "icon": "drawio:aws/amazon-bedrock-agentcore-identity",
+      "label": "Amazon Bedrock AgentCore\nIdentity",
+      "sublabel": "aws",
+      "col": 3,
+      "row": 4,
+      "size": 100
+    },
+    {
+      "id": "icon24",
+      "kind": "icon",
+      "icon": "drawio:languages-runtimes/grpc",
+      "label": "gRPC",
+      "sublabel": "languages-runtimes",
+      "col": 4,
+      "row": 4,
+      "size": 100
+    },
+    {
+      "id": "icon25",
+      "kind": "icon",
+      "icon": "drawio:databases/memcached",
+      "label": "Memcached",
+      "sublabel": "databases",
+      "col": 0,
+      "row": 5,
+      "size": 100
+    }
+  ]
+}

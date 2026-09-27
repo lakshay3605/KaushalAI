@@ -1,0 +1,17 @@
+{
+  "_comment": "Synthetic feature example: native Kafka plus original shared-pack artwork. No customer system is represented.",
+  "title": "Shared artwork, editable connections",
+  "layout": { "colPitch": 320, "rowPitch": 250 },
+  "nodes": [
+    { "id": "kafka", "kind": "icon", "icon": "kafka", "label": "Kafka", "sublabel": "Native library icon", "col": 0, "row": 0 },
+    { "id": "postgres", "kind": "icon", "icon": "drawio:databases/postgresql", "label": "PostgreSQL", "sublabel": "Original shared SVG", "col": 1, "row": 0 },
+    { "id": "grafana", "kind": "icon", "icon": "drawio:observability/grafana", "label": "Grafana", "sublabel": "Original shared SVG", "col": 3, "row": 0 },
+    { "id": "replica", "kind": "icon", "icon": "drawio:databases/postgresql", "label": "PostgreSQL replica", "sublabel": "Same bytes, independent node", "col": 2, "row": 0 },
+    { "id": "assumptions", "kind": "note", "label": "Illustrative pipeline: an omitted consumer loads events.\nGrafana queries the replica.\nTwo PostgreSQL nodes share one embedded file.", "width": 660, "col": 0, "row": 1 }
+  ],
+  "edges": [
+    { "from": "kafka", "to": "postgres", "kind": "flow", "label": "events" },
+    { "from": "replica", "to": "grafana", "kind": "flow", "label": "query results" },
+    { "from": "postgres", "to": "replica", "kind": "flow", "label": "replication" }
+  ]
+}

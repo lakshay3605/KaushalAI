@@ -1,0 +1,1231 @@
+{
+  "_comment": "Derived style evidence. Structural statistics and digests only - no labels, paths, URLs or image payloads. Regenerate with build-knowledge.mjs.",
+  "version": 1,
+  "generated": "2026-09-08T14:59:00.230Z",
+  "corpus": {
+    "files": 9,
+    "elements": 3270,
+    "images": 124
+  },
+  "sources": [
+    {
+      "sha256": "66ba3912a79cf80cbb95d42217536acaac6ad364143f12a2343910913ac95e2d",
+      "bytes": 607545
+    },
+    {
+      "sha256": "13e7d16502d15e3a831a0287a7a803710704d0260d60b49defd7eb5601c48b0b",
+      "bytes": 3465550
+    },
+    {
+      "sha256": "b0f1879f2f9fc47aea7c6208943c1db217904f1c0b65863bc84bc916f21d868f",
+      "bytes": 3409076
+    },
+    {
+      "sha256": "a8070cc2cc255f1a233b3413aad078da6e681f8521ce50bcf5b39b2dd25bcbab",
+      "bytes": 3566243
+    },
+    {
+      "sha256": "e4d982f1fa8ed60837087185414978ee2b321cdb5ec117ae30b8cff7ed6ae9ba",
+      "bytes": 3356194
+    },
+    {
+      "sha256": "4d293b4788eec5f5182cae89c62319a0a2ab80f482d731ae91b4aab94be05da0",
+      "bytes": 95142
+    },
+    {
+      "sha256": "fc8f8990f84da933d516bd088cf948d8a9c563e04b132bfcf4adeb3b41bb40f9",
+      "bytes": 1934870
+    },
+    {
+      "sha256": "b119cfd7fe74d9070d5309d5f5c71a6806de82ef8d04f7e455eeec0a1728892c",
+      "bytes": 623599
+    },
+    {
+      "sha256": "e4dfd2f6efa300e1adc0c3492b6b43ab73b07120f8494c1992ac5def92dcc4b5",
+      "bytes": 1757712
+    }
+  ],
+  "conventions": [
+    {
+      "id": "stroke-roughness",
+      "statement": "Shapes are drawn with roughness 1 (artist) - the hand-drawn look Excalidraw is chosen for.",
+      "observed": "1",
+      "agreesWithDefault": true,
+      "distribution": {
+        "0": 872,
+        "1": 2330,
+        "2": 68
+      },
+      "evidence": {
+        "n": 2330,
+        "total": 3270,
+        "share": 0.71
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "stroke-width",
+      "statement": "Stroke width 2 (bold) for shapes; 1 only for weak associations. — the corpus instead prefers \"4\".",
+      "observed": "4",
+      "agreesWithDefault": false,
+      "distribution": {
+        "1": 10,
+        "2": 34,
+        "4": 56,
+        "6": 8
+      },
+      "evidence": {
+        "n": 56,
+        "total": 108,
+        "share": 0.52
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "font-family",
+      "statement": "Hand-drawn font family (1) throughout; family 3 for code or identifiers only.",
+      "observed": "1",
+      "agreesWithDefault": true,
+      "distribution": {
+        "1": 98,
+        "5": 6,
+        "6": 63,
+        "8": 6
+      },
+      "evidence": {
+        "n": 98,
+        "total": 173,
+        "share": 0.57
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "font-size",
+      "statement": "Body and node labels at 16 (S); section headings 20 (M); diagram title 28 (L). — the corpus instead prefers \"28\".",
+      "observed": "28",
+      "agreesWithDefault": false,
+      "distribution": {
+        "20": 25,
+        "24": 8,
+        "26": 8,
+        "28": 53,
+        "33": 14,
+        "38": 10
+      },
+      "evidence": {
+        "n": 53,
+        "total": 173,
+        "share": 0.31
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "edges-rounded",
+      "statement": "Rounded corners on rectangles; sharp only where a shape must read as a boundary. — the corpus instead prefers \"sharp\".",
+      "observed": "sharp",
+      "agreesWithDefault": false,
+      "distribution": {
+        "sharp": 59,
+        "type3": 44,
+        "type2": 4,
+        "type1": 1
+      },
+      "evidence": {
+        "n": 59,
+        "total": 108,
+        "share": 0.55
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "fill-style",
+      "statement": "Solid fills rather than hachure, so a filled node stays legible when scaled down. — the corpus instead prefers \"hachure\".",
+      "observed": "hachure",
+      "agreesWithDefault": false,
+      "distribution": {
+        "hachure": 64,
+        "solid": 34,
+        "cross-hatch": 10
+      },
+      "evidence": {
+        "n": 64,
+        "total": 108,
+        "share": 0.59
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "stroke-palette",
+      "statement": "Excalidraw default palette only: #1e1e1e, #e03131, #2f9e44, #1971c2, #f08c00. — the corpus instead prefers \"#000000\".",
+      "observed": "#000000",
+      "agreesWithDefault": false,
+      "distribution": {
+        "#000000": 35,
+        "#1e1e1e": 34,
+        "#e03131": 12,
+        "#e7b82c": 8,
+        "#5351d5": 4,
+        "#f08c00": 4
+      },
+      "evidence": {
+        "n": 35,
+        "total": 108,
+        "share": 0.32
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "node-background",
+      "statement": "Shapes are unfilled by default; fill carries meaning, so it is spent sparingly.",
+      "observed": "transparent",
+      "agreesWithDefault": true,
+      "distribution": {
+        "transparent": 62,
+        "#ffffff": 26,
+        "#ced4da": 6,
+        "#f1f1f1": 5,
+        "#099268": 2,
+        "#e8590c": 2
+      },
+      "evidence": {
+        "n": 62,
+        "total": 108,
+        "share": 0.57
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "node-footprint",
+      "statement": "Icon-sized nodes occupy roughly a 100x100 square.",
+      "observed": "100x100",
+      "agreesWithDefault": true,
+      "distribution": {
+        "100x100": 42,
+        "200x200": 13,
+        "300x0": 10,
+        "100x0": 10,
+        "300x300": 9,
+        "400x300": 5
+      },
+      "evidence": {
+        "n": 42,
+        "total": 108,
+        "share": 0.39
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "stroke-style",
+      "statement": "Solid strokes; a broken stroke marks a boundary rather than a thing.",
+      "observed": "solid",
+      "agreesWithDefault": true,
+      "distribution": {
+        "solid": 104,
+        "dotted": 4
+      },
+      "evidence": {
+        "n": 104,
+        "total": 108,
+        "share": 0.96
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "text-align",
+      "statement": "Node captions centred; only multi-line body copy is left-aligned.",
+      "observed": "center",
+      "agreesWithDefault": true,
+      "distribution": {
+        "center": 113,
+        "left": 60
+      },
+      "evidence": {
+        "n": 113,
+        "total": 173,
+        "share": 0.65
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "arrowhead",
+      "statement": "Target end only, default open arrowhead.",
+      "observed": "arrow",
+      "agreesWithDefault": true,
+      "distribution": {
+        "arrow": 163,
+        "null": 2
+      },
+      "evidence": {
+        "n": 163,
+        "total": 165,
+        "share": 0.99
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "arrow-color",
+      "statement": "Connectors are near-black unless the colour itself carries meaning.",
+      "observed": "#1e1e1e",
+      "agreesWithDefault": true,
+      "distribution": {
+        "#1e1e1e": 90,
+        "#29b5e8": 26,
+        "#e03131": 12,
+        "#343a40": 10,
+        "#fc5d0d": 8,
+        "#1971c2": 8
+      },
+      "evidence": {
+        "n": 90,
+        "total": 165,
+        "share": 0.55
+      },
+      "confidence": "low"
+    },
+    {
+      "id": "arrow-stroke-width",
+      "statement": "Connectors at stroke width 2. — the corpus instead prefers \"4\".",
+      "observed": "4",
+      "agreesWithDefault": false,
+      "distribution": {
+        "1": 2,
+        "2": 46,
+        "4": 117
+      },
+      "evidence": {
+        "n": 117,
+        "total": 165,
+        "share": 0.71
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "arrow-routing",
+      "statement": "Connectors run as straight or multi-point arrows rather than elbow arrows. — the corpus instead prefers \"true\".",
+      "observed": "true",
+      "agreesWithDefault": false,
+      "distribution": {
+        "true": 116,
+        "false": 49
+      },
+      "evidence": {
+        "n": 116,
+        "total": 165,
+        "share": 0.7
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "arrow-labels",
+      "statement": "An edge that needs a word carries it as a label bound to the arrow. — the corpus instead prefers \"false\".",
+      "observed": "false",
+      "agreesWithDefault": false,
+      "distribution": {
+        "false": 165
+      },
+      "evidence": {
+        "n": 165,
+        "total": 165,
+        "share": 1
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "zone-stroke-style",
+      "statement": "Boundary boxes are drawn with a dashed stroke. — the corpus instead prefers \"dotted\".",
+      "observed": "dotted",
+      "agreesWithDefault": false,
+      "distribution": {
+        "dotted": 8,
+        "dashed": 5
+      },
+      "evidence": {
+        "n": 8,
+        "total": 13,
+        "share": 0.62
+      },
+      "confidence": "medium"
+    },
+    {
+      "id": "zone-stroke-width",
+      "statement": "Boundary boxes at stroke width 2.",
+      "observed": "2",
+      "agreesWithDefault": true,
+      "distribution": {
+        "2": 13
+      },
+      "evidence": {
+        "n": 13,
+        "total": 13,
+        "share": 1
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "canvas-background",
+      "statement": "White canvas.",
+      "observed": "#ffffff",
+      "agreesWithDefault": true,
+      "distribution": {
+        "#ffffff": 9
+      },
+      "evidence": {
+        "n": 9,
+        "total": 9,
+        "share": 1
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "label-placement",
+      "statement": "Labels are bound to their shape, so moving the shape moves the text. — the corpus instead prefers \"free\".",
+      "observed": "free",
+      "agreesWithDefault": false,
+      "distribution": {
+        "free": 363,
+        "bound": 34
+      },
+      "evidence": {
+        "n": 363,
+        "total": 397,
+        "share": 0.91
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "boundary-mechanism",
+      "statement": "Named regions are frame elements. — the corpus instead prefers \"scope-shape\".",
+      "observed": "scope-shape",
+      "agreesWithDefault": false,
+      "distribution": {
+        "scope-shape": 21,
+        "frame": 0
+      },
+      "evidence": {
+        "n": 21,
+        "total": 21,
+        "share": 1
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "arrow-binding",
+      "statement": "Both ends of every connector are bound to their shapes.",
+      "observed": "bound",
+      "agreesWithDefault": true,
+      "distribution": {
+        "bound": 264,
+        "unbound": 66
+      },
+      "evidence": {
+        "n": 264,
+        "total": 330,
+        "share": 0.8
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "icon-source",
+      "statement": "Icons are drawn as Excalidraw elements rather than placed as raster images.",
+      "observed": "drawn",
+      "agreesWithDefault": true,
+      "distribution": {
+        "drawn": 1847,
+        "image": 124
+      },
+      "evidence": {
+        "n": 1847,
+        "total": 1971,
+        "share": 0.94
+      },
+      "confidence": "high"
+    }
+  ],
+  "layout": {
+    "readingDirection": {
+      "horizontalEdges": 99,
+      "verticalEdges": 15
+    },
+    "nodeWidth": [
+      {
+        "n": 65,
+        "p25": 9,
+        "p50": 51,
+        "p75": 75
+      },
+      {
+        "n": 256,
+        "p25": 8,
+        "p50": 12,
+        "p75": 68
+      },
+      {
+        "n": 252,
+        "p25": 8,
+        "p50": 12,
+        "p75": 68
+      },
+      {
+        "n": 275,
+        "p25": 8,
+        "p50": 12,
+        "p75": 99
+      },
+      {
+        "n": 179,
+        "p25": 7,
+        "p50": 18,
+        "p75": 110
+      },
+      {
+        "n": 31,
+        "p25": 7,
+        "p50": 61,
+        "p75": 83
+      },
+      {
+        "n": 106,
+        "p25": 12,
+        "p50": 12,
+        "p75": 35
+      },
+      {
+        "n": 88,
+        "p25": 13,
+        "p50": 13,
+        "p75": 79
+      },
+      {
+        "n": 97,
+        "p25": 12,
+        "p50": 12,
+        "p75": 119
+      }
+    ],
+    "nodeHeight": [
+      {
+        "n": 65,
+        "p25": 5,
+        "p50": 26,
+        "p75": 66
+      },
+      {
+        "n": 256,
+        "p25": 8,
+        "p50": 17,
+        "p75": 39
+      },
+      {
+        "n": 252,
+        "p25": 8,
+        "p50": 17,
+        "p75": 39
+      },
+      {
+        "n": 275,
+        "p25": 8,
+        "p50": 17,
+        "p75": 51
+      },
+      {
+        "n": 179,
+        "p25": 12,
+        "p50": 23,
+        "p75": 86
+      },
+      {
+        "n": 31,
+        "p25": 7,
+        "p50": 43,
+        "p75": 74
+      },
+      {
+        "n": 106,
+        "p25": 12,
+        "p50": 27,
+        "p75": 33
+      },
+      {
+        "n": 88,
+        "p25": 13,
+        "p50": 22,
+        "p75": 68
+      },
+      {
+        "n": 97,
+        "p25": 12,
+        "p50": 33,
+        "p75": 44
+      }
+    ],
+    "pitchX": [
+      {
+        "n": 4,
+        "p25": 199,
+        "p50": 285,
+        "p75": 328
+      },
+      {
+        "n": 23,
+        "p25": 299,
+        "p50": 385,
+        "p75": 454
+      },
+      {
+        "n": 23,
+        "p25": 299,
+        "p50": 385,
+        "p75": 454
+      },
+      {
+        "n": 29,
+        "p25": 299,
+        "p50": 366,
+        "p75": 464
+      },
+      {
+        "n": 22,
+        "p25": 281,
+        "p50": 301,
+        "p75": 453
+      },
+      {
+        "n": 3,
+        "p25": 200,
+        "p50": 283,
+        "p75": 285
+      },
+      {
+        "n": 10,
+        "p25": 174,
+        "p50": 435,
+        "p75": 462
+      }
+    ],
+    "pitchY": [
+      {
+        "n": 4,
+        "p25": 29,
+        "p50": 99,
+        "p75": 308
+      },
+      {
+        "n": 14,
+        "p25": 12,
+        "p50": 122,
+        "p75": 151
+      },
+      {
+        "n": 14,
+        "p25": 12,
+        "p50": 122,
+        "p75": 151
+      },
+      {
+        "n": 18,
+        "p25": 39,
+        "p50": 147,
+        "p75": 426
+      },
+      {
+        "n": 13,
+        "p25": 13,
+        "p50": 121,
+        "p75": 147
+      },
+      {
+        "n": 3,
+        "p25": 13,
+        "p50": 29,
+        "p75": 98
+      },
+      {
+        "n": 10,
+        "p25": 150,
+        "p50": 244,
+        "p75": 330
+      }
+    ],
+    "snappedTo10": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "canvases": [
+      {
+        "width": 1660,
+        "height": 770
+      },
+      {
+        "width": 7584,
+        "height": 3064
+      },
+      {
+        "width": 6843,
+        "height": 3839
+      },
+      {
+        "width": 5630,
+        "height": 4591
+      },
+      {
+        "width": 6843,
+        "height": 3709
+      },
+      {
+        "width": 1282,
+        "height": 392
+      },
+      {
+        "width": 3018,
+        "height": 2256
+      },
+      {
+        "width": 3035,
+        "height": 3467
+      },
+      {
+        "width": 3018,
+        "height": 1613
+      }
+    ]
+  },
+  "structure": {
+    "boundLabelShare": 0.09,
+    "boundArrowEnds": 264,
+    "unboundArrows": 15,
+    "frames": 0,
+    "scopeShapes": 21,
+    "containerLikeShapes": 238,
+    "groups": 1847,
+    "imagesVsShapes": {
+      "images": 124,
+      "shapes": 1349
+    }
+  },
+  "tallies": {
+    "style": {
+      "strokeColor": {
+        "#1e1e1e": 767,
+        "#000000": 873,
+        "transparent": 879,
+        "#ffffff": 129,
+        "#29b5e8": 39,
+        "#f7c31d": 1,
+        "#3276af": 1,
+        "#01b0f0": 141,
+        "#000": 118,
+        "#e03131": 43,
+        "#0091e2": 40,
+        "#fc5d0d": 18,
+        "#0b7285": 20,
+        "#343a40": 15,
+        "#f08c00": 12,
+        "#008080": 12,
+        "#e7b82c": 8,
+        "#fe9314": 8,
+        "#495057": 4,
+        "#e5b21a": 4,
+        "#343a4011": 5,
+        "#364fc711": 5,
+        "#5c940d11": 5,
+        "#fcf1e5": 5,
+        "#e6770011": 5,
+        "#5351d5": 4,
+        "#5250d5": 4,
+        "#6619de": 4,
+        "#630ed8": 4,
+        "#6618dd": 4,
+        "#fcb036": 4,
+        "#744ffa": 4,
+        "#1971c2": 17,
+        "turquoise": 5,
+        "aqua": 5,
+        "red": 5,
+        "salmon": 5,
+        "#228be6": 5,
+        "lightblue": 5,
+        "green": 5,
+        "lightgreen": 5,
+        "#b42d21": 4,
+        "#216f36": 4,
+        "#1864ab": 4,
+        "#c7970f": 4,
+        "#45913e": 1,
+        "#ae6f00": 2,
+        "#2f9e44": 1,
+        "#7aa116": 3,
+        "#ff694a": 2,
+        "#b6a0f8": 2,
+        "#00000000": 1
+      },
+      "backgroundColor": {
+        "transparent": 783,
+        "#ffffff": 382,
+        "#f1f1f1": 135,
+        "#1595d5": 136,
+        "#29b5e8": 210,
+        "#bc7d00": 6,
+        "#4dabf7": 8,
+        "#1971c2": 11,
+        "#099268": 15,
+        "#135a9b": 4,
+        "#0f4475": 4,
+        "#a5d8ff": 41,
+        "#107c42": 4,
+        "#45913e": 5,
+        "#e8590c": 2,
+        "#000000": 2,
+        "#fe9314": 34,
+        "#026cc3": 2,
+        "#51e7ff": 2,
+        "#188cb3": 2,
+        "#ced4da": 75,
+        "#e9ecef": 138,
+        "#535c65": 3,
+        "#1e1e1e": 10,
+        "#f7c31d": 1,
+        "#3276af": 1,
+        "#ffd43b": 1,
+        "#ea4335": 5,
+        "#34a853": 5,
+        "#4285f4": 33,
+        "#fbbc05": 1,
+        "#01b0f0": 595,
+        "#fff": 143,
+        "white": 39,
+        "#868e9644": 50,
+        "#0091e2": 40,
+        "#669df6": 28,
+        "#edf2f9": 28,
+        "#aed796": 5,
+        "#3572a5": 22,
+        "#ffda48": 22,
+        "#3371a2": 22,
+        "#00c7d4": 12,
+        "#00ad46": 12,
+        "#017cee": 12,
+        "#e43921": 12,
+        "#4a4848": 12,
+        "#e03131": 12,
+        "black": 14,
+        "#aecbfa": 12,
+        "#fab005": 12,
+        "#fc5d0d": 12,
+        "#c5bcdd": 5,
+        "#aedaf5": 4,
+        "#ffec99": 4,
+        "#008080": 4,
+        "turquoise": 5,
+        "aqua": 5,
+        "red": 5,
+        "salmon": 5,
+        "#228be6": 5,
+        "lightblue": 5,
+        "green": 5,
+        "lightgreen": 5,
+        "#fbbd9b": 1,
+        "#f48284": 1,
+        "#eaddd7": 7,
+        "#af6e00": 2,
+        "#12b886": 1,
+        "#000": 7,
+        "#868e96": 4,
+        "#7950f288": 4,
+        "#40c05788": 3,
+        "#ff694a": 2,
+        "#40c057": 2,
+        "#ffff": 1,
+        "#e64980": 1
+      },
+      "fillStyle": {
+        "solid": 1085,
+        "hachure": 25,
+        "cross-hatch": 27
+      },
+      "strokeWidth": {
+        "1": 1323,
+        "2": 652,
+        "4": 1287,
+        "6": 8
+      },
+      "strokeStyle": {
+        "solid": 3165,
+        "dashed": 50,
+        "dotted": 55
+      },
+      "roughness": {
+        "0": 872,
+        "1": 2330,
+        "2": 68
+      },
+      "opacity": {
+        "0": 7,
+        "10": 20,
+        "60": 18,
+        "100": 3225
+      },
+      "roundness": {
+        "sharp": 512,
+        "type3": 167,
+        "type2": 435,
+        "type1": 235
+      },
+      "fontSize": {
+        "16": 8,
+        "20": 18,
+        "28": 63,
+        "36": 11,
+        "16.878980891719745": 8,
+        "35.69270831592073": 2,
+        "14.428743087623511": 2,
+        "24.644958771872304": 2,
+        "14.428196912577256": 2,
+        "24.435340390838128": 2,
+        "22.7402923627265": 2,
+        "14.474609944072645": 2,
+        "24.778018534692315": 2,
+        "14.147358925233599": 1,
+        "15.687973749972693": 1,
+        "23.58270038888558": 1,
+        "26.77332753644811": 1,
+        "18.78980891719745": 24,
+        "25.818364526034408": 16,
+        "37.94875205630632": 12,
+        "32.68825599243504": 12,
+        "30.693810413012834": 9,
+        "33.74901505766417": 8,
+        "65.78348309059581": 8,
+        "26.010354262008512": 8,
+        "23.66913630873814": 8,
+        "14.841150950073416": 4,
+        "38.005081179541016": 8,
+        "29.946408446571493": 4,
+        "50.133917603115684": 6,
+        "38.26719044736089": 4,
+        "36.70707952635944": 4,
+        "62.836145524668275": 4,
+        "22.591509938906846": 4,
+        "24.222327374247914": 4,
+        "41.68527535975817": 4,
+        "37.79365563121245": 4,
+        "79.21616285047223": 4,
+        "25.40478329033273": 4,
+        "65.06289711891164": 4,
+        "63.92577087269254": 4,
+        "53.14533889669502": 4,
+        "48.86269388129603": 1,
+        "102.61101525632236": 1,
+        "34.66666666666669": 3,
+        "29.36785422774723": 3,
+        "40.90185006315134": 3,
+        "83.43283582089539": 3,
+        "25.272602904285062": 1,
+        "42.23588106322228": 2,
+        "88.6947953927989": 2,
+        "29.32196418240173": 2,
+        "28.374020191472233": 4,
+        "22.949550359912816": 3,
+        "33.333374023437536": 2,
+        "31.5794769829154": 1,
+        "66.3164868141049": 1,
+        "25.92002758118572": 1,
+        "21.958142064907193": 1,
+        "30.582031204569375": 1,
+        "62.382155932331166": 1,
+        "21.92383039449208": 1,
+        "56.03936346851342": 1,
+        "54.85267696874793": 1,
+        "48.296559207350384": 1,
+        "50.03257979125511": 1,
+        "32.886913746182024": 1,
+        "24.122160838576917": 1,
+        "27.78599724625156": 1,
+        "31.086637392414527": 1,
+        "20.28072622858504": 4,
+        "44.75404121142398": 2,
+        "20.280726228585042": 2,
+        "20.280726228585053": 2,
+        "20.28072622858505": 2,
+        "18.476780229816047": 2,
+        "18.476780229816075": 2,
+        "24.29235435590604": 2,
+        "45.82881867574786": 2,
+        "74.59335413415175": 1,
+        "71.55226580082092": 1,
+        "122.48505314217357": 1,
+        "44.037110684050916": 1,
+        "47.2160255994242": 1,
+        "31.71333554261009": 3,
+        "130.5883583187519": 2,
+        "59.16287332857614": 2,
+        "28.428481357928437": 1,
+        "35.68960293349986": 1,
+        "71.06672040411803": 1,
+        "51.47045805371174": 1,
+        "10.820200159829083": 1,
+        "19.74484145786629": 1,
+        "20.204018645563565": 1,
+        "21.224074517591728": 1,
+        "22.037840672288535": 1,
+        "21.478014610054423": 1,
+        "23.054059505205174": 1,
+        "46.12108532498247": 1,
+        "63.01805976024925": 1,
+        "28.85426726465214": 1,
+        "68.99147068308092": 1,
+        "64.43138706668051": 1,
+        "29.61720017402851": 1
+      },
+      "fontFamily": {
+        "1": 258,
+        "2": 8,
+        "5": 41,
+        "6": 79,
+        "8": 11
+      },
+      "textAlign": {
+        "center": 252,
+        "left": 145
+      },
+      "endArrowhead": {
+        "arrow": 163,
+        "none": 2
+      },
+      "startArrowhead": {
+        "none": 165
+      },
+      "elbowed": {
+        "false": 49,
+        "true": 116
+      }
+    },
+    "geometry": {
+      "canvasBackground": {
+        "#ffffff": 9
+      }
+    },
+    "roles": {
+      "arrow": {
+        "strokeColor": {
+          "#1e1e1e": 90,
+          "#343a40": 10,
+          "#e03131": 12,
+          "#29b5e8": 26,
+          "#f08c00": 4,
+          "#fc5d0d": 8,
+          "#630ed8": 4,
+          "#1971c2": 8,
+          "#ae6f00": 2,
+          "#2f9e44": 1
+        },
+        "strokeWidth": {
+          "1": 2,
+          "2": 46,
+          "4": 117
+        },
+        "strokeStyle": {
+          "solid": 165
+        },
+        "roughness": {
+          "0": 4,
+          "1": 155,
+          "2": 6
+        },
+        "elbowed": {
+          "false": 49,
+          "true": 116
+        },
+        "endArrowhead": {
+          "arrow": 163,
+          "null": 2
+        },
+        "labelled": {
+          "false": 165
+        }
+      },
+      "text": {
+        "fontFamily": {
+          "1": 98,
+          "5": 6,
+          "6": 63,
+          "8": 6
+        },
+        "fontSize": {
+          "14": 2,
+          "16": 1,
+          "18": 4,
+          "20": 25,
+          "21": 1,
+          "24": 8,
+          "25": 4,
+          "26": 8,
+          "28": 53,
+          "33": 14,
+          "34": 8,
+          "36": 4,
+          "38": 10,
+          "42": 4,
+          "50": 7,
+          "53": 4,
+          "56": 1,
+          "64": 4,
+          "65": 4,
+          "71": 1,
+          "79": 4,
+          "131": 2
+        },
+        "textAlign": {
+          "center": 113,
+          "left": 60
+        },
+        "bound": {
+          "false": 173
+        }
+      },
+      "shape": {
+        "strokeColor": {
+          "#1e1e1e": 34,
+          "#000000": 35,
+          "#5351d5": 4,
+          "#e7b82c": 8,
+          "#e03131": 12,
+          "#f08c00": 4,
+          "#6619de": 4,
+          "#008080": 4,
+          "#ffffff": 2,
+          "#ff694a": 1
+        },
+        "backgroundColor": {
+          "#f1f1f1": 5,
+          "#ffffff": 26,
+          "#1595d5": 1,
+          "transparent": 62,
+          "#099268": 2,
+          "#e8590c": 2,
+          "#ced4da": 6,
+          "#a5d8ff": 1,
+          "#eaddd7": 1,
+          "#12b886": 1,
+          "white": 1
+        },
+        "strokeWidth": {
+          "1": 10,
+          "2": 34,
+          "4": 56,
+          "6": 8
+        },
+        "strokeStyle": {
+          "solid": 104,
+          "dotted": 4
+        },
+        "roughness": {
+          "0": 25,
+          "1": 50,
+          "2": 33
+        },
+        "fillStyle": {
+          "solid": 34,
+          "cross-hatch": 10,
+          "hachure": 64
+        },
+        "roundness": {
+          "type3": 44,
+          "sharp": 59,
+          "type2": 4,
+          "type1": 1
+        },
+        "size": {
+          "100x100": 42,
+          "0x0": 3,
+          "300x300": 9,
+          "200x200": 13,
+          "400x300": 5,
+          "200x300": 3,
+          "400x0": 4,
+          "700x1400": 3,
+          "500x200": 1,
+          "200x500": 1,
+          "500x1000": 1,
+          "100x200": 2,
+          "300x0": 10,
+          "100x0": 10,
+          "400x100": 1
+        }
+      },
+      "zone": {
+        "strokeColor": {
+          "#1e1e1e": 9,
+          "#1971c2": 1,
+          "#e03131": 1,
+          "#29b5e8": 2
+        },
+        "backgroundColor": {
+          "transparent": 9,
+          "#a5d8ff": 4
+        },
+        "strokeWidth": {
+          "2": 13
+        },
+        "strokeStyle": {
+          "dashed": 5,
+          "dotted": 8
+        },
+        "roughness": {
+          "1": 12,
+          "2": 1
+        },
+        "fillStyle": {
+          "solid": 1,
+          "hachure": 6,
+          "cross-hatch": 6
+        },
+        "roundness": {
+          "type3": 5,
+          "sharp": 8
+        },
+        "size": {
+          "1100x300": 1,
+          "1400x700": 4,
+          "500x200": 4,
+          "900x500": 1,
+          "1500x1200": 1,
+          "500x400": 1,
+          "600x400": 1
+        }
+      }
+    },
+    "derived": {
+      "labelPlacement": {
+        "free": 363,
+        "bound": 34
+      },
+      "boundary": {
+        "scope-shape": 21,
+        "frame": 0
+      },
+      "arrowEnds": {
+        "bound": 264,
+        "unbound": 66
+      },
+      "iconSource": {
+        "drawn": 1847,
+        "image": 124
+      }
+    }
+  },
+  "history": [
+    {
+      "version": 1,
+      "at": "2026-09-08T14:59:00.228Z",
+      "files": 9,
+      "elements": 3270
+    }
+  ]
+}

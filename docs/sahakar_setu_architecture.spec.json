@@ -1,0 +1,53 @@
+{
+  "page": "Sahakar-Setu Architecture",
+  "pageId": "sahakar-setu-master-arch",
+  "title": "SAHAKAR-SETU: MASTER TECHNICAL SYSTEM ARCHITECTURE & DATA FLOW",
+  "subtitle": "Ministry of Cooperation • NCCT National Training Network • 5-Layer Modular Production Blueprint",
+  "layout": { "originX": 40, "originY": 80, "colPitch": 310, "rowPitch": 190 },
+  "boundaries": [
+    { "id": "layer1", "kind": "scope", "label": "LAYER 1: CLIENT & PHYSICAL EDGE DEVICES", "color": "#0F172A", "col": 0, "row": 0, "cols": 6, "rows": 1 },
+    { "id": "layer2", "kind": "scope", "label": "LAYER 2: UNIFIED API GATEWAY & SECURITY", "color": "#38BDF8", "col": 0, "row": 1, "cols": 6, "rows": 1 },
+    { "id": "layer3", "kind": "scope", "label": "LAYER 3: CORE APPLICATION MODULAR MONOLITH (FASTAPI)", "color": "#0284C7", "col": 0, "row": 2, "cols": 6, "rows": 1 },
+    { "id": "layer4", "kind": "scope", "label": "LAYER 4: PERSISTENCE & DATA STORAGE LAYER", "color": "#0F172A", "col": 0, "row": 3, "cols": 6, "rows": 1 },
+    { "id": "layer5", "kind": "scope", "label": "LAYER 5: NATIONAL DIGITAL PUBLIC INFRASTRUCTURE (DPI)", "color": "#0F172A", "col": 0, "row": 4, "cols": 6, "rows": 1 }
+  ],
+  "nodes": [
+    { "id": "trainee_pwa", "kind": "box", "label": "Trainee Mobile PWA\nNext.js 14 • Serwist SW", "parent": "layer1", "col": 0, "row": 0 },
+    { "id": "voice_ui", "kind": "box", "label": "Voice & Multilingual UI\nWeb Audio API", "parent": "layer1", "col": 1, "row": 0 },
+    { "id": "admin_portal", "kind": "box", "label": "Institute Admin Portal\nReact 18 • TanStack", "parent": "layer1", "col": 2, "row": 0 },
+    { "id": "hostel_console", "kind": "box", "label": "Hostel & Mess Console\nDynamic Bed Matrix", "parent": "layer1", "col": 3, "row": 0 },
+    { "id": "recruiter_portal", "kind": "box", "label": "Cooperative Recruiter\nPACS Vacancy Manager", "parent": "layer1", "col": 4, "row": 0 },
+    { "id": "edge_kiosk", "kind": "box", "label": "Edge Kiosk (Door Mount)\nINT8 MobileFaceNet ONNX", "parent": "layer1", "col": 5, "row": 0 },
+
+    { "id": "gateway", "kind": "box", "label": "Unified API Gateway & Reverse Proxy\nTLS 1.3 • WAF • RBAC • Rate Limiter", "parent": "layer2", "col": 2, "row": 1, "width": 400 },
+
+    { "id": "engine_erp", "kind": "box", "label": "Registration & ERP Engine\npg_trgm Fuzzy Dedup • Camunda", "parent": "layer3", "col": 0, "row": 2 },
+    { "id": "engine_hostel", "kind": "box", "label": "Hostel & Logistics Engine\nGender/Date Allotment", "parent": "layer3", "col": 1, "row": 2 },
+    { "id": "engine_attendance", "kind": "box", "label": "Biometric Attendance & Stipend\nINT8 Vector Match • TA/DA Fraud Gate", "parent": "layer3", "col": 2, "row": 2 },
+    { "id": "engine_lms", "kind": "box", "label": "Multilingual LMS & Sandbox\nAudio Lessons • PACS Sim", "parent": "layer3", "col": 3, "row": 2 },
+    { "id": "engine_credential", "kind": "box", "label": "Cryptographic Credential Engine\nW3C Verifiable Credentials • Ed25519", "parent": "layer3", "col": 4, "row": 2 },
+    { "id": "engine_jobs", "kind": "box", "label": "Cooperative Job Matcher\nw1(Grade)+w2(Dist)+w3(Rec)", "parent": "layer3", "col": 5, "row": 2 },
+
+    { "id": "storage_pg", "kind": "box", "label": "Primary DB: PostgreSQL 16\nMulti-Tenant Row-Level Security (RLS)", "parent": "layer4", "col": 1, "row": 3, "width": 260 },
+    { "id": "storage_redis", "kind": "box", "label": "In-Memory Cache & Broker: Redis 7\nCelery Async Queues • Rate Limits", "parent": "layer4", "col": 3, "row": 3, "width": 260 },
+    { "id": "storage_s3", "kind": "box", "label": "Encrypted Object Store: R2 / S3\nMicro-Lessons • Signed PDFs", "parent": "layer4", "col": 5, "row": 3, "width": 260 },
+
+    { "id": "dpi_bhashini", "kind": "box", "label": "Bhashini / AI4Bharat Gateway\nIndicWhisper ASR • IndicTrans2", "parent": "layer5", "col": 0, "row": 4 },
+    { "id": "dpi_digilocker", "kind": "box", "label": "DigiLocker & NAD Vault\nVerifiable Credential Storage", "parent": "layer5", "col": 1, "row": 4 },
+    { "id": "dpi_ncs", "kind": "box", "label": "National Career Service (NCS)\nMinistry of Labour Job Feed", "parent": "layer5", "col": 2, "row": 4 },
+    { "id": "dpi_ncd", "kind": "box", "label": "National Cooperative Database\nMaster PACS Registry & Audits", "parent": "layer5", "col": 4, "row": 4 },
+    { "id": "dpi_sms", "kind": "box", "label": "NIC Gov SMS / WhatsApp DLT\nTransactional OTPs & DBT Alerts", "parent": "layer5", "col": 5, "row": 4 }
+  ],
+  "edges": [
+    { "from": "trainee_pwa", "to": "gateway", "kind": "flow", "label": "HTTPS / JSON: Audio Chunks, OTP" },
+    { "from": "edge_kiosk", "to": "gateway", "kind": "flow", "label": "HMAC-SHA256 Encrypted Sync: 128-d Vectors" },
+    { "from": "gateway", "to": "engine_attendance", "kind": "flow", "label": "Reverse Proxy Routing (/api/v1/...)" },
+    { "from": "engine_erp", "to": "storage_pg", "kind": "flow", "label": "SQL with Row-Level Security (RLS)" },
+    { "from": "engine_attendance", "to": "storage_redis", "kind": "flow", "label": "Pub/Sub Celery Queues" },
+    { "from": "engine_credential", "to": "storage_s3", "kind": "flow", "label": "Presigned S3 URLs" },
+    { "from": "engine_lms", "to": "dpi_bhashini", "kind": "async", "label": "gRPC Voice Streams" },
+    { "from": "engine_credential", "to": "dpi_digilocker", "kind": "flow", "label": "JSON-LD W3C Push" },
+    { "from": "engine_jobs", "to": "dpi_ncs", "kind": "async", "label": "REST Vacancy Feeds" },
+    { "from": "storage_redis", "to": "dpi_sms", "kind": "flow", "label": "DLT-Approved SMS Dispatch" }
+  ]
+}

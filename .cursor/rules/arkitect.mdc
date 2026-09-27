@@ -1,0 +1,34 @@
+---
+description: Draw editable Draw.io and Excalidraw architecture, system and flow diagrams with Arkitect
+globs:
+alwaysApply: false
+---
+
+## Arkitect — editable architecture diagrams
+
+Arkitect is installed at `C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect`. It draws **native, editable** diagrams:
+`.drawio` (Draw.io / diagrams.net) and `.excalidraw` (Excalidraw). Never hand
+over a screenshot or Mermaid as the final artifact when a real diagram was asked
+for.
+
+Read `C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\AGENTS.md` for the full contract before drawing. In short:
+
+- **Draw.io** for formal solution architecture, AWS-heavy designs, client-facing
+  decks. **Excalidraw** for system design, block diagrams, flows, README art.
+- **Resolve icons first** — 6,000+ bundled: 18 Draw.io packs (AWS, Azure, GCP
+  and curated non-AWS packs, not AWS alone) plus 1,162 Excalidraw library items.
+  Never substitute one product's mark for another; use a named placeholder and
+  say so.
+- **Generate from a spec**, validate, render, and *look at the PNG* before
+  calling it done.
+- **Nothing is uploaded.** Diagrams stay local; only a public product logo or
+  the public Excalidraw catalogue ever leaves the machine, and never with
+  anything from the diagram in the query.
+
+```bash
+node "C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\bin\arkitect.mjs"                       # every command
+node "C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\bin\arkitect.mjs" drawio icon "bedrock"
+node "C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\bin\arkitect.mjs" drawio build spec.json --out docs/arch.drawio
+node "C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\bin\arkitect.mjs" excalidraw icon "postgres"
+node "C:\Users\Abhijeet Yadav\AppData\Roaming\npm\node_modules\arkitect\bin\arkitect.mjs" excalidraw build spec.json --out docs/arch.excalidraw
+```

@@ -1,0 +1,42 @@
+{
+  "_comment": "Starter spec for build-diagram.mjs. Generic ingest -> index -> analyse -> alert architecture with no customer content. Copy it, rename ids and labels, keep the structure: nodes sit on a col/row grid, boundaries span whole grid cells, nodes name their boundary as `parent`.",
+  "page": "Architecture",
+  "pageId": "starter-architecture",
+  "title": "Reference architecture",
+  "subtitle": "Hourly ingest, index and alert, single region",
+  "layout": { "originX": 200, "originY": 180, "colPitch": 320, "rowPitch": 190 },
+
+  "_context_comment": "Naming the packs this diagram draws from biases icon resolution toward them, so `opensearch` lands on Amazon OpenSearch Service rather than the OpenSearch project. A single node can override it with its own \"pack\".",
+  "context": { "packs": ["aws"] },
+
+  "boundaries": [
+    { "id": "cloud", "kind": "aws-cloud", "label": "AWS Cloud", "col": 1, "row": 0, "cols": 4, "rows": 2, "padLeft": 55, "padTop": 60, "padRight": 55, "padBottom": 30 },
+    { "id": "pipeline", "kind": "scope", "label": "Ingestion pipeline", "color": "#E7157B", "dashed": false, "parent": "cloud", "col": 1, "row": 0, "cols": 2, "rows": 1, "padLeft": 30, "padTop": 42, "padRight": 30, "padBottom": 12 }
+  ],
+
+  "nodes": [
+    { "id": "src", "kind": "box", "label": "Source systems", "col": 0, "row": 0, "width": 170, "height": 110 },
+    { "id": "note", "kind": "note", "label": "Assumption: hourly batch ingestion, single region.", "col": 0, "row": 1, "width": 190, "height": 74 },
+
+    { "id": "ingest", "kind": "icon", "icon": "lambda", "label": "Ingestion function", "parent": "pipeline", "col": 1, "row": 0 },
+    { "id": "raw", "kind": "icon", "icon": "simple storage service", "label": "Raw zone", "parent": "pipeline", "col": 2, "row": 0 },
+
+    { "id": "index", "kind": "icon", "icon": "opensearch", "label": "Search index\nOpenSearch", "parent": "cloud", "col": 3, "row": 0 },
+    { "id": "agent", "kind": "icon", "icon": "bedrock", "label": "Analysis model", "parent": "cloud", "col": 4, "row": 0 },
+
+    { "id": "schedule", "kind": "icon", "icon": "eventbridge", "label": "Schedule", "parent": "cloud", "col": 1, "row": 1 },
+    { "id": "metrics", "kind": "icon", "icon": "timestream", "label": "Metric store", "parent": "cloud", "col": 3, "row": 1 },
+    { "id": "alarms", "kind": "icon", "icon": "cloudwatch", "label": "Alarms", "parent": "cloud", "col": 4, "row": 1 }
+  ],
+
+  "edges": [
+    { "from": "src", "to": "ingest", "kind": "flow", "label": "raw records" },
+    { "from": "ingest", "to": "raw", "kind": "flow" },
+    { "from": "raw", "to": "index", "kind": "flow" },
+    { "from": "index", "to": "agent", "kind": "flow" },
+    { "from": "schedule", "to": "ingest", "kind": "async", "label": "hourly" },
+    { "from": "index", "to": "metrics", "kind": "flow" },
+    { "from": "metrics", "to": "alarms", "kind": "success" },
+    { "from": "agent", "to": "alarms", "kind": "error", "label": "anomaly" }
+  ]
+}

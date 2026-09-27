@@ -1,0 +1,97 @@
+{
+  "_comment": "Reusable spec fragments for build-diagram.mjs, matching references/pattern-catalog.md. Copy a fragment into a spec's boundaries/nodes/edges arrays and renumber col/row. All content is generic - no customer material.",
+
+  "aws-cloud-boundary": {
+    "pattern": 1,
+    "boundaries": [
+      { "id": "cloud", "kind": "aws-cloud", "label": "AWS Cloud", "col": 1, "row": 0, "cols": 4, "rows": 2, "padLeft": 55, "padTop": 60, "padRight": 55, "padBottom": 30 }
+    ]
+  },
+
+  "scope-box": {
+    "pattern": 2,
+    "_use": "colour carries meaning: #E7157B proposed, #009900 current/success, #CC0000 recovery/problem",
+    "boundaries": [
+      { "id": "scope", "kind": "scope", "label": "Named phase", "color": "#E7157B", "dashed": false, "col": 1, "row": 0, "cols": 2, "rows": 1 }
+    ]
+  },
+
+  "current-vs-proposed": {
+    "pattern": 3,
+    "boundaries": [
+      { "id": "current", "kind": "scope", "label": "CURRENT APPROACH", "color": "#009900", "dashed": false, "col": 0, "row": 0, "cols": 4, "rows": 1 },
+      { "id": "proposed", "kind": "scope", "label": "PROPOSED APPROACH", "color": "#E7157B", "dashed": false, "col": 0, "row": 2, "cols": 4, "rows": 2 },
+      { "id": "mode-a", "kind": "scope", "label": "PRIMARY RUN", "color": "#009900", "dashed": false, "parent": "proposed", "col": 0, "row": 2, "cols": 4, "rows": 1 },
+      { "id": "mode-b", "kind": "scope", "label": "RECOVERY RUN", "color": "#CC0000", "dashed": false, "parent": "proposed", "col": 0, "row": 3, "cols": 4, "rows": 1 }
+    ],
+    "nodes": [
+      { "id": "strengths", "kind": "note", "label": "Strengths\n\nPoint one\nPoint two", "col": 5, "row": 0, "width": 220, "height": 150 },
+      { "id": "weaknesses", "kind": "note", "label": "Weaknesses\n\nPoint one\nPoint two", "col": 5, "row": 2, "width": 220, "height": 150 }
+    ]
+  },
+
+  "tier-swimlanes": {
+    "pattern": 4,
+    "boundaries": [
+      { "id": "backend", "kind": "lane", "label": "BACKEND", "col": 0, "row": 0, "cols": 3, "rows": 2 },
+      { "id": "storage", "kind": "lane", "label": "STORAGE", "col": 3, "row": 0, "cols": 2, "rows": 2 },
+      { "id": "frontend", "kind": "lane", "label": "FRONTEND", "col": 5, "row": 0, "cols": 1, "rows": 2 }
+    ]
+  },
+
+  "external-systems-column": {
+    "pattern": 6,
+    "nodes": [
+      { "id": "producers", "kind": "box", "label": "Source systems", "col": 0, "row": 0, "width": 170, "height": 220 }
+    ],
+    "edges": [
+      { "from": "producers", "to": "<first-node>", "kind": "flow", "label": "records" }
+    ]
+  },
+
+  "numbered-flow": {
+    "pattern": 7,
+    "_rule": "One sequence per page, from 1, on edges only. Entry points and parallel paths are not steps: leave them unnumbered, or letter them (A, B) as here.",
+    "nodes": [
+      { "id": "client", "kind": "box", "label": "Client", "col": 0, "row": 0 },
+      { "id": "partner", "kind": "box", "label": "Partner", "col": 0, "row": 1 },
+      { "id": "api", "kind": "box", "label": "API", "col": 1, "row": 0.5 },
+      { "id": "store", "kind": "box", "label": "Store", "col": 2, "row": 0.5 },
+      { "id": "notify", "kind": "box", "label": "Notifier", "col": 3, "row": 0.5 }
+    ],
+    "edges": [
+      { "from": "client", "to": "api", "kind": "flow", "label": "A. Submit request" },
+      { "from": "partner", "to": "api", "kind": "flow", "label": "B. Submit request" },
+      { "from": "api", "to": "store", "kind": "flow", "label": "1. Persist" },
+      { "from": "store", "to": "notify", "kind": "async", "label": "2. Notify" }
+    ]
+  },
+
+  "agentic-runtime": {
+    "pattern": 10,
+    "boundaries": [
+      { "id": "runtime", "kind": "scope", "label": "Agent runtime", "color": "#232F3E", "dashed": true, "col": 1, "row": 0, "cols": 3, "rows": 1 }
+    ],
+    "nodes": [
+      { "id": "agent-a", "kind": "icon", "icon": "bedrock", "label": "Monitoring agent", "parent": "runtime", "col": 1, "row": 0 },
+      { "id": "agent-b", "kind": "icon", "icon": "bedrock", "label": "Diagnosis agent", "parent": "runtime", "col": 2, "row": 0 },
+      { "id": "agent-c", "kind": "icon", "icon": "bedrock", "label": "Recommendation agent", "parent": "runtime", "col": 3, "row": 0 },
+      { "id": "memory", "kind": "icon", "icon": "agentcore memory", "label": "Agent memory", "col": 2, "row": 1 },
+      { "id": "observability", "kind": "icon", "icon": "agentcore observability", "label": "Agent observability", "col": 3, "row": 1 }
+    ],
+    "edges": [
+      { "from": "agent-a", "to": "agent-b", "kind": "error", "label": "failure detected" },
+      { "from": "agent-b", "to": "agent-c", "kind": "flow" },
+      { "from": "agent-b", "to": "memory", "kind": "async" },
+      { "from": "agent-c", "to": "observability", "kind": "async" }
+    ]
+  },
+
+  "annotation": {
+    "pattern": 9,
+    "nodes": [
+      { "id": "assumption", "kind": "note", "label": "Assumption: stated here so the reader can challenge it.", "col": 0, "row": 1, "width": 190, "height": 74 },
+      { "id": "open-question", "kind": "text", "label": "ADR: open decision", "color": "#CC0000", "bold": false, "col": 2, "row": 1, "width": 160, "height": 30 }
+    ]
+  }
+}

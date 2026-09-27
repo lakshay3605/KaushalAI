@@ -1,0 +1,79 @@
+{
+  "_comment": "Worked example of the build-diagram.mjs spec. Deliberately generic - no customer material, no cloud vendor - so it can be copied as a starting point for any system. Every node kind, every connector kind and an auto-generated legend appear at least once.",
+
+  "title": "Event-driven data platform",
+  "canvasBackground": "white",
+
+  "style": {
+    "roughness": 1,
+    "fontFamily": 1,
+    "strokeWidth": 2,
+    "rounded": true
+  },
+
+  "layout": {
+    "originX": 0,
+    "originY": 0,
+    "colPitch": 300,
+    "rowPitch": 230
+  },
+
+  "boundaries": [
+    {
+      "id": "platform",
+      "kind": "scope",
+      "label": "Data platform",
+      "color": "blue",
+      "dashed": true
+    },
+    {
+      "id": "pipeline",
+      "kind": "scope",
+      "label": "Streaming pipeline",
+      "color": "violet",
+      "dashed": true,
+      "parent": "platform"
+    }
+  ],
+
+  "nodes": [
+    { "id": "user",    "kind": "actor",    "label": "Operator",           "col": 6, "row": 0 },
+    { "id": "apps",    "kind": "box",      "label": "Source applications", "sublabel": "web, mobile, batch jobs", "col": 0, "row": 1 },
+
+    { "id": "gateway", "kind": "round",    "label": "Ingest API",  "accent": "blue",  "col": 1, "row": 1, "parent": "pipeline" },
+    { "id": "bus",     "kind": "box",      "label": "Event bus",   "accent": "violet", "col": 2, "row": 1, "parent": "pipeline" },
+    { "id": "check",   "kind": "diamond",  "label": "Schema\nvalid?", "accent": "orange", "col": 3, "row": 1, "parent": "pipeline", "width": 150, "height": 110 },
+
+    { "id": "dlq",     "kind": "box",      "label": "Dead-letter queue", "accent": "red", "col": 3, "row": 2, "parent": "pipeline" },
+    { "id": "transform", "kind": "box",    "label": "Transform workers", "accent": "green", "col": 4, "row": 1, "parent": "pipeline" },
+
+    { "id": "warehouse", "kind": "cylinder", "label": "Analytics warehouse", "accent": "blue", "col": 5, "row": 1, "parent": "platform", "width": 150, "height": 120 },
+    { "id": "cache",   "kind": "cylinder", "label": "Serving cache", "accent": "grey", "col": 5, "row": 2, "parent": "platform", "width": 150, "height": 120 },
+
+    { "id": "bi",      "kind": "box",      "label": "Dashboards",  "col": 6, "row": 1 },
+    { "id": "api",     "kind": "round",    "label": "Product API", "col": 6, "row": 2 },
+
+    {
+      "id": "note",
+      "kind": "note",
+      "label": "Assumption: events are at-least-once, so the transform stage is idempotent and keyed on event id.",
+      "col": 1,
+      "row": 3,
+      "width": 340
+    }
+  ],
+
+  "edges": [
+    { "from": "user",      "to": "bi",        "kind": "light" },
+    { "from": "apps",      "to": "gateway",   "kind": "flow",    "label": "events" },
+    { "from": "gateway",   "to": "bus",       "kind": "flow" },
+    { "from": "bus",       "to": "check",     "kind": "flow" },
+    { "from": "check",     "to": "dlq",       "kind": "error",   "label": "rejected" },
+    { "from": "check",     "to": "transform", "kind": "branch",  "label": "valid" },
+    { "from": "transform", "to": "warehouse", "kind": "flow" },
+    { "from": "transform", "to": "cache",     "kind": "success", "label": "materialised" },
+    { "from": "warehouse", "to": "bi",        "kind": "flow" },
+    { "from": "cache",     "to": "api",       "kind": "flow" },
+    { "from": "dlq",       "to": "transform", "kind": "async",   "label": "replay" }
+  ]
+}

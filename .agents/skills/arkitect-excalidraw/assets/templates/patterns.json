@@ -1,0 +1,123 @@
+{
+  "_comment": "Reusable spec fragments for build-diagram.mjs, matching references/pattern-catalog.md. Copy a fragment into a spec's boundaries/nodes/edges arrays and renumber col/row. Generic on purpose - no vendor, no customer material.",
+
+  "pipeline": {
+    "pattern": 1,
+    "boundaries": [
+      { "id": "system", "kind": "scope", "label": "System boundary", "color": "blue", "dashed": true }
+    ],
+    "nodes": [
+      { "id": "src", "kind": "box", "label": "Source systems", "accent": "grey", "col": 0, "row": 1 },
+      { "id": "ingest", "kind": "round", "label": "Ingest", "accent": "blue", "col": 1, "row": 1, "parent": "system" },
+      { "id": "process", "kind": "box", "label": "Process", "accent": "green", "col": 2, "row": 1, "parent": "system" },
+      { "id": "store", "kind": "cylinder", "label": "Store", "accent": "blue", "col": 3, "row": 1, "parent": "system", "width": 150, "height": 120 },
+      { "id": "sink", "kind": "box", "label": "Consumers", "accent": "grey", "col": 4, "row": 1 }
+    ],
+    "edges": [
+      { "from": "src", "to": "ingest", "kind": "flow" },
+      { "from": "ingest", "to": "process", "kind": "flow" },
+      { "from": "process", "to": "store", "kind": "flow" },
+      { "from": "store", "to": "sink", "kind": "flow" }
+    ]
+  },
+
+  "scope-box": {
+    "pattern": 2,
+    "_use": "colour carries meaning: blue = the subject, green = current, red = risk, violet = proposed",
+    "boundaries": [
+      { "id": "scope", "kind": "scope", "label": "Named phase", "color": "violet", "dashed": true, "col": 1, "row": 0, "cols": 2, "rows": 1 }
+    ]
+  },
+
+  "tiered-frames": {
+    "pattern": 3,
+    "_use": "frames are top level and cannot nest; put scope boxes inside them",
+    "boundaries": [
+      { "id": "frontend", "kind": "frame", "label": "Frontend", "col": 0, "row": 0, "cols": 4, "rows": 1 },
+      { "id": "backend", "kind": "frame", "label": "Backend", "col": 0, "row": 1, "cols": 4, "rows": 1 },
+      { "id": "data", "kind": "frame", "label": "Data", "col": 0, "row": 2, "cols": 4, "rows": 1 }
+    ]
+  },
+
+  "decision": {
+    "pattern": 4,
+    "nodes": [
+      { "id": "check", "kind": "diamond", "label": "Valid?", "accent": "orange", "col": 2, "row": 0, "width": 150, "height": 110 },
+      { "id": "ok", "kind": "box", "label": "Continue", "accent": "green", "col": 3, "row": 0 },
+      { "id": "bad", "kind": "box", "label": "Reject", "accent": "red", "col": 3, "row": 1 }
+    ],
+    "edges": [
+      { "from": "check", "to": "ok", "kind": "branch", "label": "yes" },
+      { "from": "check", "to": "bad", "kind": "error", "label": "no" }
+    ]
+  },
+
+  "current-vs-proposed": {
+    "pattern": 5,
+    "boundaries": [
+      { "id": "current", "kind": "scope", "label": "TODAY", "color": "green", "dashed": false, "col": 0, "row": 0, "cols": 4, "rows": 1 },
+      { "id": "proposed", "kind": "scope", "label": "PROPOSED", "color": "violet", "dashed": false, "col": 0, "row": 2, "cols": 4, "rows": 1 }
+    ],
+    "nodes": [
+      { "id": "gains", "kind": "note", "label": "What it buys\n\nPoint one\nPoint two", "accent": "green", "col": 5, "row": 0, "width": 240 },
+      { "id": "costs", "kind": "note", "label": "What it costs\n\nPoint one\nPoint two", "accent": "red", "col": 5, "row": 2, "width": 240 }
+    ]
+  },
+
+  "external-column": {
+    "pattern": 6,
+    "_use": "one arrow for the column as a whole, not one per product inside it",
+    "nodes": [
+      { "id": "external", "kind": "box", "label": "External systems", "accent": "grey", "col": 0, "row": 0, "width": 200, "height": 260 }
+    ],
+    "edges": [
+      { "from": "external", "to": "<first-node>", "kind": "flow", "label": "records" }
+    ]
+  },
+
+  "component-blocks": {
+    "pattern": 7,
+    "_use": "top-down: callers above callees. State the direction convention in the report.",
+    "boundaries": [
+      { "id": "service", "kind": "scope", "label": "Deployable", "color": "black", "dashed": false, "col": 0, "row": 0, "cols": 3, "rows": 2 }
+    ],
+    "nodes": [
+      { "id": "api", "kind": "round", "label": "HTTP surface", "accent": "blue", "col": 1, "row": 0, "parent": "service" },
+      { "id": "domain", "kind": "box", "label": "Domain logic", "col": 1, "row": 1, "parent": "service" },
+      { "id": "ports", "kind": "box", "label": "Adapters", "accent": "grey", "col": 2, "row": 1, "parent": "service" }
+    ],
+    "edges": [
+      { "from": "api", "to": "domain", "kind": "flow" },
+      { "from": "domain", "to": "ports", "kind": "flow" }
+    ]
+  },
+
+  "agentic-runtime": {
+    "pattern": 8,
+    "boundaries": [
+      { "id": "runtime", "kind": "scope", "label": "Agent runtime", "color": "violet", "dashed": true, "col": 1, "row": 0, "cols": 3, "rows": 1 }
+    ],
+    "nodes": [
+      { "id": "a1", "kind": "round", "label": "Planner", "accent": "violet", "col": 1, "row": 0, "parent": "runtime" },
+      { "id": "a2", "kind": "round", "label": "Worker", "accent": "violet", "col": 2, "row": 0, "parent": "runtime" },
+      { "id": "a3", "kind": "round", "label": "Reviewer", "accent": "violet", "col": 3, "row": 0, "parent": "runtime" },
+      { "id": "tools", "kind": "box", "label": "Tools", "accent": "grey", "col": 2, "row": 1 },
+      { "id": "memory", "kind": "cylinder", "label": "Memory", "accent": "blue", "col": 3, "row": 1, "width": 150, "height": 120 }
+    ],
+    "edges": [
+      { "from": "a1", "to": "a2", "kind": "flow", "label": "plan" },
+      { "from": "a2", "to": "a3", "kind": "flow" },
+      { "from": "a3", "to": "a2", "kind": "error", "label": "rework" },
+      { "from": "a2", "to": "tools", "kind": "light" },
+      { "from": "a2", "to": "memory", "kind": "light" }
+    ]
+  },
+
+  "annotation": {
+    "pattern": 10,
+    "nodes": [
+      { "id": "assumption", "kind": "note", "label": "Assumption: ...", "col": 0, "row": 3, "width": 320 },
+      { "id": "question", "kind": "text", "label": "Open: does this need to survive a region failure?", "accent": "red", "col": 2, "row": 3 }
+    ]
+  }
+}

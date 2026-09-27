@@ -1,0 +1,409 @@
+{
+  "_comment": "Credits for the bundled libraries, matched against libraries.excalidraw.com. index-libraries.mjs folds this into the index; ATTRIBUTION.md is generated from it.",
+  "fetched": "2026-09-08",
+  "libraries": {
+    "architecture-diagram-components": {
+      "name": "Architecture diagram components",
+      "authors": [
+        {
+          "name": "Anna Pastushko",
+          "url": "https://www.linkedin.com/in/annpastushko"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#3eRknTpFfyN",
+      "catalogueId": "3eRknTpFfyN"
+    },
+    "artem-s-icons": {
+      "name": "Artem's icons",
+      "authors": [
+        {
+          "name": "Artem Anufrij",
+          "url": "https://social.anufrij.de/@artem"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#7kq9MUEz7FM",
+      "catalogueId": "7kq9MUEz7FM"
+    },
+    "awesome-icons": {
+      "name": "Awesome Icons",
+      "authors": [
+        {
+          "name": "ferminrp",
+          "url": "https://github.com/ferminrp"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#AVm9HRgIGRV",
+      "catalogueId": "AVm9HRgIGRV"
+    },
+    "aws-architecture-icons": {
+      "name": "AWS Architecture Icons",
+      "authors": [
+        {
+          "name": "Narhari Motivaras",
+          "url": "https://github.com/Narhari-motivaras"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#2ZWlTmLYsLv",
+      "catalogueId": "2ZWlTmLYsLv"
+    },
+    "aws-serverless-icons-v2": {
+      "name": "AWS Serverless Icons v2",
+      "authors": [
+        {
+          "name": "slobodan",
+          "url": "https://slobodan.me"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#undefined"
+    },
+    "aws-serverless": {
+      "name": "AWS Serverless Icons",
+      "authors": [
+        {
+          "name": "Slobodan Stojanović",
+          "url": "https://slobodan.me"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#1pcNHEgp9Dy",
+      "catalogueId": "1pcNHEgp9Dy"
+    },
+    "azure-cloud-services": {
+      "name": "Azure cloud services icons",
+      "authors": [
+        {
+          "name": "Youri Tjang",
+          "url": "https://github.com/youritjang"
+        },
+        {
+          "name": "bothzoli",
+          "url": "https://github.com/bothzoli"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#5YhgvRl6h7f",
+      "catalogueId": "5YhgvRl6h7f"
+    },
+    "azure-general": {
+      "name": "Azure General",
+      "authors": [
+        {
+          "name": "Gordon Howes",
+          "url": "https://twitter.com/@7demonsrising"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#4mbu7fGVbUa",
+      "catalogueId": "4mbu7fGVbUa"
+    },
+    "azure-network": {
+      "name": "Azure Network",
+      "authors": [
+        {
+          "name": "Gordon Howes",
+          "url": "https://twitter.com/@7demonsrising"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#7Y2aicpCXyE",
+      "catalogueId": "7Y2aicpCXyE"
+    },
+    "cloud-design-patterns": {
+      "name": "Cloud Design Patterns",
+      "authors": [
+        {
+          "name": "Michel Caradec",
+          "url": "https://github.com/michelcaradec"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#JtMDpqcYZa",
+      "catalogueId": "JtMDpqcYZa"
+    },
+    "cloud": {
+      "name": "Cloud",
+      "authors": [
+        {
+          "name": "rfranzke",
+          "url": "https://twitter.com/rafaelfranzke"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#5OOWz0N1Bx6",
+      "catalogueId": "5OOWz0N1Bx6"
+    },
+    "data-platform": {
+      "name": "Data Platform",
+      "authors": [
+        {
+          "name": "Chu Quang Bach",
+          "url": "https://github.com/chuqbach"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#2Js6svFdFO9",
+      "catalogueId": "2Js6svFdFO9"
+    },
+    "data-science": {
+      "name": "Data Science logos",
+      "authors": [
+        {
+          "name": "Fares Hasan",
+          "url": "https://github.com/farisology"
+        },
+        {
+          "name": "Sarhan Samat",
+          "url": "https://github.com/SarhanAS"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#6HQVyIAmGxg",
+      "catalogueId": "6HQVyIAmGxg"
+    },
+    "data-viz": {
+      "name": "Data Viz",
+      "authors": [
+        {
+          "name": "dbs-sticky",
+          "url": "https://twitter.com/dbs_sticky"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#A3fEOoJwyZa",
+      "catalogueId": "A3fEOoJwyZa"
+    },
+    "db-eng": {
+      "name": "Database",
+      "authors": [
+        {
+          "name": "Stefan Oehrli",
+          "url": "https://github.com/oehrlis"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#3wNGI8ycyjj",
+      "catalogueId": "3wNGI8ycyjj"
+    },
+    "dev-ops": {
+      "name": "Dev Ops Icons",
+      "authors": [
+        {
+          "name": "Mark Sharpley",
+          "url": "https://www.marksharpley.co.uk"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#icrZZOlOr9",
+      "catalogueId": "icrZZOlOr9"
+    },
+    "drwnio": {
+      "name": "Software Logos",
+      "authors": [
+        {
+          "name": "drwnio.polyrand.net",
+          "url": "https://drwnio.polyrand.net/"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#55rgwmkZSXc",
+      "catalogueId": "55rgwmkZSXc"
+    },
+    "forms": {
+      "name": "Forms",
+      "authors": [
+        {
+          "name": "NicolasGoudry@G.Script",
+          "url": "https://github.com/g-script"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#4AutOE2P3k9",
+      "catalogueId": "4AutOE2P3k9"
+    },
+    "gcp-icons": {
+      "name": "GCP Icons",
+      "authors": [
+        {
+          "name": "Clément Bosc",
+          "url": "https://github.com/clementbosc"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#1rNfPL1yUT4",
+      "catalogueId": "1rNfPL1yUT4"
+    },
+    "github-icons": {
+      "name": "GitHub Git Icons",
+      "authors": [
+        {
+          "name": "marwinburesch",
+          "url": "https://github.com/marwinburesch"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#6e2Hj4oZxbi",
+      "catalogueId": "6e2Hj4oZxbi"
+    },
+    "google-icons": {
+      "name": "Google Icons",
+      "authors": [
+        {
+          "name": "Marcus Guidoti",
+          "url": "https://github.com/mguidoti"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#94sCXDtBAOl",
+      "catalogueId": "94sCXDtBAOl"
+    },
+    "icons": {
+      "name": "Icons",
+      "authors": [
+        {
+          "name": "xxxDeveloper",
+          "url": "https://github.com/xxxDeveloper"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#2vmqnBscFMU",
+      "catalogueId": "2vmqnBscFMU"
+    },
+    "it-logos-extra": {
+      "name": "IT Logos",
+      "authors": [
+        {
+          "name": "Pierre Clainchard",
+          "url": "https://github.com/pclainchard"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#9WHt2cojRbW",
+      "catalogueId": "9WHt2cojRbW"
+    },
+    "it-logos": {
+      "name": "IT Logos",
+      "authors": [
+        {
+          "name": "Pierre Clainchard",
+          "url": "https://github.com/pclainchard"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#9WHt2cojRbW",
+      "catalogueId": "9WHt2cojRbW"
+    },
+    "microsoft-azure-cloud-icons": {
+      "name": "Microsoft Azure cloud icons",
+      "authors": [
+        {
+          "name": "Suresh Sethuramaswamy",
+          "url": "https://www.linkedin.com/in/sureshsethu/"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#7l9kkXvgxdJ",
+      "catalogueId": "7l9kkXvgxdJ"
+    },
+    "network-topology-icons": {
+      "name": "Network topology icons",
+      "authors": [
+        {
+          "name": "dwelle",
+          "url": "https://twitter.com/dluzar"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#5AFQOIRuFn5",
+      "catalogueId": "5AFQOIRuFn5"
+    },
+    "post-it": {
+      "name": "Sticky Notes",
+      "authors": [
+        {
+          "name": "ferminrp",
+          "url": "https://github.com/ferminrp"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#1GackrBWvTI",
+      "catalogueId": "1GackrBWvTI"
+    },
+    "redis-grafana": {
+      "name": "Redis Grafana",
+      "authors": [
+        {
+          "name": "mikhailredis",
+          "url": "https://github.com/mikhailredis"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#5SncTBdiigf",
+      "catalogueId": "5SncTBdiigf"
+    },
+    "robots": {
+      "name": "Robots",
+      "authors": [
+        {
+          "name": "Kaligule",
+          "url": "https://schauderbasis.de"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#jXpa3f12fQ",
+      "catalogueId": "jXpa3f12fQ"
+    },
+    "snowflake-iconography": {
+      "name": "Snowflake Iconography",
+      "authors": [
+        {
+          "name": "Patrick Cuba",
+          "url": "https://github.com/PatrickCuba"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#3EXCvk6KjSJ",
+      "catalogueId": "3EXCvk6KjSJ"
+    },
+    "software-architecture": {
+      "name": "Software Architecture",
+      "authors": [
+        {
+          "name": "Youri Tjang",
+          "url": "https://github.com/youritjang"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#mzQjGLHnDi",
+      "catalogueId": "mzQjGLHnDi"
+    },
+    "some-handdrawn-signs": {
+      "name": "some-handdrawn-signs",
+      "authors": [
+        {
+          "name": "Marc",
+          "url": "https://github.com/kwirke"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#fPC31YYF7J",
+      "catalogueId": "fPC31YYF7J"
+    },
+    "storytelling": {
+      "name": "Storytelling",
+      "authors": [
+        {
+          "name": "drwnio.polyrand.net",
+          "url": "https://drwnio.polyrand.net/"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#7JW0nUyIW2R",
+      "catalogueId": "7JW0nUyIW2R"
+    },
+    "system-design-template": {
+      "name": "System Design Template",
+      "authors": [
+        {
+          "name": "James Wiens",
+          "url": "https://github.com/aretecode"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#4DI8NDC3gSh",
+      "catalogueId": "4DI8NDC3gSh"
+    },
+    "system-design": {
+      "name": "System Design Components",
+      "authors": [
+        {
+          "name": "Rohan Pithadiya",
+          "url": "https://github.com/Rohanpithadiya"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#4SlkJRmBgDQ",
+      "catalogueId": "4SlkJRmBgDQ"
+    },
+    "technology-logos": {
+      "name": "Technology Logos",
+      "authors": [
+        {
+          "name": "Matthias Haeussler",
+          "url": "https://twitter.com/maeddes"
+        }
+      ],
+      "catalogue": "https://libraries.excalidraw.com/?target=_blank#Aqkp5tXQHd6",
+      "catalogueId": "Aqkp5tXQHd6"
+    }
+  }
+}

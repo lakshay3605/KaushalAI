@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "generated": "2026-08-29T00:41:54.533Z",
+  "policy": "Structural statistics only. No labels, page names, file names, paths, hostnames, URLs or business strings from the analysed diagrams appear in this file. SHA-256 digests are integrity anchors, not content.",
+  "corpus": {
+    "files": 5,
+    "pages": 7,
+    "cells": 750,
+    "vertices": 568,
+    "edges": 165,
+    "containers": 19,
+    "labelledCells": 329,
+    "embeddedImagePlacements": 97,
+    "matchedCustomLibraryIcons": 20,
+    "distinctCustomIconsUsed": 9,
+    "externalImageReferences": 11
+  },
+  "sources": [
+    {
+      "id": "ref-01",
+      "role": "multi-page exploration",
+      "sha256": "47f53d2afde2ed82236d3b12d1b8818c28bda8cbcce4b9d9698d0f82cce36d09",
+      "bytes": 7663202,
+      "drawioVersion": "29.0.3",
+      "pageCount": 3,
+      "pages": [
+        {
+          "compressed": false,
+          "vertices": 136,
+          "edges": 35,
+          "containers": 1,
+          "gridVisible": false,
+          "gridSize": "10",
+          "index": 0
+        },
+        {
+          "compressed": false,
+          "vertices": 12,
+          "edges": 0,
+          "containers": 0,
+          "gridVisible": true,
+          "gridSize": "10",
+          "index": 1
+        },
+        {
+          "compressed": false,
+          "vertices": 3,
+          "edges": 0,
+          "containers": 0,
+          "gridVisible": true,
+          "gridSize": "10",
+          "index": 2
+        }
+      ]
+    },
+    {
+      "id": "ref-02",
+      "role": "single-page architecture",
+      "sha256": "e234546fa01e8b116e68c51185b56974fc08e571b6fe0a6792ef56f1a43e3c50",
+      "bytes": 4810272,
+      "drawioVersion": "29.0.3",
+      "pageCount": 1,
+      "pages": [
+        {
+          "compressed": false,
+          "vertices": 100,
+          "edges": 29,
+          "containers": 2,
+          "gridVisible": false,
+          "gridSize": "10",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "id": "ref-03",
+      "role": "detailed single-page architecture",
+      "sha256": "557d2df81127b89d41265cb30f158e75bbcb03fe7cf817972f4d2b026630c251",
+      "bytes": 617700,
+      "drawioVersion": "29.0.3",
+      "pageCount": 1,
+      "pages": [
+        {
+          "compressed": false,
+          "vertices": 175,
+          "edges": 54,
+          "containers": 4,
+          "gridVisible": false,
+          "gridSize": "10",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "id": "ref-04",
+      "role": "single-page architecture",
+      "sha256": "c155a2a4652b027d87589dd644691002fc009d7eb6b79ad82a9aba4a4af0d30c",
+      "bytes": 691634,
+      "drawioVersion": "29.0.3",
+      "pageCount": 1,
+      "pages": [
+        {
+          "compressed": false,
+          "vertices": 74,
+          "edges": 31,
+          "containers": 6,
+          "gridVisible": true,
+          "gridSize": "10",
+          "index": 0
+        }
+      ]
+    },
+    {
+      "id": "ref-05",
+      "role": "single-page architecture",
+      "sha256": "81195b8c00efc74d29896df70a4dff3c433805d15d1090a5265ae4bc904b6c92",
+      "bytes": 252888,
+      "drawioVersion": "29.0.3",
+      "pageCount": 1,
+      "pages": [
+        {
+          "compressed": false,
+          "vertices": 68,
+          "edges": 16,
+          "containers": 6,
+          "gridVisible": false,
+          "gridSize": "10",
+          "index": 0
+        }
+      ]
+    }
+  ],
+  "conventions": [
+    {
+      "id": "edge-routing",
+      "statement": "Connectors use orthogonal routing, not straight or curved lines.",
+      "evidence": {
+        "top": "orthogonalEdgeStyle",
+        "count": 142,
+        "share": 0.861,
+        "total": 165
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "edge-arrowheads",
+      "statement": "A single filled \"classic\" arrowhead marks the target end; the source end is bare.",
+      "evidence": {
+        "top": "start=none;end=classic",
+        "count": 141,
+        "share": 0.855
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "edge-weight",
+      "statement": "strokeWidth 2 is the most common connector weight (a plurality, not a majority); 1 appears on light/secondary links and 3 on emphasised ones. Any of 1-3 is in-style.",
+      "evidence": {
+        "histogram": [
+          {
+            "value": "2",
+            "count": 78
+          },
+          {
+            "value": "1",
+            "count": 46
+          },
+          {
+            "value": "3",
+            "count": 39
+          },
+          {
+            "value": "4",
+            "count": 2
+          }
+        ],
+        "total": 165,
+        "pluralityShare": 0.473
+      },
+      "confidence": "medium",
+      "scope": "all references"
+    },
+    {
+      "id": "edge-dash-semantics",
+      "statement": "Solid connectors carry the primary flow; dashed connectors carry asynchronous, scheduled, reference or control relationships. Roughly a quarter of connectors are dashed.",
+      "evidence": {
+        "solid": 126,
+        "dashed": 39,
+        "dashedShare": 0.236
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "reading-direction",
+      "statement": "Primary flow reads left to right; vertical links are reserved for outputs, storage and secondary fan-out.",
+      "evidence": {
+        "horizontalEdges": 71,
+        "verticalEdges": 29,
+        "diagonalEdges": 40,
+        "ratio": 2.45
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "flow-pitch",
+      "statement": "Connected nodes are spaced roughly 320px apart horizontally and 190px vertically (centre to centre).",
+      "evidence": {
+        "horizontal": {
+          "p25": 216,
+          "p50": 321,
+          "p75": 582,
+          "n": 71
+        },
+        "vertical": {
+          "p25": 173,
+          "p50": 191,
+          "p75": 254,
+          "n": 29
+        }
+      },
+      "confidence": "medium",
+      "scope": "all references"
+    },
+    {
+      "id": "icon-size",
+      "statement": "AWS service icons sit at ~75-78px square; embedded third-party logos are drawn larger and less uniformly.",
+      "evidence": {
+        "aws4Top": [
+          {
+            "value": "75x78",
+            "count": 19
+          },
+          {
+            "value": "68x68",
+            "count": 13
+          },
+          {
+            "value": "78x78",
+            "count": 12
+          }
+        ],
+        "iconTop": [
+          {
+            "value": "64x64",
+            "count": 12
+          },
+          {
+            "value": "60x60",
+            "count": 7
+          },
+          {
+            "value": "157x119.6",
+            "count": 3
+          }
+        ]
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "icon-label-placement",
+      "statement": "Service icons carry their caption below the icon (verticalLabelPosition=bottom, verticalAlign=top), centred.",
+      "evidence": {
+        "top": "vlp=bottom;va=top",
+        "count": 184,
+        "distribution": [
+          {
+            "value": "vlp=bottom;va=top",
+            "count": 184
+          },
+          {
+            "value": "vlp=-;va=-",
+            "count": 10
+          }
+        ]
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "type-scale",
+      "statement": "Two type sizes carry almost everything: 12px for node captions and body text, 16px for section and container headings.",
+      "evidence": {
+        "histogram": [
+          {
+            "value": "12",
+            "count": 99
+          },
+          {
+            "value": "16",
+            "count": 46
+          },
+          {
+            "value": "14",
+            "count": 1
+          },
+          {
+            "value": "8",
+            "count": 1
+          }
+        ],
+        "total": 147
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "font-colour",
+      "statement": "Default text colour is AWS squid-ink #232F3E; white is used only on filled/dark shapes.",
+      "evidence": {
+        "histogram": [
+          {
+            "value": "#232F3E",
+            "count": 88
+          },
+          {
+            "value": "#ffffff",
+            "count": 18
+          },
+          {
+            "value": "#333333",
+            "count": 10
+          },
+          {
+            "value": "#000000",
+            "count": 5
+          },
+          {
+            "value": "#147EBA",
+            "count": 4
+          }
+        ]
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "font-family",
+      "statement": "No font family is ever set - every diagram inherits the draw.io default (Helvetica).",
+      "evidence": {
+        "explicitFontFamilyDeclarations": 0
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "corners-and-shadows",
+      "statement": "Shapes are square-cornered with no drop shadows; rounded corners appear once across the whole corpus.",
+      "evidence": {
+        "note": "rounded=1 and shadow=1 each observed once"
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "surface-fill",
+      "statement": "Containers and boundaries are unfilled (fillColor=none); colour is carried by the stroke and by service icons.",
+      "evidence": {
+        "fillNone": 225,
+        "topFills": [
+          {
+            "value": "none",
+            "count": 225
+          },
+          {
+            "value": "default",
+            "count": 57
+          },
+          {
+            "value": "#7AA116",
+            "count": 34
+          },
+          {
+            "value": "#ED7100",
+            "count": 31
+          },
+          {
+            "value": "#FFFFFF",
+            "count": 11
+          }
+        ]
+      },
+      "confidence": "medium",
+      "scope": "all references"
+    },
+    {
+      "id": "boundary-vocabulary",
+      "statement": "The only AWS group shape used is the AWS Cloud boundary (group_aws_cloud_alt); everything else is grouped with plain unfilled rectangles in a semantic stroke colour, or with swimlanes for tiers. VPC/subnet/region nesting is never used.",
+      "evidence": {
+        "grIcons": [
+          {
+            "value": "mxgraph.aws4.group_aws_cloud_alt",
+            "count": 2
+          },
+          {
+            "value": "mxgraph.aws4.group_aws_step_functions_workflow",
+            "count": 1
+          }
+        ],
+        "containers": 19
+      },
+      "confidence": "medium",
+      "scope": "all references"
+    },
+    {
+      "id": "grid-snapping",
+      "statement": "Placement is visual rather than grid-snapped - only a minority of coordinates land on a 10px multiple.",
+      "evidence": {
+        "coordsOnGrid10": 150,
+        "coordsChecked": 1034,
+        "share": 0.145
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "icon-sourcing",
+      "statement": "Most AWS services are drawn with built-in mxgraph.aws4 shapes; the custom library supplies icons the built-in set lacks (Bedrock AgentCore, Timestream, Forecast). Third-party products are pasted bitmaps.",
+      "evidence": {
+        "embeddedImagePlacements": 97,
+        "matchedToCustomLibrary": 20,
+        "resIcons": [
+          {
+            "value": "mxgraph.aws4.lambda",
+            "count": 14
+          },
+          {
+            "value": "mxgraph.aws4.batch",
+            "count": 5
+          },
+          {
+            "value": "mxgraph.aws4.sns",
+            "count": 5
+          },
+          {
+            "value": "mxgraph.aws4.elasticsearch_service",
+            "count": 3
+          },
+          {
+            "value": "mxgraph.aws4.s3",
+            "count": 3
+          },
+          {
+            "value": "mxgraph.aws4.dynamodb",
+            "count": 2
+          }
+        ]
+      },
+      "confidence": "high",
+      "scope": "all references"
+    },
+    {
+      "id": "edge-labels",
+      "statement": "Connectors are labelled sparingly, with short verb phrases; labels sit on the line with an opaque background.",
+      "evidence": {
+        "edges": 165,
+        "labelled": 17,
+        "share": 0.103
+      },
+      "confidence": "medium",
+      "scope": "all references"
+    }
+  ],
+  "tokens": {
+    "fillColor": [
+      {
+        "value": "none",
+        "count": 225
+      },
+      {
+        "value": "default",
+        "count": 57
+      },
+      {
+        "value": "#7AA116",
+        "count": 34
+      },
+      {
+        "value": "#ED7100",
+        "count": 31
+      },
+      {
+        "value": "#FFFFFF",
+        "count": 11
+      },
+      {
+        "value": "#0050ef",
+        "count": 9
+      },
+      {
+        "value": "#0085FC",
+        "count": 5
+      },
+      {
+        "value": "#BC1356",
+        "count": 5
+      },
+      {
+        "value": "#1ba1e2",
+        "count": 4
+      },
+      {
+        "value": "#8C4FFF",
+        "count": 4
+      },
+      {
+        "value": "#C925D1",
+        "count": 4
+      },
+      {
+        "value": "#E7157B",
+        "count": 4
+      }
+    ],
+    "strokeColor": [
+      {
+        "value": "none",
+        "count": 260
+      },
+      {
+        "value": "inherit",
+        "count": 44
+      },
+      {
+        "value": "#ffffff",
+        "count": 42
+      },
+      {
+        "value": "#FF0000",
+        "count": 16
+      },
+      {
+        "value": "default",
+        "count": 13
+      },
+      {
+        "value": "#2D2D2D",
+        "count": 11
+      },
+      {
+        "value": "#001DBC",
+        "count": 9
+      },
+      {
+        "value": "#000000",
+        "count": 8
+      },
+      {
+        "value": "#009900",
+        "count": 8
+      },
+      {
+        "value": "#CC0000",
+        "count": 6
+      },
+      {
+        "value": "#006600",
+        "count": 4
+      },
+      {
+        "value": "#006EAF",
+        "count": 4
+      }
+    ],
+    "fontColor": [
+      {
+        "value": "#232F3E",
+        "count": 88
+      },
+      {
+        "value": "#ffffff",
+        "count": 18
+      },
+      {
+        "value": "#333333",
+        "count": 10
+      },
+      {
+        "value": "#000000",
+        "count": 5
+      },
+      {
+        "value": "#147EBA",
+        "count": 4
+      },
+      {
+        "value": "#5A6C86",
+        "count": 1
+      },
+      {
+        "value": "#CD2264",
+        "count": 1
+      }
+    ],
+    "fontSize": [
+      {
+        "value": "12",
+        "count": 99
+      },
+      {
+        "value": "16",
+        "count": 46
+      },
+      {
+        "value": "14",
+        "count": 1
+      },
+      {
+        "value": "8",
+        "count": 1
+      }
+    ],
+    "shapes": [
+      {
+        "value": "rectangle",
+        "count": 280
+      },
+      {
+        "value": "image",
+        "count": 98
+      },
+      {
+        "value": "mxgraph.aws4.resourceIcon",
+        "count": 42
+      },
+      {
+        "value": "partialRectangle",
+        "count": 33
+      },
+      {
+        "value": "mxgraph.aws4.bucket_with_objects",
+        "count": 22
+      },
+      {
+        "value": "swimlane",
+        "count": 12
+      },
+      {
+        "value": "ellipse",
+        "count": 11
+      },
+      {
+        "value": "mxgraph.bootstrap.topButton",
+        "count": 11
+      },
+      {
+        "value": "tableRow",
+        "count": 11
+      },
+      {
+        "value": "mxgraph.aws4.lambda_function",
+        "count": 10
+      },
+      {
+        "value": "mxgraph.aws4.bucket",
+        "count": 6
+      },
+      {
+        "value": "mxgraph.bootstrap.rrect",
+        "count": 5
+      },
+      {
+        "value": "mxgraph.aws4.group",
+        "count": 3
+      },
+      {
+        "value": "mxgraph.veeam2.report",
+        "count": 3
+      },
+      {
+        "value": "note",
+        "count": 3
+      }
+    ],
+    "iconSizes": [
+      {
+        "value": "64x64",
+        "count": 12
+      },
+      {
+        "value": "60x60",
+        "count": 7
+      },
+      {
+        "value": "157x119.6",
+        "count": 3
+      },
+      {
+        "value": "197.5x197.5",
+        "count": 3
+      },
+      {
+        "value": "75x90.6",
+        "count": 3
+      },
+      {
+        "value": "88.72x67.59",
+        "count": 3
+      },
+      {
+        "value": "102x102",
+        "count": 2
+      },
+      {
+        "value": "118.33x120",
+        "count": 2
+      }
+    ],
+    "aws4Sizes": [
+      {
+        "value": "75x78",
+        "count": 19
+      },
+      {
+        "value": "68x68",
+        "count": 13
+      },
+      {
+        "value": "78x78",
+        "count": 12
+      },
+      {
+        "value": "56x56",
+        "count": 4
+      },
+      {
+        "value": "60.53x60.53",
+        "count": 3
+      },
+      {
+        "value": "69x69",
+        "count": 3
+      },
+      {
+        "value": "80x80",
+        "count": 3
+      },
+      {
+        "value": "42x43.68",
+        "count": 2
+      }
+    ],
+    "edgeRouting": [
+      {
+        "value": "orthogonalEdgeStyle",
+        "count": 142
+      },
+      {
+        "value": "straight",
+        "count": 23
+      }
+    ],
+    "edgeArrows": [
+      {
+        "value": "start=none;end=classic",
+        "count": 141
+      },
+      {
+        "value": "start=none;end=diamondThin",
+        "count": 8
+      },
+      {
+        "value": "start=none;end=oval",
+        "count": 4
+      },
+      {
+        "value": "start=oval;end=none",
+        "count": 4
+      },
+      {
+        "value": "start=classic;end=none",
+        "count": 3
+      }
+    ],
+    "edgeStrokeWidth": [
+      {
+        "value": "2",
+        "count": 78
+      },
+      {
+        "value": "1",
+        "count": 46
+      },
+      {
+        "value": "3",
+        "count": 39
+      },
+      {
+        "value": "4",
+        "count": 2
+      }
+    ],
+    "labelPlacement": [
+      {
+        "value": "vlp=bottom;va=top",
+        "count": 184
+      },
+      {
+        "value": "vlp=-;va=-",
+        "count": 10
+      }
+    ],
+    "groupIcons": [
+      {
+        "value": "mxgraph.aws4.group_aws_cloud_alt",
+        "count": 2
+      },
+      {
+        "value": "mxgraph.aws4.group_aws_step_functions_workflow",
+        "count": 1
+      }
+    ],
+    "builtInServiceIcons": [
+      {
+        "value": "mxgraph.aws4.lambda",
+        "count": 14
+      },
+      {
+        "value": "mxgraph.aws4.batch",
+        "count": 5
+      },
+      {
+        "value": "mxgraph.aws4.sns",
+        "count": 5
+      },
+      {
+        "value": "mxgraph.aws4.elasticsearch_service",
+        "count": 3
+      },
+      {
+        "value": "mxgraph.aws4.s3",
+        "count": 3
+      },
+      {
+        "value": "mxgraph.aws4.dynamodb",
+        "count": 2
+      },
+      {
+        "value": "mxgraph.aws4.neptune",
+        "count": 2
+      },
+      {
+        "value": "mxgraph.aws4.step_functions",
+        "count": 2
+      },
+      {
+        "value": "mxgraph.aws4.athena",
+        "count": 1
+      },
+      {
+        "value": "mxgraph.aws4.bedrock",
+        "count": 1
+      },
+      {
+        "value": "mxgraph.aws4.cloudwatch_2",
+        "count": 1
+      },
+      {
+        "value": "mxgraph.aws4.cost_explorer",
+        "count": 1
+      },
+      {
+        "value": "mxgraph.aws4.ec2",
+        "count": 1
+      },
+      {
+        "value": "mxgraph.aws4.eventbridge",
+        "count": 1
+      }
+    ],
+    "recurringStyleSignatures": [
+      {
+        "value": "align=center;fillColor=none;html=1;rounded=0;strokeColor=none;text;verticalAlign=middle;whiteSpace=wrap",
+        "count": 129
+      },
+      {
+        "value": "aspect=fixed;imageAspect=0;labelBackgroundColor=default;shape=image;verticalAlign=top;verticalLabelPosition=bottom",
+        "count": 62
+      },
+      {
+        "value": "align=center;fillColor=default;html=1;rounded=0;strokeColor=none;text;verticalAlign=middle;whiteSpace=wrap",
+        "count": 49
+      },
+      {
+        "value": "bottom=0;connectable=0;fillColor=none;fontSize=16;html=1;left=0;overflow=hidden;pointerEvents=1;right=0;shape=partialRectangle;strokeColor=inherit;top=0;whiteSpace=wrap",
+        "count": 33
+      },
+      {
+        "value": "align=center;aspect=fixed;dashed=0;fillColor=#7AA116;fontColor=#232F3E;fontSize=12;fontStyle=0;gradientColor=none;html=1;outlineConnect=0;pointerEvents=1;shape=mxgraph.aws4.bucket_with_objects;sketch=0;strokeColor=none;verticalAlign=top;verticalLabelPosition=bottom",
+        "count": 22
+      },
+      {
+        "value": "aspect=fixed;imageAspect=0;shape=image;verticalAlign=top;verticalLabelPosition=bottom",
+        "count": 17
+      },
+      {
+        "value": "align=center;html=1;rounded=0;text;verticalAlign=middle;whiteSpace=wrap",
+        "count": 16
+      },
+      {
+        "value": "align=center;edgeLabel;html=1;labelBackgroundColor=#E6E6E6;resizable=0;verticalAlign=middle",
+        "count": 15
+      },
+      {
+        "value": "edgeStyle=orthogonalEdgeStyle;html=1;jettySize=auto;orthogonalLoop=1;rounded=0;strokeWidth=2",
+        "count": 15
+      },
+      {
+        "value": "align=center;aspect=fixed;dashed=0;fillColor=#ED7100;fontColor=#232F3E;fontSize=12;fontStyle=0;html=1;outlineConnect=0;resIcon=mxgraph.aws4.lambda;shape=mxgraph.aws4.resourceIcon;sketch=0;strokeColor=#ffffff;verticalAlign=top;verticalLabelPosition=bottom",
+        "count": 14
+      },
+      {
+        "value": "group",
+        "count": 12
+      },
+      {
+        "value": "bottom=0;collapsible=0;dropTarget=0;fillColor=none;fontSize=16;horizontal=0;left=0;portConstraint=eastwest;right=0;shape=tableRow;startSize=0;strokeColor=inherit;swimlaneBody=0;swimlaneHead=0;top=0",
+        "count": 11
+      }
+    ],
+    "boundarySignatures": [
+      {
+        "value": "fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;swimlane",
+        "count": 4
+      },
+      {
+        "value": "childLayout=stackLayout;collapsible=0;fillColor=none;fontStyle=0;horizontal=1;horizontalStack=0;html=1;marginBottom=0;resizeLast=0;resizeParent=1;resizeParentMax=0;startSize=0;strokeColor=none;swimlane;whiteSpace=wrap",
+        "count": 3
+      },
+      {
+        "value": "childLayout=tableLayout;collapsible=0;container=1;fontSize=16;shape=table;startSize=24;strokeColor=default",
+        "count": 2
+      },
+      {
+        "value": "horizontal=0;html=1;rotation=90;startSize=41;swimlane;whiteSpace=wrap",
+        "count": 2
+      },
+      {
+        "value": "align=left;collapsible=0;container=1;dashed=0;fillColor=none;fontColor=#232F3E;fontSize=12;fontStyle=0;grIcon=mxgraph.aws4.group_aws_cloud_alt;gradientColor=none;html=1;imageBorder=light-dark(#87ceea, #ededed);outlineConnect=0;pointerEvents=0;recursiveResize=0;shape=mxgraph.aws4.group;spacingLeft=30;strokeColor=#232F3E;verticalAlign=top;whiteSpace=wrap",
+        "count": 1
+      },
+      {
+        "value": "align=left;collapsible=0;container=1;dashed=0;fillColor=none;fontColor=#232F3E;fontSize=12;fontStyle=0;grIcon=mxgraph.aws4.group_aws_cloud_alt;gradientColor=none;html=1;outlineConnect=0;pointerEvents=0;recursiveResize=0;shape=mxgraph.aws4.group;spacingLeft=30;strokeColor=#232F3E;verticalAlign=top;whiteSpace=wrap",
+        "count": 1
+      },
+      {
+        "value": "align=left;collapsible=0;container=1;dashed=0;fillColor=none;fontColor=#CD2264;fontSize=12;fontStyle=0;grIcon=mxgraph.aws4.group_aws_step_functions_workflow;gradientColor=none;html=1;outlineConnect=0;pointerEvents=0;recursiveResize=0;shape=mxgraph.aws4.group;spacingLeft=30;strokeColor=#CD2264;verticalAlign=top;whiteSpace=wrap",
+        "count": 1
+      },
+      {
+        "value": "align=left;collapsible=0;container=1;expand=0;html=1;rectStyle=rounded;shape=mxgraph.bpmn.task2;size=10;taskMarker=script;whiteSpace=wrap",
+        "count": 1
+      }
+    ],
+    "edgeLabelSignatures": [
+      {
+        "value": "align=center;edgeLabel;html=1;labelBackgroundColor=#E6E6E6;resizable=0;verticalAlign=middle",
+        "count": 15
+      },
+      {
+        "value": "align=center;edgeLabel;html=1;labelBackgroundColor=#E6E6E6;resizable=0;rotation=90;verticalAlign=middle",
+        "count": 1
+      },
+      {
+        "value": "align=center;edgeLabel;html=1;resizable=0;verticalAlign=middle",
+        "count": 1
+      }
+    ]
+  },
+  "history": []
+}
