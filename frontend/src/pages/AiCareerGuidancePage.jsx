@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import PageBanner from '../components/common/PageBanner';
 import { 
@@ -12,15 +12,17 @@ import { apiRequest } from '../api';
 export default function AiCareerGuidancePage() {
   const { showToast, appliedJobIds, toggleApplyJob } = useApp();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [chatMessages, setChatMessages] = useState([
     {
       sender: 'ai',
-      text: 'Hi Rohit! 👋 I analyzed your completed modules in PACS Management. Based on your 85% score in Cooperative Operations, you have a 92% readiness match for Cooperative Manager and Rural Finance Officer positions!'
+      text: 'Hi Rohit! 👋 I am your AI Career Assistant. Ask me anything about courses, exams, or cooperative careers, or try one of the suggestions below!'
     }
   ]);
   const [chatInput, setChatInput] = useState('');
   const [loadingAi, setLoadingAi] = useState(false);
+  const initialPromptProcessed = useRef(false);
 
   const careerPaths = [
     {
@@ -126,31 +128,47 @@ export default function AiCareerGuidancePage() {
         body: JSON.stringify({ query: text, role: 'TRAINEE' })
       }).catch(() => null);
 
-      if (res && res.answer) {
-        setChatMessages(prev => [...prev, {
-          sender: 'ai',
-          text: res.answer,
-          sources: res.sources
-        }]);
-      } else {
-        // Fallback intelligent simulated career coach response
-        let reply = "Based on NCCT cooperative competency frameworks, strengthening your 'Advanced Excel & MIS' and 'PACS Statutory Accounting' skills will accelerate your qualification for Managerial roles.";
-        if (text.toLowerCase().includes('job')) {
-          reply = "I found 3 open positions in Jharkhand PACS that value your certified 'PACS Operations' credential. You meet 92% of the prerequisite criteria!";
-        } else if (text.toLowerCase().includes('course') || text.toLowerCase().includes('learn')) {
-          reply = "I recommend enrolling in 'Digital Tools for PACS' (Module 5). Completing it will close your digital tools skill gap from 60% to 85%.";
+      setTimeout(() => {
+        if (res && res.answer) {
+          setChatMessages(prev => [...prev, {
+            sender: 'ai',
+            text: res.answer,
+            sources: res.sources
+          }]);
+        } else {
+          // Fallback intelligent simulated career coach response
+          let reply = "Based on NCCT cooperative competency frameworks, strengthening your 'Advanced Excel & MIS' and 'PACS Statutory Accounting' skills will accelerate your qualification for Managerial roles.";
+          if (text.toLowerCase().includes('job')) {
+            reply = "I found 3 open positions in Jharkhand PACS that value your certified 'PACS Operations' credential. You meet 92% of the prerequisite criteria!";
+          } else if (text.toLowerCase().includes('course') || text.toLowerCase().includes('learn')) {
+            reply = "I recommend enrolling in 'Digital Tools for PACS' (Module 5). Completing it will close your digital tools skill gap from 60% to 85%.";
+          } else if (text.toLowerCase().includes('lacking') || text.toLowerCase().includes('lack')) {
+            reply = "Based on your current profile, you are lacking in **'Digital Tools' (60%)** and **'Leadership' (65%)**. To become fully job-ready for a Cooperative Manager role, I recommend completing the 'Digital Tools for PACS' and 'Cooperative Leadership' modules. This will boost your overall readiness by 15%.";
+          }
+          setChatMessages(prev => [...prev, { sender: 'ai', text: reply }]);
         }
-        setChatMessages(prev => [...prev, { sender: 'ai', text: reply }]);
-      }
+        setLoadingAi(false);
+      }, 1200);
+      
     } catch (e) {
-      setChatMessages(prev => [...prev, { 
-        sender: 'ai', 
-        text: 'To enter the cooperative banking cadre, acquire 75%+ attendance in PACS Operations and complete credit underwriting modules.' 
-      }]);
-    } finally {
-      setLoadingAi(false);
+      setTimeout(() => {
+        setChatMessages(prev => [...prev, { 
+          sender: 'ai', 
+          text: 'To enter the cooperative banking cadre, acquire 75%+ attendance in PACS Operations and complete credit underwriting modules.' 
+        }]);
+        setLoadingAi(false);
+      }, 1200);
     }
   };
+
+  useEffect(() => {
+    if (location.state?.initialPrompt && !initialPromptProcessed.current) {
+      initialPromptProcessed.current = true;
+      handleSendMessage(location.state.initialPrompt);
+      // Clean up the location state so it doesn't refire on reload
+      navigate(location.pathname, { replace: true, state: {} });
+    }
+  }, [location.state, navigate]);
 
   return (
     <div className="space-y-6">

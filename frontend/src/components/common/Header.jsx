@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { 
@@ -21,6 +21,19 @@ export default function Header() {
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [loginId, setLoginId] = useState('ADMIN');
+  const [loginPassword, setLoginPassword] = useState('ADMIN');
+  const [loginRole, setLoginRole] = useState('TRAINEE');
+
+  useEffect(() => {
+    if (isLandingPage) {
+      const timer = setTimeout(() => {
+        setIsLoginModalOpen(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isLandingPage]);
 
   const unreadNotifCount = notifications.filter(n => n.unread).length;
 
@@ -193,10 +206,7 @@ export default function Header() {
             <>
               {/* Login Button (White outline button matching screenshot) */}
               <button
-                onClick={() => {
-                  switchRole('TRAINEE');
-                  navigate('/dashboard');
-                }}
+                onClick={() => setIsLoginModalOpen(true)}
                 className="px-4 py-1.5 rounded-lg border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs font-semibold transition"
               >
                 Login
@@ -204,10 +214,7 @@ export default function Header() {
 
               {/* Get Started Button (Solid dark green matching screenshot) */}
               <button
-                onClick={() => {
-                  switchRole('TRAINEE');
-                  navigate('/dashboard');
-                }}
+                onClick={() => setIsLoginModalOpen(true)}
                 className="px-4 py-1.5 rounded-lg bg-[#0B6A45] hover:bg-[#085536] text-white text-xs font-semibold transition shadow-2xs"
               >
                 Get Started
@@ -323,9 +330,8 @@ export default function Header() {
             <div className="pt-3 flex flex-col gap-2">
               <button
                 onClick={() => {
-                  switchRole('TRAINEE');
-                  navigate('/dashboard');
                   setMobileMenuOpen(false);
+                  setIsLoginModalOpen(true);
                 }}
                 className="w-full py-2.5 bg-[#0B6A45] hover:bg-[#085536] text-white text-xs font-semibold rounded-lg text-center shadow-xs"
               >
@@ -333,9 +339,8 @@ export default function Header() {
               </button>
               <button
                 onClick={() => {
-                  switchRole('TRAINEE');
-                  navigate('/dashboard');
                   setMobileMenuOpen(false);
+                  setIsLoginModalOpen(true);
                 }}
                 className="w-full py-2.5 border border-slate-300 text-slate-700 text-xs font-semibold rounded-lg text-center hover:bg-slate-50"
               >
@@ -343,6 +348,95 @@ export default function Header() {
               </button>
             </div>
           </nav>
+        </div>
+      )}
+
+      {/* Login Modal */}
+      {isLoginModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-md p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="relative p-6 border-b border-gray-100 bg-gradient-to-br from-[#056B46]/5 to-[#0B6A45]/10 flex flex-col items-center justify-center text-center">
+              <button 
+                onClick={() => setIsLoginModalOpen(false)}
+                className="absolute top-4 right-4 p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-white/60 transition shadow-2xs"
+              >
+                <X size={18} />
+              </button>
+              
+              <img 
+                src="/assets/emblem.png" 
+                alt="Emblem" 
+                className="h-10 w-auto object-contain mb-3 drop-shadow-sm"
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
+              <h3 className="text-xl font-black text-slate-900 tracking-tight">Login to KaushalAI</h3>
+              <p className="text-[11px] text-[#056B46] font-bold mt-1 uppercase tracking-wide">Cooperative Skill Ecosystem</p>
+            </div>
+            
+            <form 
+              onSubmit={(e) => {
+                e.preventDefault();
+                setIsLoginModalOpen(false);
+                switchRole(loginRole);
+                if (loginRole === 'TRAINEE') navigate('/dashboard');
+                else if (loginRole === 'CENTRE_OPERATOR') navigate('/kiosk');
+                else if (loginRole === 'RECRUITER') navigate('/recruiter');
+                else if (loginRole === 'ADMIN') navigate('/admin');
+              }}
+              className="p-5 space-y-4"
+            >
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">User ID / Email</label>
+                <input 
+                  type="text"
+                  value={loginId}
+                  onChange={(e) => setLoginId(e.target.value)}
+                  placeholder="e.g. SS202500873" 
+                  className="w-full px-3 py-2 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#056B46] focus:ring-1 focus:ring-[#056B46]"
+                  required
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Password</label>
+                <input 
+                  type="password"
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                  placeholder="••••••••" 
+                  className="w-full px-3 py-2 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#056B46] focus:ring-1 focus:ring-[#056B46]"
+                  required
+                />
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Role</label>
+                <select 
+                  value={loginRole}
+                  onChange={(e) => setLoginRole(e.target.value)}
+                  className="w-full px-3 py-2 bg-slate-50 border border-gray-200 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-[#056B46] focus:ring-1 focus:ring-[#056B46]"
+                >
+                  <option value="TRAINEE">Trainee</option>
+                  <option value="CENTRE_OPERATOR">Kiosk Worker</option>
+                  <option value="RECRUITER">Recruiter</option>
+                  <option value="ADMIN">NCCT Admin</option>
+                </select>
+              </div>
+              
+              <div className="pt-2">
+                <button 
+                  type="submit"
+                  className="w-full py-2.5 bg-[#0B6A45] hover:bg-[#085536] text-white text-xs font-semibold rounded-xl text-center shadow-2xs transition"
+                >
+                  Sign In
+                </button>
+              </div>
+              
+              <div className="text-center pt-2">
+                <p className="text-[10px] text-slate-500">
+                  Demo credentials: Any ID and Password will work to enter the prototype.
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </header>

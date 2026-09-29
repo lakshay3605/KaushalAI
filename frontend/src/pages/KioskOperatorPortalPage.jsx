@@ -31,6 +31,7 @@ export default function KioskOperatorPortalPage() {
   // Modals & Check-in Overlays
   const [qrModalOpen, setQrModalOpen] = useState(false);
   const [cameraModalOpen, setCameraModalOpen] = useState(false);
+  const [isScanningFace, setIsScanningFace] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [selectedTraineeModal, setSelectedTraineeModal] = useState(null);
   const [registerModalOpen, setRegisterModalOpen] = useState(false);
@@ -51,26 +52,53 @@ export default function KioskOperatorPortalPage() {
   // Local pending queue state for demonstrability
   const [localPendingCount, setLocalPendingCount] = useState(0);
 
+  // Auto-scan effect for Camera Modal
+  const videoRef = React.useRef(null);
+  const streamRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (cameraModalOpen) {
+      setIsScanningFace(true);
+
+      // Start webcam
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then((stream) => {
+          streamRef.current = stream;
+          if (videoRef.current) {
+            videoRef.current.srcObject = stream;
+          }
+        })
+        .catch((err) => {
+          console.error("Camera error:", err);
+          showToast("Camera access denied or unavailable", "error");
+        });
+
+      const timer = setTimeout(() => {
+        setIsScanningFace(false);
+        const rohit = {
+          traineeId: 'SS202500873',
+          name: 'Rohit Kumar',
+          programme: 'PACS Management Programme',
+          phone: '+91 98765 43210',
+          avatar: '/assets/rohit_kumar.jpg'
+        };
+        markAttendanceForTrainee(rohit, 'Camera INT8');
+        setCameraModalOpen(false);
+      }, 3500); // Made it 3.5s so they have time to see themselves on camera
+      return () => clearTimeout(timer);
+    } else {
+      // Stop webcam when modal closes
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current = null;
+      }
+    }
+  }, [cameraModalOpen]);
+
   // ----------------------------------------------------
   // DATA MODEL: Today's Attendance Records
   // ----------------------------------------------------
   const [attendanceRecords, setAttendanceRecords] = useState([
-    {
-      id: 'att-1',
-      traineeId: 'SS202500873',
-      name: 'Rohit Kumar',
-      programme: 'PACS Management Programme',
-      time: '09:42 AM',
-      method: 'QR Code',
-      status: 'Present',
-      avatar: '/assets/rohit_kumar.jpg',
-      attendanceRate: 85,
-      modulesCompleted: 8,
-      totalModules: 12,
-      assessmentsCompleted: 3,
-      totalAssessments: 4,
-      certificatesCount: 4
-    },
     {
       id: 'att-2',
       traineeId: 'SS202500912',
@@ -1012,18 +1040,36 @@ export default function KioskOperatorPortalPage() {
               
               {/* Camera Frame */}
               <div className="relative w-64 h-64 mx-auto rounded-full bg-black overflow-hidden flex items-center justify-center border-4 border-blue-500 shadow-xl">
+                <video
+                  ref={videoRef}
+                  autoPlay
+                  playsInline
+                  muted
+                  className="w-full h-full object-cover transform -scale-x-100"
+                />
+
+                {/* Fallback image if camera fails */}
                 <img
                   src="/assets/rohit_kumar.jpg"
-                  alt="Camera Face Frame"
-                  className="w-full h-full object-cover"
+                  alt="Camera Fallback"
+                  className="absolute inset-0 w-full h-full object-cover -z-10"
                 />
 
                 {/* Face Guide Oval */}
                 <div className="absolute inset-4 rounded-full border-2 border-dashed border-blue-300 animate-pulse" />
+                
+                {/* Scanning Animation */}
+                {isScanningFace && (
+                  <div className="absolute inset-0 bg-blue-500/20">
+                    <div className="w-full h-1 bg-blue-400 shadow-[0_0_15px_rgba(59,130,246,1)] animate-bounce" style={{ animationDuration: '1.5s' }}></div>
+                  </div>
+                )}
               </div>
 
               <div className="space-y-1">
-                <h4 className="text-sm font-extrabold text-slate-900">Position face inside circular guide</h4>
+                <h4 className="text-sm font-extrabold text-slate-900">
+                  {isScanningFace ? "Analyzing biometrics..." : "Face Detected!"}
+                </h4>
                 <p className="text-[11px] text-slate-500">
                   Identity Match Simulated • Hardware-agnostic camera check-in
                 </p>
@@ -1032,14 +1078,12 @@ export default function KioskOperatorPortalPage() {
               {/* Action Button */}
               <div className="pt-2">
                 <button
-                  onClick={() => {
-                    const rohit = masterTrainees[0];
-                    markAttendanceForTrainee(rohit, 'Camera INT8');
-                    setCameraModalOpen(false);
-                  }}
-                  className="w-full py-2.5 rounded-xl bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition shadow-sm"
+                  disabled={isScanningFace}
+                  className={`w-full py-2.5 rounded-xl text-white text-xs font-bold transition shadow-sm ${
+                    isScanningFace ? 'bg-blue-400 cursor-not-allowed' : 'bg-emerald-600'
+                  }`}
                 >
-                  Verify Identity & Mark Present
+                  {isScanningFace ? 'Scanning...' : 'Verified: Rohit Kumar'}
                 </button>
               </div>
 

@@ -17,12 +17,11 @@ export default function TraineeDashboard() {
   const handleAiSend = (e) => {
     e?.preventDefault();
     if (!aiInput.trim()) return;
-    setIsAiCoachOpen(true);
+    navigate('/career', { state: { initialPrompt: aiInput } });
   };
 
   const handlePromptClick = (prompt) => {
-    setAiInput(prompt);
-    setIsAiCoachOpen(true);
+    navigate('/career', { state: { initialPrompt: prompt } });
   };
 
   return (

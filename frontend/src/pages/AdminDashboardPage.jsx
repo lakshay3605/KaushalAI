@@ -35,6 +35,11 @@ export default function AdminDashboardPage() {
   const [addCentreModalOpen, setAddCentreModalOpen] = useState(false);
   const [issueCertModalOpen, setIssueCertModalOpen] = useState(false);
   const [exportReportModalOpen, setExportReportModalOpen] = useState(false);
+  const [newProgrammeTitle, setNewProgrammeTitle] = useState('');
+  const [newProgrammeDuration, setNewProgrammeDuration] = useState('');
+  const [newCentreName, setNewCentreName] = useState('');
+  const [newCentreState, setNewCentreState] = useState('');
+  const [newCentreCode, setNewCentreCode] = useState('');
 
   // Filters for Trainee Directory
   const [traineeSearch, setTraineeSearch] = useState('');
@@ -56,21 +61,21 @@ export default function AdminDashboardPage() {
     { rank: 5, name: 'Jaipur Cooperative Hub', state: 'Rajasthan', learners: '3,760', rate: 78, status: 'Active' }
   ];
 
-  const institutesList = [
+  const [institutesList, setInstitutesList] = useState([
     { id: 'inst-1', name: 'Ranchi Cooperative Training Centre', location: 'Ranchi, Jharkhand', activeTrainees: 5420, activeProgrammes: 6, attendanceRate: 92, status: 'Active', code: 'NCCT-JH-01' },
     { id: 'inst-2', name: 'Jamshedpur Cooperative Institute', location: 'Jamshedpur, Jharkhand', activeTrainees: 2840, activeProgrammes: 4, attendanceRate: 74, status: 'Needs Attention', code: 'NCCT-JH-02' },
     { id: 'inst-3', name: 'Dhanbad Training Centre', location: 'Dhanbad, Jharkhand', activeTrainees: 1950, activeProgrammes: 3, attendanceRate: 88, status: 'Active', code: 'NCCT-JH-03' },
     { id: 'inst-4', name: 'Patna Cooperative Training Institute', location: 'Patna, Bihar', activeTrainees: 4980, activeProgrammes: 5, attendanceRate: 88, status: 'Active', code: 'NCCT-BR-01' },
     { id: 'inst-5', name: 'Lucknow Institute of Cooperative Management', location: 'Lucknow, Uttar Pradesh', activeTrainees: 4120, activeProgrammes: 5, attendanceRate: 84, status: 'Active', code: 'NCCT-UP-01' }
-  ];
+  ]);
 
-  const programmesList = [
+  const [programmesList, setProgrammesList] = useState([
     { id: 'prog-1', name: 'PACS Management Programme', enrolled: 1240, completed: 1016, completionRate: 82, certRate: 91, status: 'Active', batches: 8 },
     { id: 'prog-2', name: 'PACS Accounting & Bookkeeping', enrolled: 2150, completed: 1892, completionRate: 88, certRate: 94, status: 'Active', batches: 14 },
     { id: 'prog-3', name: 'Digital Tools & MIS for PACS', enrolled: 1820, completed: 1547, completionRate: 85, certRate: 89, status: 'Active', batches: 12 },
     { id: 'prog-4', name: 'Rural Credit Appraisal & Recovery', enrolled: 960, completed: 748, completionRate: 78, certRate: 86, status: 'Active', batches: 6 },
     { id: 'prog-5', name: 'Cooperative Governance & By-laws', enrolled: 1400, completed: 1260, completionRate: 90, certRate: 95, status: 'Active', batches: 9 }
-  ];
+  ]);
 
   const traineesList = [
     {
@@ -268,9 +273,9 @@ export default function AdminDashboardPage() {
           <div className="flex items-center gap-1.5 shrink-0">
             {[
               { id: 'overview', label: 'Overview', icon: BarChart3 },
-              { id: 'training', label: 'Training (128 Batches)', icon: Layers },
+              { id: 'training', label: 'Timetables & Training', icon: Layers },
               { id: 'trainees', label: 'Trainees', icon: Users },
-              { id: 'institutes', label: 'Institutes (500+)', icon: Building2 },
+              { id: 'institutes', label: 'Institutes & Hostels', icon: Building2 },
               { id: 'courses', label: 'Programmes', icon: BookOpen },
               { id: 'assessments', label: 'Assessments', icon: CheckSquare },
               { id: 'attendance', label: 'Attendance (Kiosk)', icon: Clock },
@@ -517,8 +522,8 @@ export default function AdminDashboardPage() {
         <div className="space-y-5">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-base font-extrabold text-slate-900">Training Institutes & Centres ({institutesList.length})</h2>
-              <p className="text-xs text-slate-500">Accredited institutes under National Council for Cooperative Training (NCCT).</p>
+              <h2 className="text-base font-extrabold text-slate-900">Institutes, Hostels & Logistics ({institutesList.length})</h2>
+              <p className="text-xs text-slate-500">Manage capacities, hostel availability, and logistics for accredited NCCT institutes.</p>
             </div>
             <button
               onClick={() => setAddCentreModalOpen(true)}
@@ -1292,17 +1297,29 @@ export default function AdminDashboardPage() {
             </div>
             <form onSubmit={(e) => {
               e.preventDefault();
+              setProgrammesList([...programmesList, {
+                id: `prog-${programmesList.length + 1}`,
+                name: newProgrammeTitle,
+                enrolled: 0,
+                completed: 0,
+                completionRate: 0,
+                certRate: 0,
+                status: 'Active',
+                batches: 0
+              }]);
+              setNewProgrammeTitle('');
+              setNewProgrammeDuration('');
               showToast('✓ Training Programme successfully registered with NCCT!', 'success');
               setAddProgrammeModalOpen(false);
             }} className="p-5 space-y-3 text-xs">
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Programme Title</label>
-                <input required placeholder="e.g. PACS Leadership & Cooperative Governance" className="w-full p-2 border rounded-lg bg-slate-50" />
+                <input required value={newProgrammeTitle} onChange={e => setNewProgrammeTitle(e.target.value)} placeholder="e.g. PACS Leadership & Cooperative Governance" className="w-full p-2 border rounded-lg bg-slate-50" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Duration (Hours)</label>
-                  <input required placeholder="e.g. 240 Hours" className="w-full p-2 border rounded-lg bg-slate-50" />
+                  <input required value={newProgrammeDuration} onChange={e => setNewProgrammeDuration(e.target.value)} placeholder="e.g. 240 Hours" className="w-full p-2 border rounded-lg bg-slate-50" />
                 </div>
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Target Sector</label>
@@ -1336,21 +1353,34 @@ export default function AdminDashboardPage() {
             </div>
             <form onSubmit={(e) => {
               e.preventDefault();
+              setInstitutesList([...institutesList, {
+                id: `inst-${institutesList.length + 1}`,
+                name: newCentreName,
+                location: `${newCentreState}`,
+                activeTrainees: 0,
+                activeProgrammes: 0,
+                attendanceRate: 100,
+                status: 'Active',
+                code: newCentreCode
+              }]);
+              setNewCentreName('');
+              setNewCentreState('');
+              setNewCentreCode('');
               showToast('✓ Training Centre successfully accredited and onboarded!', 'success');
               setAddCentreModalOpen(false);
             }} className="p-5 space-y-3 text-xs">
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Centre / Institute Name</label>
-                <input required placeholder="e.g. Bokaro Cooperative Training Institute" className="w-full p-2 border rounded-lg bg-slate-50" />
+                <input required value={newCentreName} onChange={e => setNewCentreName(e.target.value)} placeholder="e.g. Bokaro Cooperative Training Institute" className="w-full p-2 border rounded-lg bg-slate-50" />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">State</label>
-                  <input required placeholder="e.g. Jharkhand" className="w-full p-2 border rounded-lg bg-slate-50" />
+                  <input required value={newCentreState} onChange={e => setNewCentreState(e.target.value)} placeholder="e.g. Jharkhand" className="w-full p-2 border rounded-lg bg-slate-50" />
                 </div>
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Centre Code</label>
-                  <input required placeholder="e.g. NCCT-JH-04" className="w-full p-2 border rounded-lg bg-slate-50" />
+                  <input required value={newCentreCode} onChange={e => setNewCentreCode(e.target.value)} placeholder="e.g. NCCT-JH-04" className="w-full p-2 border rounded-lg bg-slate-50" />
                 </div>
               </div>
               <div className="pt-2 flex justify-end gap-2 border-t border-gray-100">

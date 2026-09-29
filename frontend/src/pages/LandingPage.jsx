@@ -51,7 +51,7 @@ export default function LandingPage() {
                 }}
                 className="bg-[#0B6A45] hover:bg-[#085536] text-white font-semibold px-6 py-3 rounded-lg shadow-xs hover:shadow transition flex items-center gap-2 text-sm cursor-pointer"
               >
-                <span>Get Started</span>
+                <span>Online Programme Registration</span>
                 <ArrowRight size={16} />
               </button>
 
@@ -70,13 +70,13 @@ export default function LandingPage() {
 
           {/* RIGHT SIDE (~53% width) — Hero Image with 4 Floating Cards */}
           <div className="w-full lg:w-[53%] relative">
-            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-sm border border-gray-200/90 aspect-[16/9.5] sm:aspect-[16/9] min-h-[290px] sm:min-h-0 w-full flex items-center justify-end p-4 sm:p-6 lg:p-7 bg-slate-50">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-sm border border-gray-200/90 aspect-[4/3] sm:aspect-[5/4] lg:aspect-[4/3] min-h-[350px] sm:min-h-0 w-full flex items-center justify-end p-4 sm:p-6 lg:p-7 bg-slate-50">
               
               {/* Clean Background Photo (Farmer holding folder + PACS building with zero embedded text) */}
               <img
                 src="/assets/hero_cooperative_professional.jpg"
                 alt="Cooperative Professional at Primary Agricultural Credit Society"
-                className="absolute inset-0 w-full h-full object-cover object-left"
+                className="absolute inset-0 w-full h-full object-cover object-[left_top]"
                 onError={(e) => {
                   e.target.src = '/assets/clean_hero_photo.jpg';
                 }}
@@ -316,7 +316,7 @@ export default function LandingPage() {
                   <span>•</span>
                   <span>8 Weeks</span>
                   <span>•</span>
-                  <span className="text-[#059669] font-semibold">Certificate</span>
+                  <button className="text-[#059669] font-bold hover:underline">Register Now</button>
                 </div>
               </div>
 
@@ -348,7 +348,7 @@ export default function LandingPage() {
                   <span>•</span>
                   <span>10 Weeks</span>
                   <span>•</span>
-                  <span className="text-[#059669] font-semibold">Certificate</span>
+                  <button className="text-[#059669] font-bold hover:underline">Register Now</button>
                 </div>
               </div>
 
@@ -380,7 +380,7 @@ export default function LandingPage() {
                   <span>•</span>
                   <span>8 Weeks</span>
                   <span>•</span>
-                  <span className="text-[#059669] font-semibold">Certificate</span>
+                  <button className="text-[#059669] font-bold hover:underline">Register Now</button>
                 </div>
               </div>
 
