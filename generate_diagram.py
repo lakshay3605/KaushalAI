@@ -448,9 +448,10 @@ def generate_svg():
 
 </svg>"""
 
-    with open("d:/sih-26087/master_architecture_cream.svg", "w", encoding="utf-8") as f:
+    output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "master_architecture_cream.svg")
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(svg)
-    print("SVG generated successfully at d:/sih-26087/master_architecture_cream.svg")
+    print(f"SVG generated successfully at {output_path}")
 
 if __name__ == "__main__":
     generate_svg()
