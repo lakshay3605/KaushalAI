@@ -209,9 +209,9 @@ export default function TraineeDashboard() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="w-24 h-20 rounded-xl overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+            <div className="w-28 h-20 rounded-xl overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
               <img
-                src="/assets/pacs_learning_group.jpg"
+                src="/assets/course_coop_mgmt_new_1790835041825.jpg"
                 alt="PACS Operations"
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -492,54 +492,63 @@ export default function TraineeDashboard() {
               </Link>
             </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             
             <div 
               onClick={() => navigate('/learning')}
-              className="rounded-xl border border-gray-200 p-2.5 hover:shadow-xs hover:border-emerald-700/40 transition cursor-pointer"
+              className="rounded-2xl border border-gray-100 bg-white p-2 hover:shadow-md hover:border-emerald-700/30 transition-all cursor-pointer group"
             >
-              <div className="h-20 rounded-lg overflow-hidden bg-slate-100 mb-2">
-                <img src="/assets/course_rural_banking.jpg" alt="Rural Banking" className="w-full h-full object-cover" />
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-50 mb-3">
+                <img src="/assets/career_rural_finance.jpg" alt="Rural Banking" className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                <span className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-extrabold text-amber-700 bg-white/95 backdrop-blur-sm px-2 py-1 rounded shadow-sm">
+                  Popular
+                </span>
               </div>
-              <span className="text-[9px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded">
-                Popular
-              </span>
-              <h4 className="text-[11px] font-bold text-slate-900 mt-1 line-clamp-2">
-                Rural Banking & Credit Operations
-              </h4>
-              <p className="text-[10px] text-slate-400 mt-1">5 Modules • 6 Weeks</p>
+              <div className="px-1.5 pb-1.5">
+                <h4 className="text-sm font-extrabold text-slate-900 leading-tight line-clamp-2 group-hover:text-emerald-800 transition">
+                  Rural Banking & Credit Operations
+                </h4>
+                <p className="text-[11px] font-medium text-slate-500 mt-1.5">5 Modules • 6 Weeks</p>
+              </div>
             </div>
 
             <div 
               onClick={() => navigate('/learning')}
-              className="rounded-xl border border-gray-200 p-2.5 hover:shadow-xs hover:border-emerald-700/40 transition cursor-pointer"
+              className="rounded-2xl border border-gray-100 bg-white p-2 hover:shadow-md hover:border-emerald-700/30 transition-all cursor-pointer group"
             >
-              <div className="h-20 rounded-lg overflow-hidden bg-slate-100 mb-2">
-                <img src="/assets/course_digital_tools.jpg" alt="Digital Tools" className="w-full h-full object-cover" />
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-50 mb-3">
+                <img src="/assets/impact_laptop.jpg" alt="Digital Tools" className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                <span className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-extrabold text-emerald-700 bg-white/95 backdrop-blur-sm px-2 py-1 rounded shadow-sm">
+                  New
+                </span>
               </div>
-              <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
-                New
-              </span>
-              <h4 className="text-[11px] font-bold text-slate-900 mt-1 line-clamp-2">
-                Digital Tools for PACS
-              </h4>
-              <p className="text-[10px] text-slate-400 mt-1">4 Modules • 5 Weeks</p>
+              <div className="px-1.5 pb-1.5">
+                <h4 className="text-sm font-extrabold text-slate-900 leading-tight line-clamp-2 group-hover:text-emerald-800 transition">
+                  Digital Tools for PACS
+                </h4>
+                <p className="text-[11px] font-medium text-slate-500 mt-1.5">4 Modules • 5 Weeks</p>
+              </div>
             </div>
 
             <div 
               onClick={() => navigate('/learning')}
-              className="rounded-xl border border-gray-200 p-2.5 hover:shadow-xs hover:border-emerald-700/40 transition cursor-pointer"
+              className="rounded-2xl border border-gray-100 bg-white p-2 hover:shadow-md hover:border-emerald-700/30 transition-all cursor-pointer group"
             >
-              <div className="h-20 rounded-lg overflow-hidden bg-slate-100 mb-2">
-                <img src="/assets/course_coop_mgmt.jpg" alt="Coop Mgmt" className="w-full h-full object-cover" />
+              <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-slate-50 mb-3">
+                <img src="/assets/career_coop_manager.jpg" alt="Coop Mgmt" className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                <span className="absolute top-2 right-2 text-[9px] uppercase tracking-wider font-extrabold text-blue-700 bg-white/95 backdrop-blur-sm px-2 py-1 rounded shadow-sm">
+                  Recommended
+                </span>
               </div>
-              <span className="text-[9px] font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">
-                Recommended
-              </span>
-              <h4 className="text-[11px] font-bold text-slate-900 mt-1 line-clamp-2">
-                Cooperative Society Management
-              </h4>
-              <p className="text-[10px] text-slate-400 mt-1">6 Modules • 8 Weeks</p>
+              <div className="px-1.5 pb-1.5">
+                <h4 className="text-sm font-extrabold text-slate-900 leading-tight line-clamp-2 group-hover:text-emerald-800 transition">
+                  Cooperative Society Management
+                </h4>
+                <p className="text-[11px] font-medium text-slate-500 mt-1.5">6 Modules • 8 Weeks</p>
+              </div>
             </div>
 
           </div>

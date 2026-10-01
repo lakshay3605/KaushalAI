@@ -275,7 +275,7 @@ export default function AdminDashboardPage() {
               { id: 'overview', label: 'Overview', icon: BarChart3 },
               { id: 'training', label: 'Timetables & Training', icon: Layers },
               { id: 'trainees', label: 'Trainees', icon: Users },
-              { id: 'institutes', label: 'Institutes & Hostels', icon: Building2 },
+              { id: 'institutes', label: 'Institutes & PACS', icon: Building2 },
               { id: 'courses', label: 'Programmes', icon: BookOpen },
               { id: 'assessments', label: 'Assessments', icon: CheckSquare },
               { id: 'attendance', label: 'Attendance (Kiosk)', icon: Clock },
@@ -518,12 +518,12 @@ export default function AdminDashboardPage() {
 
       ) : activeTab === 'institutes' ? (
 
-        /* VIEW: INSTITUTES MANAGEMENT */
+        /* VIEW: INSTITUTES & PACS MANAGEMENT */
         <div className="space-y-5">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-base font-extrabold text-slate-900">Institutes, Hostels & Logistics ({institutesList.length})</h2>
-              <p className="text-xs text-slate-500">Manage capacities, hostel availability, and logistics for accredited NCCT institutes.</p>
+              <h2 className="text-base font-extrabold text-slate-900">Training Institutions & PACS Cooperatives ({institutesList.length})</h2>
+              <p className="text-xs text-slate-500">Manage institutional profiles, capacities, and logistics for accredited NCCT institutes and Primary Cooperatives.</p>
             </div>
             <button
               onClick={() => setAddCentreModalOpen(true)}
@@ -621,6 +621,9 @@ export default function AdminDashboardPage() {
                     <td className="p-4 font-bold text-emerald-800">{prog.completionRate}%</td>
                     <td className="p-4 font-bold text-purple-700">{prog.certRate}%</td>
                     <td className="p-4 text-right space-x-2">
+                      <button onClick={() => showToast(`Opening nomination portal for ${prog.name}...`, 'success')} className="px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 font-bold hover:bg-blue-100">
+                        Nominate Staff
+                      </button>
                       <button onClick={() => showToast(`Opening batch management for ${prog.name}`, 'info')} className="px-2.5 py-1 rounded-lg border border-gray-200 text-slate-700 font-bold hover:bg-slate-100">
                         Manage Batches
                       </button>
@@ -1319,15 +1322,45 @@ export default function AdminDashboardPage() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Duration (Hours)</label>
-                  <input required value={newProgrammeDuration} onChange={e => setNewProgrammeDuration(e.target.value)} placeholder="e.g. 240 Hours" className="w-full p-2 border rounded-lg bg-slate-50" />
+                  <input required value={newProgrammeDuration} onChange={e => setNewProgrammeDuration(e.target.value)} placeholder="e.g. 240 Hours" className="w-full p-2 border rounded-lg bg-slate-50 focus:outline-none focus:border-emerald-500" />
                 </div>
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Target Sector</label>
-                  <select className="w-full p-2 border rounded-lg bg-slate-50">
+                  <select className="w-full p-2 border rounded-lg bg-slate-50 focus:outline-none focus:border-emerald-500">
                     <option>PACS</option>
                     <option>Dairy Cooperatives</option>
                     <option>Fisheries Cooperatives</option>
                   </select>
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <label className="font-bold text-slate-700 block mb-2">Curriculum Modules Included</label>
+                <div className="grid grid-cols-2 gap-2 text-[11px]">
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Cooperative Principles</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Financial Literacy</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Rural Development</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Compliance & Legal</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Digital Tools & IT</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 border rounded-lg hover:bg-slate-50">
+                    <input type="checkbox" defaultChecked className="text-emerald-700 rounded focus:ring-emerald-700" />
+                    <span className="font-medium">Capacity Building</span>
+                  </label>
                 </div>
               </div>
               <div className="pt-2 flex justify-end gap-2 border-t border-gray-100">

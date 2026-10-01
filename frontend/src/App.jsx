@@ -20,6 +20,10 @@ import ProfilePage from './pages/ProfilePage';
 import RecruiterPortalPage from './pages/RecruiterPortalPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import KioskOperatorPortalPage from './pages/KioskOperatorPortalPage';
+import AboutPage from './pages/AboutPage';
+import ProgrammesPage from './pages/ProgrammesPage';
+import OpportunitiesPage from './pages/OpportunitiesPage';
+import ResourcesPage from './pages/ResourcesPage';
 import PublicCertificateVerifier from './pages/PublicCertificateVerifier';
 
 function PortalLayout() {
@@ -134,8 +138,12 @@ export default function App() {
         
         <Routes>
           <Route path="/" element={<PortalLayout />}>
-            {/* Page 1: Public Landing Page */}
+            {/* Page 1: Public Landing Page & Info Pages */}
             <Route index element={<LandingPage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="programmes" element={<ProgrammesPage />} />
+            <Route path="opportunities" element={<OpportunitiesPage />} />
+            <Route path="resources" element={<ResourcesPage />} />
 
             {/* Page 2: Trainee Dashboard */}
             <Route path="dashboard" element={<TraineeDashboard />} />

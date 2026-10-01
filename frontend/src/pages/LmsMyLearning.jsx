@@ -45,7 +45,7 @@ export default function LmsMyLearning() {
       modulesCount: 6,
       weeksCount: 8,
       lessonsCount: 24,
-      thumbnail: '/assets/pacs_learning_group.jpg',
+      thumbnail: '/assets/farmer_pacs_backdrop.jpg',
       currentLesson: 'Module 3: Lesson 3.2 — Functions and Services of PACS',
       badgeColor: 'bg-emerald-50 text-[#056B46] border-emerald-200'
     },
@@ -59,7 +59,7 @@ export default function LmsMyLearning() {
       modulesCount: 4,
       weeksCount: 6,
       lessonsCount: 16,
-      thumbnail: '/assets/popular_c1.jpg',
+      thumbnail: '/assets/assessment_calc_hands.jpg',
       currentLesson: 'Module 1: Lesson 1.3 — Journal Entries & Double Entry System',
       badgeColor: 'bg-blue-50 text-blue-700 border-blue-200'
     },
@@ -73,7 +73,7 @@ export default function LmsMyLearning() {
       modulesCount: 6,
       weeksCount: 8,
       lessonsCount: 22,
-      thumbnail: '/assets/course_coop_mgmt.jpg',
+      thumbnail: '/assets/career_coop_manager.jpg',
       currentLesson: 'Module 1: Lesson 1.1 — Principles of Cooperative Governance',
       badgeColor: 'bg-purple-50 text-purple-700 border-purple-200'
     },
@@ -87,7 +87,7 @@ export default function LmsMyLearning() {
       modulesCount: 5,
       weeksCount: 6,
       lessonsCount: 18,
-      thumbnail: '/assets/course_rural_banking.jpg',
+      thumbnail: '/assets/career_rural_finance.jpg',
       currentLesson: 'Module 1: Lesson 1.1 — Agricultural Credit Delivery Architecture',
       badgeColor: 'bg-amber-50 text-amber-800 border-amber-200'
     },
@@ -101,7 +101,7 @@ export default function LmsMyLearning() {
       modulesCount: 4,
       weeksCount: 5,
       lessonsCount: 14,
-      thumbnail: '/assets/course_digital_tools.jpg',
+      thumbnail: '/assets/impact_laptop.jpg',
       currentLesson: 'All Modules Completed • Certificate Verified',
       badgeColor: 'bg-emerald-50 text-[#056B46] border-emerald-200'
     },
@@ -115,7 +115,7 @@ export default function LmsMyLearning() {
       modulesCount: 4,
       weeksCount: 4,
       lessonsCount: 12,
-      thumbnail: '/assets/popular_c2.jpg',
+      thumbnail: '/assets/career_community_dev.jpg',
       currentLesson: 'All Modules Completed • Certificate Verified',
       badgeColor: 'bg-teal-50 text-teal-800 border-teal-200'
     }
@@ -571,10 +571,10 @@ export default function LmsMyLearning() {
               {/* Assessment Action */}
               <div className="mt-5 pt-4 border-t border-gray-100">
                 <button
-                  onClick={() => navigate('/assessments')}
-                  className="w-full py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer"
+                  onClick={() => navigate('/assessments/pacs-accounting')}
+                  className="w-full py-2.5 px-3 rounded-xl bg-[#0B6A45] hover:bg-[#085536] text-white font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer shadow-2xs"
                 >
-                  <Award size={14} className="text-[#056B46]" />
+                  <Award size={14} className="text-white" />
                   <span>Take Module 3 Assessment</span>
                 </button>
               </div>
@@ -743,11 +743,11 @@ export default function LmsMyLearning() {
             >
               <div>
                 {/* Course Image Header with Badges */}
-                <div className="relative h-44 w-full overflow-hidden bg-slate-100">
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
                   <img
                     src={course.thumbnail}
                     alt={course.title}
-                    className="w-full h-full object-cover transition duration-300 hover:scale-105"
+                    className="w-full h-full object-cover object-center transition duration-300 hover:scale-105"
                     onError={(e) => {
                       e.target.src = '/assets/clean_hero_photo.jpg';
                     }}

@@ -8,7 +8,7 @@ import {
 
 export default function Header() {
   const { 
-    currentUser, switchRole, isOffline, setIsOffline, 
+    currentUser, setCurrentUser, switchRole, isOffline, setIsOffline, 
     pendingSyncCount, handleSyncOffline, setIsKioskOpen, 
     setIsTourOpen, notifications, setNotifications
   } = useApp();
@@ -27,13 +27,13 @@ export default function Header() {
   const [loginRole, setLoginRole] = useState('TRAINEE');
 
   useEffect(() => {
-    if (isLandingPage) {
+    if (isLandingPage && !currentUser) {
       const timer = setTimeout(() => {
         setIsLoginModalOpen(true);
       }, 2000);
       return () => clearTimeout(timer);
     }
-  }, [isLandingPage]);
+  }, [isLandingPage, currentUser]);
 
   const unreadNotifCount = notifications.filter(n => n.unread).length;
 
@@ -47,15 +47,16 @@ export default function Header() {
     }
   };
 
+  const isPublicPage = isLandingPage || ['/about', '/programmes', '/opportunities', '/resources'].includes(location.pathname);
+
   const getNavLinks = () => {
-    if (isLandingPage) {
+    if (!currentUser || isPublicPage) {
       return [
         { label: 'Home', path: '/' },
-        { label: 'About', path: '/#about' },
-        { label: 'Programmes', path: '/#programmes' },
-        { label: 'Opportunities', path: '/#opportunities' },
-        { label: 'Resources', path: '/#resources' },
-        { label: 'Contact', path: '/#contact' }
+        { label: 'About', path: '/about' },
+        { label: 'Programmes', path: '/programmes' },
+        { label: 'Opportunities', path: '/opportunities' },
+        { label: 'Resources', path: '/resources' }
       ];
     }
     if (currentUser?.role === 'RECRUITER' || location.pathname.startsWith('/jobs') || location.pathname.startsWith('/recruiter')) {
@@ -111,7 +112,7 @@ export default function Header() {
       
       {/* Main Navigation Bar — Matching approved reference header */}
       <div className={`w-full mx-auto flex items-center justify-between gap-4 h-16 ${
-        isLandingPage ? 'px-6 sm:px-10 lg:px-14 xl:px-16' : 'px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1536px]'
+        isPublicPage ? 'px-6 sm:px-10 lg:px-14 xl:px-16' : 'px-4 sm:px-6 lg:px-8 xl:px-10 max-w-[1536px]'
       }`}>
         
         {/* LEFT: KaushalAI Logo & Emblem */}
@@ -141,8 +142,8 @@ export default function Header() {
             const isRecruiterPortal = location.pathname.startsWith('/jobs') || location.pathname.startsWith('/recruiter');
             const isAdminPortal = location.pathname.startsWith('/admin');
             const isKioskPortal = location.pathname.startsWith('/kiosk');
-            const isActive = isLandingPage 
-              ? isHome 
+            const isActive = isPublicPage 
+              ? (location.pathname === item.path) 
               : isKioskPortal
               ? (item.label === 'Dashboard' && !location.search.includes('tab=')) ||
                 (location.search.includes('tab=attendance') && item.label === 'Attendance') ||
@@ -189,7 +190,7 @@ export default function Header() {
           {/* Search Icon */}
           <button
             onClick={() => {
-              if (isLandingPage) {
+              if (isPublicPage) {
                 navigate('/learning');
               } else {
                 const el = document.getElementById('global-search');
@@ -202,7 +203,7 @@ export default function Header() {
             <Search size={18} />
           </button>
 
-          {isLandingPage ? (
+          {isPublicPage ? (
             <>
               {/* Login Button (White outline button matching screenshot) */}
               <button
@@ -297,10 +298,23 @@ export default function Header() {
                       <p className="text-[10px] text-slate-400">{currentUser?.email}</p>
                     </div>
                     <div className="p-2 space-y-1">
-                      <button onClick={() => { switchRole('TRAINEE'); navigate('/dashboard'); setProfileMenuOpen(false); }} className="w-full text-left p-1.5 rounded text-xs hover:bg-slate-50">Trainee (Rohit Kumar)</button>
-                      <button onClick={() => { switchRole('RECRUITER'); navigate('/recruiter'); setProfileMenuOpen(false); }} className="w-full text-left p-1.5 rounded text-xs hover:bg-slate-50">Recruiter (Anjali Mehta)</button>
-                      <button onClick={() => { switchRole('ADMIN'); navigate('/admin'); setProfileMenuOpen(false); }} className="w-full text-left p-1.5 rounded text-xs hover:bg-slate-50">NCCT Admin</button>
-                      <button onClick={() => { switchRole('CENTRE_OPERATOR'); navigate('/kiosk'); setProfileMenuOpen(false); }} className="w-full text-left p-1.5 rounded text-xs hover:bg-slate-50">Centre Operator (Sunita)</button>
+                      {currentUser?.role === 'TRAINEE' && (
+                        <button onClick={() => { navigate('/profile'); setProfileMenuOpen(false); }} className="w-full text-left p-1.5 rounded text-xs hover:bg-slate-50 flex items-center gap-2 text-emerald-800 font-bold mb-1">
+                          <User size={14} /> My Profile
+                        </button>
+                      )}
+                      <div className="pt-2 mt-2 border-t border-gray-100">
+                        <button 
+                          onClick={() => { 
+                            setCurrentUser(null); 
+                            navigate('/'); 
+                            setProfileMenuOpen(false); 
+                          }} 
+                          className="w-full text-left p-1.5 rounded text-xs hover:bg-red-50 text-red-600 font-bold flex items-center gap-2"
+                        >
+                          <LogOut size={14} /> Logout
+                        </button>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -313,7 +327,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Drawer Navigation for Landing Page */}
-      {mobileMenuOpen && isLandingPage && (
+      {mobileMenuOpen && isPublicPage && (
         <div className="lg:hidden bg-white border-t border-gray-100 px-6 py-4 shadow-lg animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col gap-2.5">
             {navLinks.map((item) => (
